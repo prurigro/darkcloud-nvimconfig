@@ -1,6 +1,3 @@
-let g:unite_force_overwrite_statusline = 0
-let g:vimfiler_force_overwrite_statusline = 0
-
 function! LLModified()
     return &ft =~ 'help' ? '' : &modified ? '*' : &modifiable ? '' : '-'
 endfunction
@@ -14,8 +11,6 @@ function! LLFilename()
 
     return
     \   fname == '__Tagbar__.1' ? g:lightline.fname :
-    \   &ft == 'vimfiler' ? vimfiler#get_status_string() :
-    \   &ft == 'unite' ? unite#get_status_string() :
     \   &ft == 'qf' ? '[Error/Location List]' :
     \       ('' != LLReadonly() ? LLReadonly() . ' ' : '') .
     \       ('' != fname ? fname : '[NEW]') .
@@ -23,7 +18,7 @@ function! LLFilename()
 endfunction
 
 function! LLFugitive()
-    if expand('%:t') !~? 'Tagbar' && &ft !~? 'vimfiler' && exists('*FugitiveHead')
+    if expand('%:t') !~? 'Tagbar' && exists('*FugitiveHead')
         let mark = '' "edit here for cool mark
         let _ = FugitiveHead()
         return strlen(_) ? mark._ : ''
@@ -48,8 +43,6 @@ function! LLMode()
     let fname = expand('%:t')
 
     return fname == '__Tagbar__' ? 'Tagbar' :
-    \   &ft == 'unite' ? 'Unite' :
-    \   &ft == 'vimfiler' ? 'VimFiler' :
     \   winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 

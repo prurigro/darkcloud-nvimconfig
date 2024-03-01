@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 #
-#  Darkcloud Vim Config Update Tool
-#  https://github.com/prurigro/darkcloud-vimconfig
+#  Darkcloud Neovim Config Update Tool
+#  https://github.com/prurigro/darkcloud-nvimconfig
 #
 #  Written by Kevin MacMartin (prurigro@gmail.com)
 #  Released under the MIT license
@@ -47,7 +47,7 @@ function error {
 
 # show_version: displays version information
 function show_version {
-    printf '%s\n' "$script_name: darkcloud-vimconfig update tool (version: $repo_version)"
+    printf '%s\n' "$script_name: darkcloud-nvimconfig update tool (version: $repo_version)"
 }
 
 # show_help: this function displays help output
@@ -57,7 +57,7 @@ function show_help {
     printf '%s\n' 'OPTIONS'
     printf '  %s\t%s\n' '-v, --version' '| output version information and exit'
     printf '  %s\t%s\n\n' '-h, --help' '| display this help and exit'
-    printf '%s\n' 'Run with no arguments to update darkcloud-vimconfig'
+    printf '%s\n' 'Run with no arguments to update darkcloud-nvimconfig'
 }
 
 ### SETUP
@@ -96,7 +96,7 @@ cd "$script_home" || exit
 }
 
 # display script title
-printf '\n%s\n' "$cbg_black ~~~ DarkCloud Vimconfig Update Tool ~~~ $c_reset"
+printf '\n%s\n' "$cbg_black ~~~ DarkCloud Neovim Config Update Tool ~~~ $c_reset"
 
 # create vim/bundle.user if it doesn't exist
 [[ -d 'vim/bundle.user' ]] || {
@@ -111,10 +111,10 @@ printf '\n%s\n' "$cbg_black ~~~ DarkCloud Vimconfig Update Tool ~~~ $c_reset"
     fi
 }
 
-# create vim/vimrc.user if it doesn't exist
-[[ -e 'vim/vimrc.user' ]] || {
+# create vim/user.vim if it doesn't exist
+[[ -e 'vim/user.vim' ]] || {
     printf '\n%s' "$cbg_blue >> Creating user config file:$c_reset"
-    process_status="$(touch 'vim/vimrc.user' 2>&1)"
+    process_status="$(touch 'vim/user.vim' 2>&1)"
 
     if (( ! $? )); then
         {
@@ -123,23 +123,22 @@ printf '\n%s\n' "$cbg_black ~~~ DarkCloud Vimconfig Update Tool ~~~ $c_reset"
             printf '%s\n%s\n\n' '"Disable Completion: (1:disable completion | *0:enable completion if requirements are met)' '"let g:disablecompletion = 0'
             printf '%s\n%s\n\n' '"Disable automatic tag generation and highlighting: (1:force disabled tag generation and highlighting | *0:enable automatic tag generation and highlighting)' '"let g:disableautotags = 0'
             printf '%s\n%s\n\n' '"Disable automatic linebreaking: (1:force disabled globally | *0:let the filetype decide)' '"let g:disablelinebreaks = 0'
-            printf '%s\n%s\n\n' '"Enable Powerline fonts: (1:expect powerline font | *0:expect regular font)' '"let g:powerlinefonts = 0 "(set powerline font for gvim and terminal when enabled)'
-            printf '%s\n%s\n' '"GVim font selection: (Escaping spaces and use powerline if appropriate)' '"set guifont=Monospace\ 12'
-        } >> vim/vimrc.user
+            printf '%s\n%s' '"Enable Powerline fonts: (1:expect powerline font | *0:expect regular font)' '"let g:powerlinefonts = 0 "(use powerline font glyphs when enabled)'
+        } >> vim/user.vim
 
-        if [[ -e 'vim/vimrc.user' ]]; then
+        if [[ -e 'vim/user.vim' ]]; then
             printf '%s\n' "$cfg_green_bold SUCCESS! $c_reset"
         else
             printf '%s\n' "$cfg_red_bold FAIL! $c_reset"
         fi
     else
         printf '%s\n' "$cfg_red_bold FAIL! $c_reset"
-        error "touch vim/vimrc.user" "User config couldn't be created" "$process_status"
+        error "touch vim/user.vim" "User config couldn't be created" "$process_status"
     fi
 }
 
 ### REPO UPDATE
-printf '\n%s' "$cbg_blue >> Updating darkcloud-vimconfig:$c_reset"
+printf '\n%s' "$cbg_blue >> Updating darkcloud-nvimconfig:$c_reset"
 process_status="$(git pull origin master 2>&1)"
 
 if (( ! $? )); then

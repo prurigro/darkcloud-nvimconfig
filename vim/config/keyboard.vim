@@ -1,13 +1,13 @@
-"============================================================"
-"                                                            "
-"  Darkcloud Vim Config: keyboard settings                   "
-"                                                            "
-"  By: Kevin MacMartin (prurigro@gmail.com)                  "
-"  Website: https://github.com/prurigro/darkcloud-vimconfig  "
-"                                                            "
-"  License: MIT                                              "
-"                                                            "
-"============================================================"
+"============================================================="
+"                                                             "
+"  Darkcloud Neovim Config: keyboard settings                 "
+"                                                             "
+"  By: Kevin MacMartin (prurigro@gmail.com)                   "
+"  Website: https://github.com/prurigro/darkcloud-nvimconfig  "
+"                                                             "
+"  License: MIT                                               "
+"                                                             "
+"============================================================="
 "
 "Aliases:
 "  :GitLog & :gitlog          | (C) -> show a navigatable log of commit history
@@ -54,8 +54,6 @@
 "    <Alt-n>                  | (N) -> go to the next open tab
 "    <Alt-p>                  | (N) -> go to the previous open tab
 "    <Alt-t>                  | (N) -> open a new tab
-"    <Alt-c>                  | (N) -> create a new tab with vimfiler
-"    <Alt-d>                  | (N) -> create a new tab with a double pane vimfiler
 "
 "  (split)
 "    <Ctrl-w>{                | (N) -> rotate counter-clockwise
@@ -91,19 +89,11 @@
 "    <F3>                     | (A) -> toggle external-paste mode
 "    <F4>                     | (A) -> toggle syntax checking
 "
-"    <F9>                     | (A) -> toggle git commit history
-"    <Leader>}                | (N) -> toggle git commit history
-"    <F10>                    | (A) -> toggle the tagbar sidebar
-"    <Leader>{                | (N) -> toggle the tagbar sidebar
-"    <F11>                    | (A) -> toggle the location list
+"    <F11>                    | (N) -> toggle git commit history
+"    <Leader>[                | (N) -> toggle git commit history
+"    <F12>                    | (N) -> toggle the tagbar sidebar
+"    <Leader>]                | (N) -> toggle the tagbar sidebar
 "    <Leader><Leader>         | (N) -> toggle the location list
-"    <F12>                    | (A) -> toggle vimfiler sidebar
-"    <Leader>[                | (N) -> toggle vimfiler sidebar
-"
-"  (gvim toggles)
-"    <Leader><F1>             | (A) -> toggle the menubar
-"    <Leader><F2>             | (A) -> toggle the toolbar
-"    <Leader><F3>             | (A) -> toggle the scrollbars
 "
 "  (spellcheck)
 "    ?+                       | (N) -> add the selected word to the local dictionary
@@ -117,16 +107,16 @@
 "    p                        | (V) -> preserve the buffer pasting over selected text
 "    Y                        | (N) -> copy to the end of the line
 "
-"    (delete/cut operations that don't replace the paste buffer)
-"      <Leader>x              | (N) -> delete the char(s) under and the cursor
-"      <Leader>x              | (V) -> delete the currently selected text
-"      <Leader>X              | (N) -> delete the char(s) before the cursor
-"      <Leader>X              | (V) -> delete the currently selected lines
-"      <Leader>D              | (N) -> delete from the cursor to EOL
-"      <Leader>D              | (V) -> delete the currently selected lines
-"      <Leader>dw             | (N) -> delete from the cursor to end of the word
-"      <Leader>dd             | (N) -> delete current line
-"      <Leader>d              | (V) -> delete selected text
+"  (delete/cut operations that don't replace the paste buffer)
+"    <Leader>x                | (N) -> delete the char(s) under and the cursor
+"    <Leader>x                | (V) -> delete the currently selected text
+"    <Leader>X                | (N) -> delete the char(s) before the cursor
+"    <Leader>X                | (V) -> delete the currently selected lines
+"    <Leader>D                | (N) -> delete from the cursor to EOL
+"    <Leader>D                | (V) -> delete the currently selected lines
+"    <Leader>dw               | (N) -> delete from the cursor to end of the word
+"    <Leader>dd               | (N) -> delete current line
+"    <Leader>d                | (V) -> delete selected text
 "
 "  (fixing-and-formatting)
 "    <Leader>J                | (N) -> split document into lines of tw or 80
@@ -219,16 +209,6 @@
 "    <Leader>.                | (N) -> replace diff in other pane with current pane
 "    <Leader<<                | (N) -> replace diff in current pane with other pane
 "    <Leader<,                | (N) -> replace diff in current pane with other pane
-"
-"  (vimfiler)
-"    <LClick>                 | (A) -> left click + left justify the cursor
-"    <MClick>                 | (A) -> same as the left click
-"    <RClick>                 | (A) -> same as the left click
-"    <LClick><LClick>         | (A) -> edit selected file
-"    <Right>                  | (A) -> map to l, which opens a directory
-"    <Left>                   | (A) -> map to h, which goes up one directory
-"    '                        | (A) -> edit the selected file
-"    n                        | (A) -> start editing a new file
 
 "DISABLED DEFAULT MAPPING: UNSET SHORTCUTS {{{
     "-unmapping tabbing from < and > for use with diff
@@ -393,8 +373,6 @@
         nnoremap <silent><expr> <A-n> ':tabnext<CR>'
         nnoremap <silent><expr> <A-p> ':tabprev<CR>'
         nnoremap <silent><expr> <A-t> ':tabnew<CR>'
-        nnoremap <silent><expr> <A-c> ':VimFiler -tab -project<CR>'
-        nnoremap <silent><expr> <A-d> ':VimFiler -tab -project -double<CR>'
     "}
 
     "SPLIT:{
@@ -466,45 +444,15 @@
         inoremap <silent><expr> <F4> '<C-O>:call ToggleAle()<CR>'
 
         "view commit history and diffs
-        nnoremap <expr><silent> <F9> ':vs<CR>:0Gclog<CR>:wincmd b<CR>'
-        xnoremap <expr><silent> <F9> '<Esc>:vs<CR>:0Gclog<CR>:wincmd b<CR>'
-        inoremap <expr><silent> <F9> '<Esc>:vs<CR>:0Gclog<CR>:wincmd b<CR>'
-        nnoremap <silent><expr> <Leader>} ':vs<CR>:0Gclog<CR>:wincmd b<CR>'
+        nnoremap <expr><silent> <F11> ':vs<CR>:0Gclog<CR>:wincmd b<CR>'
+        nnoremap <silent><expr> <Leader>[ ':vs<CR>:0Gclog<CR>:wincmd b<CR>'
 
         "bindings to trigger the tagbar list of tags
-        nnoremap <silent><expr> <F10> ':TagbarToggle<CR>:echo "tagbar toggled"<CR>'
-        xnoremap <silent><expr> <F10> '<Esc>:TagbarToggle<CR>gv'
-        inoremap <silent><expr> <F10> '<C-O>:TagbarToggle<CR>'
-        nnoremap <silent><expr> <Leader>{ ':TagbarToggle<CR>:echo "tagbar toggled"<CR>'
+        nnoremap <silent><expr> <F12> ':TagbarToggle<CR>:echo "tagbar toggled"<CR>'
+        nnoremap <silent><expr> <Leader>] ':TagbarToggle<CR>:echo "tagbar toggled"<CR>'
 
         "toggle the location list
-        nnoremap <silent><expr> <F11> ':call ToggleLocationList()<CR>'
-        xnoremap <silent><expr> <F11> '<Esc>:call ToggleLocationList()<CR>'
-        inoremap <silent><expr> <F11> '<C-O>:call ToggleLocationList()<CR>'
         nnoremap <silent><expr> <Leader><Leader> ':call ToggleLocationList()<CR>'
-
-        "trigger vimfiler
-        nnoremap <silent><expr> <F12> ':VimFiler -split -simple -toggle -no-quit -direction=topleft -winwidth=45<CR>'
-        xnoremap <silent><expr> <F12> '<Esc>:VimFiler -split -simple -toggle -no-quit -direction=topleft -winwidth=45<CR>'
-        inoremap <silent><expr> <F12> '<Esc>:VimFiler -split -simple -toggle -no-quit -direction=topleft -winwidth=45<CR>'
-        nnoremap <silent><expr> <Leader>[ ':VimFiler -split -simple -toggle -no-quit -direction=topleft -winwidth=45<CR>'
-    "}
-
-    "GVIM TOGGLES:{
-        "toggle the menu
-        nnoremap <silent><expr> <Leader><F1> ":if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>:echo 'Menu bar toggled'<CR>"
-        vnoremap <silent><expr> <Leader><F1> "<Esc>:if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>gv"
-        inoremap <silent><expr> <Leader><F1> "<C-O>:if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>"
-
-        "toggle the toolbar
-        nnoremap <silent><expr> <Leader><F2> ":if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>:echo 'Toolbar toggled'<CR>"
-        vnoremap <silent><expr> <Leader><F2> "<Esc>:if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>gv"
-        inoremap <silent><expr> <Leader><F2> "<C-O>:if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>"
-
-        "toggle the scrollbars
-        nnoremap <silent><expr> <Leader><F3> ":if &go=~#'l'<Bar>set go-=lRb<Bar>else<Bar>set go+=lRb<Bar>endif<CR>:echo 'Scrollbars toggled'<CR>"
-        vnoremap <silent><expr> <Leader><F3> "<Esc>:if &go=~#'l'<Bar>set go-=lRb<Bar>else<Bar>set go+=lRb<Bar>endif<CR>gv"
-        inoremap <silent><expr> <Leader><F3> "<C-O>:if &go=~#'l'<Bar>set go-=lRb<Bar>else<Bar>set go+=lRb<Bar>endif<CR>"
     "}
 
     "SPELLCHECK:{
@@ -685,60 +633,51 @@
     autocmd FilterWritePre * if &diff|nmap <buffer> <Leader>< do|endif
     autocmd FilterWritePre * if &diff|nmap <buffer> <Leader>, do|endif
     autocmd FilterWritePre * if &diff|cabbrev q! qall!|endif
-
-    "vimfiler
-    autocmd FileType vimfiler map <buffer> <LeftMouse> <LeftMouse>0
-    autocmd FileType vimfiler map <buffer> <MiddleMouse> <LeftMouse>
-    autocmd FileType vimfiler map <buffer> <RightMouse> <LeftMouse>
-    autocmd FileType vimfiler map <buffer> <2-LeftMouse> <Plug>(vimfiler_edit_file)
-    autocmd FileType vimfiler map <buffer> <Right> l
-    autocmd FileType vimfiler map <buffer> <Left> h
-    autocmd FileType vimfiler map <buffer> ' e
 "}}}
 
 "MAPPINGS DISABLED FOR GIVEN FILETYPES: {{{
     "remove incompatible toggles from specific file types
-    autocmd Filetype help,tagbar,qf,vimfiler noremap <buffer> ` <Nop>
-    autocmd Filetype help,tagbar,qf,vimfiler,diff noremap <buffer> <F9> <Nop>
-    autocmd Filetype help,tagbar,qf,vimfiler,diff noremap <buffer> <C-F9> <Nop>
-    autocmd Filetype help,tagbar,qf,vimfiler,diff noremap <buffer> <A-F9> <Nop>
-    autocmd Filetype help,tagbar,qf,vimfiler,diff noremap <buffer> <Leader>} <Nop>
-    autocmd Filetype help,qf,vimfiler noremap <buffer> <F10> <Nop>
-    autocmd Filetype help,qf,vimfiler noremap <buffer> <C-F10> <Nop>
-    autocmd Filetype help,qf,vimfiler noremap <buffer> <A-F10> <Nop>
-    autocmd Filetype help,qf,vimfiler noremap <buffer> <Leader>{ <Nop>
-    autocmd Filetype help,tagbar,qf,vimfiler noremap <buffer> <F11> <Nop>
-    autocmd Filetype help,tagbar,qf,vimfiler noremap <buffer> <C-F11> <Nop>
-    autocmd Filetype help,tagbar,qf,vimfiler noremap <buffer> <A-F11>] <Nop>
-    autocmd Filetype help,tagbar,qf,vimfiler noremap <buffer> <Leader> <Nop>
+    autocmd Filetype help,tagbar,qf noremap <buffer> ` <Nop>
+    autocmd Filetype help,tagbar,qf,diff noremap <buffer> <F9> <Nop>
+    autocmd Filetype help,tagbar,qf,diff noremap <buffer> <C-F9> <Nop>
+    autocmd Filetype help,tagbar,qf,diff noremap <buffer> <A-F9> <Nop>
+    autocmd Filetype help,tagbar,qf,diff noremap <buffer> <Leader>} <Nop>
+    autocmd Filetype help,qf noremap <buffer> <F10> <Nop>
+    autocmd Filetype help,qf noremap <buffer> <C-F10> <Nop>
+    autocmd Filetype help,qf noremap <buffer> <A-F10> <Nop>
+    autocmd Filetype help,qf noremap <buffer> <Leader>{ <Nop>
+    autocmd Filetype help,tagbar,qf noremap <buffer> <F11> <Nop>
+    autocmd Filetype help,tagbar,qf noremap <buffer> <C-F11> <Nop>
+    autocmd Filetype help,tagbar,qf noremap <buffer> <A-F11>] <Nop>
+    autocmd Filetype help,tagbar,qf noremap <buffer> <Leader> <Nop>
     autocmd Filetype help,tagbar,qf noremap <buffer> <F12> <Nop>
     autocmd Filetype help,tagbar,qf noremap <buffer> <C-F12> <Nop>
     autocmd Filetype help,tagbar,qf noremap <buffer> <A-F12> <Nop>
     autocmd Filetype help,tagbar,qf noremap <buffer> <Leader>[ <Nop>
 
     "disable modifier keys with directions that would interfere with logic
-    autocmd Filetype qf,vimfiler noremap <buffer> <C-Up> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <C-k> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <C-Down> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <C-j> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <C-Right> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <C-l> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <C-Left> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <C-h> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <A-Up> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <A-k> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <A-Down> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <A-j> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <A-Right> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <A-l> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <A-Left> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <A-h> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <S-Up> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <S-k> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <S-Down> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <S-j> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <S-Right> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <S-l> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <S-Left> <Nop>
-    autocmd Filetype qf,vimfiler noremap <buffer> <S-h> <Nop>
+    autocmd Filetype qf noremap <buffer> <C-Up> <Nop>
+    autocmd Filetype qf noremap <buffer> <C-k> <Nop>
+    autocmd Filetype qf noremap <buffer> <C-Down> <Nop>
+    autocmd Filetype qf noremap <buffer> <C-j> <Nop>
+    autocmd Filetype qf noremap <buffer> <C-Right> <Nop>
+    autocmd Filetype qf noremap <buffer> <C-l> <Nop>
+    autocmd Filetype qf noremap <buffer> <C-Left> <Nop>
+    autocmd Filetype qf noremap <buffer> <C-h> <Nop>
+    autocmd Filetype qf noremap <buffer> <A-Up> <Nop>
+    autocmd Filetype qf noremap <buffer> <A-k> <Nop>
+    autocmd Filetype qf noremap <buffer> <A-Down> <Nop>
+    autocmd Filetype qf noremap <buffer> <A-j> <Nop>
+    autocmd Filetype qf noremap <buffer> <A-Right> <Nop>
+    autocmd Filetype qf noremap <buffer> <A-l> <Nop>
+    autocmd Filetype qf noremap <buffer> <A-Left> <Nop>
+    autocmd Filetype qf noremap <buffer> <A-h> <Nop>
+    autocmd Filetype qf noremap <buffer> <S-Up> <Nop>
+    autocmd Filetype qf noremap <buffer> <S-k> <Nop>
+    autocmd Filetype qf noremap <buffer> <S-Down> <Nop>
+    autocmd Filetype qf noremap <buffer> <S-j> <Nop>
+    autocmd Filetype qf noremap <buffer> <S-Right> <Nop>
+    autocmd Filetype qf noremap <buffer> <S-l> <Nop>
+    autocmd Filetype qf noremap <buffer> <S-Left> <Nop>
+    autocmd Filetype qf noremap <buffer> <S-h> <Nop>
 "}}}

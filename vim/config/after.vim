@@ -1,13 +1,13 @@
-"============================================================"
-"                                                            "
-"  Darkcloud Vim Config: settings to load after              "
-"                                                            "
-"  By: Kevin MacMartin (prurigro@gmail.com)                  "
-"  Website: https://github.com/prurigro/darkcloud-vimconfig  "
-"                                                            "
-"  License: MIT                                              "
-"                                                            "
-"============================================================"
+"============================================================="
+"                                                             "
+"  Darkcloud Neovim Config: settings to load after            "
+"                                                             "
+"  By: Kevin MacMartin (prurigro@gmail.com)                   "
+"  Website: https://github.com/prurigro/darkcloud-nvimconfig  "
+"                                                             "
+"  License: MIT                                               "
+"                                                             "
+"============================================================="
 
 "load the system version of matchit if another hasn't already been
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
@@ -67,8 +67,8 @@ autocmd FileChangedRO * nested set noreadonly
     autocmd VimEnter,FilterWritePre * if &diff|setlocal nofoldenable|endif
     autocmd VimEnter * if &diff|wincmd H|endif
 
-    "disable the whitespace plugin for vimfiler
-    autocmd BufEnter,FileType vimfiler,mail hi ExtraWhitespace ctermbg=NONE guibg=NONE
+    "disable the whitespace plugin for mail
+    autocmd BufEnter,FileType mail hi ExtraWhitespace ctermbg=NONE guibg=NONE
 
     "vimpager settings
     if exists('g:vimpager.enabled')

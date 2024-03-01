@@ -16,15 +16,6 @@
 [submodule "vim/bundle/vim-togglelist"]
 	path = vim/bundle/vim-togglelist
 	url = https://github.com/milkypostman/vim-togglelist.git
-[submodule "vim/bundle/unite.vim"]
-	path = vim/bundle/unite.vim
-	url = https://github.com/Shougo/unite.vim.git
-[submodule "vim/bundle/vimfiler.vim"]
-	path = vim/bundle/vimfiler.vim
-	url = https://github.com/Shougo/vimfiler.vim.git
-[submodule "vim/bundle/tcomment_vim"]
-	path = vim/bundle/tcomment_vim
-	url = https://github.com/tomtom/tcomment_vim.git
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
@@ -76,12 +67,6 @@
 [submodule "vim/bundle/deoplete.nvim"]
 	path = vim/bundle/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim
-[submodule "vim/bundle/nvim-yarp"]
-	path = vim/bundle/nvim-yarp
-	url = https://github.com/roxma/nvim-yarp
-[submodule "vim/bundle/vim-hug-neovim-rpc"]
-	path = vim/bundle/vim-hug-neovim-rpc
-	url = https://github.com/roxma/vim-hug-neovim-rpc
 [submodule "vim/bundle/neco-syntax"]
 	path = vim/bundle/neco-syntax
 	url = https://github.com/Shougo/neco-syntax.git

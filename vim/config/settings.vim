@@ -1,23 +1,13 @@
-"============================================================"
-"                                                            "
-"  Darkcloud Vim Config: main settings                       "
-"                                                            "
-"  By: Kevin MacMartin (prurigro@gmail.com)                  "
-"  Website: https://github.com/prurigro/darkcloud-vimconfig  "
-"                                                            "
-"  License: MIT                                              "
-"                                                            "
-"============================================================"
-
-"GVIM SETTINGS: {{{
-    set guicursor+=a:blinkon0 "disable the blinking cursor
-    set guioptions=e "use the gui to render the list of open tabs
-    set guioptions+=g "make inactive menu items grey
-    set guioptions+=i "have the gui use the vim icon
-    set guioptions+=p "enable pointer callbacks for X11 (required by some WMs)
-    set guioptions+=h "prevent the cursor jumping to the longest line while scrolling
-    set winaltkeys=no "don't select the menu when pressing the alt-keys
-"}}}
+"============================================================="
+"                                                             "
+"  Darkcloud Neovim Config: main settings                     "
+"                                                             "
+"  By: Kevin MacMartin (prurigro@gmail.com)                   "
+"  Website: https://github.com/prurigro/darkcloud-nvimconfig  "
+"                                                             "
+"  License: MIT                                               "
+"                                                             "
+"============================================================="
 
 "COMPATIBILITY SETTINGS: {{{
     set nocompatible "disable vi-compatibility settings

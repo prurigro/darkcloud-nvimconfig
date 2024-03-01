@@ -1,13 +1,13 @@
-"============================================================"
-"                                                            "
-"  Darkcloud Vim Config: theme                               "
-"                                                            "
-"  By: Kevin MacMartin (prurigro@gmail.com)                  "
-"  Website: https://github.com/prurigro/darkcloud-vimconfig  "
-"                                                            "
-"  License: MIT                                              "
-"                                                            "
-"============================================================"
+"============================================================="
+"                                                             "
+"  Darkcloud Neovim Config: theme                             "
+"                                                             "
+"  By: Kevin MacMartin (prurigro@gmail.com)                   "
+"  Website: https://github.com/prurigro/darkcloud-nvimconfig  "
+"                                                             "
+"  License: MIT                                               "
+"                                                             "
+"============================================================="
 
 "remove all the colours before writing our own
 hi clear
