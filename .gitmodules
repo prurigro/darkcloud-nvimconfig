@@ -70,3 +70,9 @@
 [submodule "vim/bundle/vimpager"]
 	path = vim/bundle/vimpager
 	url = https://github.com/rkitover/vimpager
+[submodule "vim/bundle/Comment.nvim"]
+	path = vim/bundle/Comment.nvim
+	url = https://github.com/numToStr/Comment.nvim
+[submodule "vim/bundle/nvim-ts-context-commentstring"]
+	path = vim/bundle/nvim-ts-context-commentstring
+	url = https://github.com/JoosepAlviste/nvim-ts-context-commentstring

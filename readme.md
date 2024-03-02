@@ -129,28 +129,30 @@ For a complete list of mappings specific to **darkcloud-nvimconfig**, check the 
 ## Plugins
 
 * [ale](https://github.com/w0rp/ale): Asynchronous Lint Engine
+* [Comment.nvim](https://github.com/numToStr/Comment.nvim): Smart and Powerful commenting plugin for neovim
+  * [nvim-ts-context-commentstring](nvim-ts-context-commentstring): A Neovim plugin for setting the commentstring option based on the cursor location in the file. The location is checked via treesitter queries
 * [deoplete.nvim](https://github.com/Shougo/deoplete.nvim): Dark powered asynchronous completion framework for neovim/Vim8
   * [neco-syntax](https://github.com/Shougo/neco-syntax): Syntax source for neocomplete/deoplete/ncm
 * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim): EditorConfig plugin for Vim that auto-configures certain settings when a .editorconfig file is present
-* [incsearch.vim](https://github.com/haya14busa/incsearch.vim): Improved incremental searching for Vim.
-* [lightline.vim](https://github.com/itchyny/lightline.vim): A light and configurable statusline/tabline for Vim.
-  * [lightline-ale](https://github.com/maximbaz/lightline-ale): Provides ALE indicator for the lightline vim plugin.
-* [MatchTagAlways](https://github.com/Valloric/MatchTagAlways): A Vim plugin that always highlights the enclosing html/xml tags.
-* [ReplaceWithRegister](https://github.com/vim-scripts/ReplaceWithRegister): Replace text with the contents of a register (for paste+replace without writing over the buffer).
+* [incsearch.vim](https://github.com/haya14busa/incsearch.vim): Improved incremental searching for Vim
+* [lightline.vim](https://github.com/itchyny/lightline.vim): A light and configurable statusline/tabline for Vim
+  * [lightline-ale](https://github.com/maximbaz/lightline-ale): Provides ALE indicator for the lightline vim plugin
+* [MatchTagAlways](https://github.com/Valloric/MatchTagAlways): A Vim plugin that always highlights the enclosing html/xml tags
+* [ReplaceWithRegister](https://github.com/vim-scripts/ReplaceWithRegister): Replace text with the contents of a register (for paste+replace without writing over the buffer)
 * [splitjoin.vim](https://github.com/AndrewRadev/splitjoin.vim): Simplifies the transition between multiline and single-line code
-* [tabular](https://github.com/godlygeek/tabular): Vim script for text filtering and alignment.
-* [tagbar](https://github.com/majutsushi/tagbar): Uses ctags to generate a sidebar of the tags for the current file.
-* [vim-fugitive](https://github.com/tpope/vim-fugitive): A wrapper integrating git into vim in such a way as to provide features neither of them could offer on their own.
-* [vim-gutentags](https://github.com/xolox/vim-easytags): A plugin that takes care of the much needed management of tags files in Vim.
-* [vim-move](https://github.com/matze/vim-move): Provides a few convenient ways to move selected text.
-* [vim-pathogen](https://github.com/tpope/vim-pathogen): A plugin to load other plugins while keeping them isolated in their own directory structure rather than all dumped together.
-* [vim-polyglot-darkcloud](https://github.com/prurigro/vim-polyglot-darkcloud): The darkcloud-nvimconfig fork of a meta-package that attempts to provide the best syntax plugins for each file type.
-* [vim-signify](https://github.com/mhinz/vim-signify): When a version controlled file is changed, this displays a column showing where and how, and allows for navigation to and between differences.
-* [vim-surround](https://github.com/tpope/vim-surround): Provides functionality to exchange surrounding delimiters and xml-style tags with another, or simply remove them.
-  * [vim-repeat](https://github.com/tpope/vim-repeat): A library used by vim-surround to allow its delimiter-switching functions to be repeated with the `.` command.
-* [vim-togglelist](https://github.com/milkypostman/vim-togglelist): A simple plugin for vim that allows you to bind a key to toggle the Location List and the Quickfix List.
-* [vim-trailing-whitespace](https://github.com/bronson/vim-trailing-whitespace): Highlights and allows for the easy removal of trailing whitespace in documents.
-* [vim-unimpaired](https://github.com/tpope/vim-unimpaired): Pairs of handy bracket mappings.
+* [tabular](https://github.com/godlygeek/tabular): Vim script for text filtering and alignment
+* [tagbar](https://github.com/majutsushi/tagbar): Uses ctags to generate a sidebar of the tags for the current file
+* [vim-fugitive](https://github.com/tpope/vim-fugitive): A wrapper integrating git into vim in such a way as to provide features neither of them could offer on their own
+* [vim-gutentags](https://github.com/xolox/vim-easytags): A plugin that takes care of the much needed management of tags files in Vim
+* [vim-move](https://github.com/matze/vim-move): Provides a few convenient ways to move selected text
+* [vim-pathogen](https://github.com/tpope/vim-pathogen): A plugin to load other plugins while keeping them isolated in their own directory structure rather than all dumped together
+* [vim-polyglot-darkcloud](https://github.com/prurigro/vim-polyglot-darkcloud): The darkcloud-nvimconfig fork of a meta-package that attempts to provide the best syntax plugins for each file type
+* [vim-signify](https://github.com/mhinz/vim-signify): When a version controlled file is changed, this displays a column showing where and how, and allows for navigation to and between differences
+* [vim-surround](https://github.com/tpope/vim-surround): Provides functionality to exchange surrounding delimiters and xml-style tags with another, or simply remove them
+  * [vim-repeat](https://github.com/tpope/vim-repeat): A library used by vim-surround to allow its delimiter-switching functions to be repeated with the `.` command
+* [vim-togglelist](https://github.com/milkypostman/vim-togglelist): A simple plugin for vim that allows you to bind a key to toggle the Location List and the Quickfix List
+* [vim-trailing-whitespace](https://github.com/bronson/vim-trailing-whitespace): Highlights and allows for the easy removal of trailing whitespace in documents
+* [vim-unimpaired](https://github.com/tpope/vim-unimpaired): Pairs of handy bracket mappings
 * [vimpager](https://github.com/rkitover/vimpager): Pager using vim and less.vim
 
 ## Credits
