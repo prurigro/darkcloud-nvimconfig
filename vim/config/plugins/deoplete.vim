@@ -1,8 +1,8 @@
-"disable completion (default: 0)
-if !exists("g:disablecompletion")
-    let g:disablecompletion = 0
+"enable completion (default: 0)
+if !exists("g:enablecompletion")
+    let g:enablecompletion = 0
 endif
 
-if !g:disablecompletion && g:python_neovim
+if !g:enablecompletion && g:python_neovim
     let g:deoplete#enable_at_startup = 1
 endif

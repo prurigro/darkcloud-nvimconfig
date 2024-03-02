@@ -14,15 +14,6 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
     runtime! macros/matchit.vim
 endif
 
-"when enabled, this will override each file type default and disable all line breaks (default: 1)
-if !exists("g:disablelinebreaks")
-    let g:disablelinebreaks = 1
-endif
-
-if (g:disablelinebreaks == 1)
-    autocmd VimEnter * set textwidth=0
-endif
-
 "enable omnicompletion for any filetype without that has syntax highlighting
 if exists("+omnifunc")
     autocmd VimEnter,Filetype * if &omnifunc == ""|setlocal omnifunc=syntaxcomplete#Complete|endif
@@ -38,6 +29,9 @@ autocmd FileChangedRO * nested set noreadonly
     "don't conceal json syntax
     let g:vim_json_syntax_conceal = 0
 
+    "disable automatic line breaks
+    autocmd VimEnter * set textwidth=0
+
     "set given filenames to various filetypes
     autocmd BufNewFile,BufRead *.aspx,*.asmx,*.ascx,*.master setlocal ft=aspnet
     autocmd BufNewFile,BufRead *.gradle setlocal ft=groovy
@@ -48,7 +42,7 @@ autocmd FileChangedRO * nested set noreadonly
 
     "filtype specific settings
     autocmd BufEnter,FileType sh setlocal iskeyword-=.
-    autocmd Filetype text,markdown,gitcommit,mail setlocal nonumber spell nolist linebreak tabstop=2 shiftwidth=2 breakat&vim breakat-=* breakat-=. breakat-=/ breakat-=? breakat-=, breakat-=: breakat-=; breakat-=! "set some defaults for word processing
+    autocmd Filetype text,markdown,gitcommit,mail setlocal nonumber spell nolist linebreak textwidth=80 tabstop=2 shiftwidth=2 breakat&vim breakat-=* breakat-=. breakat-=/ breakat-=? breakat-=, breakat-=: breakat-=; breakat-=! "set some defaults for word processing
     autocmd Filetype text,gitcommit,mail setlocal wrap
     autocmd FileType tmux setlocal commentstring=#\ %s "set the comment string to #
     autocmd FileType scss setlocal iskeyword+=$

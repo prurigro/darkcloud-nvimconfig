@@ -93,11 +93,11 @@ let g:lightline#ale#indicator_errors = "E:"
 let g:lightline#ale#indicator_ok = "OK"
 
 "status bar config with and without powerline fonts (default: 0)
-if !exists("g:powerlinefonts")
-    let g:powerlinefonts = 0
+if !exists("g:enablepowerline")
+    let g:enablepowerline = 0
 endif
 
-if (g:powerlinefonts == 1)
+if (g:enablepowerline == 1)
     let g:lightline.separator = { 'left': '', 'right': '' }
     let g:lightline.subseparator = { 'left': '', 'right': '' }
 else

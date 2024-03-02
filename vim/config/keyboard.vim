@@ -50,6 +50,9 @@
 "
 "    <Shift-MiddleClick>      | (A) -> paste from xorg paste buffer
 "
+"  (terminal)
+"    <Esc>                    | (T) -> leave edit mode
+"
 "  (tabs)
 "    <Alt-n>                  | (N) -> go to the next open tab
 "    <Alt-p>                  | (N) -> go to the previous open tab
@@ -367,6 +370,10 @@
         "configure middle click to paste from X
         noremap <S-Insert> <MiddleMouse>
         noremap! <S-Insert> <MiddleMouse>
+    "}
+
+    "TERMINAL:{
+        tnoremap <Esc> <C-\><C-n>
     "}
 
     "TABS:{

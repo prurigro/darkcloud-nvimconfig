@@ -35,12 +35,12 @@ A theme, config and collection of plugins for Neovim
 ## Configuration
 
 * **Configure Variables**: The following variables can be added to `vim/user.vim` and have their values set to the values you require:
-  * `g:autostartchecker`: **1** = Check syntax once an appropriate file is loaded | **0** = Check syntax only after syntax checking is toggled on (_default_: **0**)
-  * `g:autostarttagbar`: **1** = Have the tagbar load automatically when a compatible format is run | **0** = The tagbar will stay hidden until triggered on demand with its toggle (_default_: **0**)
-  * `g:disablecompletion`: **1** = Disable _deoplete_ autocompletion | **0** = Enable _deoplete _autocompletion_ if the requirements are met (_default_: **0**)
-  * `g:disableautotags`: **1** = Prevent tags from being automatically generated and highlighted | **0** = Automatically generate and highlight tags (_default_: **0**)
-  * `g:disablelinebreaks`: **1** = Override filetype plugins so linebreaks never occur | **0** = Linebreaks are disabled by default, but filetype plugins can override this setting (_default_: **0**)
-  * `g:powerlinefonts`: **1** = Render the statusline using characters available with powerline-patched fonts | **0** = Render the statusbar with less attractive but more compatible characters available in all fonts (_default_: **0**)
+  * `g:autostartchecker`: **1** = Enable the syntax checker when a file is opened | **0** = Check syntax only after being toggled on (default: **0**)
+  * `g:autostarttagbar`: **1** = Load a file with the tagbar visible | **0** = Require the tagbar to be toggled on (default: **0**)
+  * `g:enabletreesitter`: **1** = Use treesitter for compatible files | **0** = Keep treesitter disabled (default: **0**)
+  * `g:enablecompletion`: **1** = Enable autocompletion | **0** = Disable autocompletion (default: **0**)
+  * `g:enableautotags`: **1** = Automatically generate tags files | **0** = Disable tag generation (default: **0**)
+  * `g:enablepowerline`: **1** = Render the statusline using characters that require powerline-patched fonts | **0** = Render the statusbar with characters that work with all fonts (default: **0**)
 * **Custom Settings**: Settings with priority over those set by darkcloud-nvimconfig can be added to `vim/user.vim` or any of the folders in the runtimepath.
 * **Custom Plugins**: Pathogen compatible plugins can be cloned or extracted to `darkcloud-nvimconfig/vim/bundle.user/`, or a folder named `bundle` in any of the folders in the runtimepath.
 * **Update Script**: (requires: bash+git) Use the `update` script to update the project and submodules, as well as handle any required maintenance, generate docs from the pathogen plugins and create missing config scripts with preset values.
@@ -128,6 +128,7 @@ For a complete list of mappings specific to **darkcloud-nvimconfig**, check the 
 * [lightline.vim](https://github.com/itchyny/lightline.vim): A light and configurable statusline/tabline for Vim
   * [lightline-ale](https://github.com/maximbaz/lightline-ale): Provides ALE indicator for the lightline vim plugin
 * [MatchTagAlways](https://github.com/Valloric/MatchTagAlways): A Vim plugin that always highlights the enclosing html/xml tags
+* [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): Treesitter configurations and abstraction layer for Neovim
 * [ReplaceWithRegister](https://github.com/vim-scripts/ReplaceWithRegister): Replace text with the contents of a register (for paste+replace without writing over the buffer)
 * [splitjoin.vim](https://github.com/AndrewRadev/splitjoin.vim): Simplifies the transition between multiline and single-line code
 * [tabular](https://github.com/godlygeek/tabular): Vim script for text filtering and alignment
