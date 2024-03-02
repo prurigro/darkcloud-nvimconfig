@@ -1,4 +1,4 @@
-let g:gutentags_cache_dir = '~/.vim/gutentags'
+let g:gutentags_cache_dir = get(g:, "gutentags_cache_dir", "~/.config/nvim/gutentags")
 
 let g:gutentags_file_list_command = {
     \ 'markers': {
