@@ -1,2 +1,3 @@
 vim/bundle.user/*
 vim/user.vim
+vim/rplugin.vim

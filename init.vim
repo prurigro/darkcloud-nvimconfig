@@ -14,6 +14,12 @@
     let g:darkcloudpath = get(g:, "darkcloudpath", "/etc/darkcloud-nvimconfig")
 "}}}
 
+"rplugin location: {{{
+lua << EOF
+    vim.env.NVIM_RPLUGIN_MANIFEST = vim.g.darkcloudpath .. "/vim/rplugin.vim"
+EOF
+"}}}
+
 "LOAD DARKCLOUD CONFIG AND THEME FILES: {{{
     "Add Config Directory: (distro-agnostic system-wide)
     let &runtimepath = printf('%s,%s/vim,%s/vim/after',&runtimepath,g:darkcloudpath,g:darkcloudpath)
