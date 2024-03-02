@@ -13,11 +13,6 @@
 scriptencoding utf-8
 
 "INITIALIZE PLUGINS: {{{
-    "create missing plugin config files and directories
-    if exists('*mkdir') && !isdirectory(glob("~/.vim/gutentags"))
-        call mkdir(glob("~/.vim/gutentags"),'p')
-    endif
-
     "load plugins in vim/bundle/ and vim/bundle.user/
     execute pathogen#infect('bundle/{}', 'bundle.user/{}')
 "}}}
