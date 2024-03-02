@@ -32,16 +32,6 @@ A theme, config and collection of plugins for Neovim
 2. By default the config expects darkcloud-nvimconfig to be installed @ `/etc/darkcloud-nvimconfig`, if you're installing it elsewhere you should add `let g:darkcloudpath = "/path/to/darkcloud-nvimconfig"` to your neovim init.
 3. Add `source /path/to/darkcloud-nvimconfig/init.vim` to the neovim init that you want to use the config with
 
-### Vimpager
-
-You can configure your PAGER to use darkcloud-nvimconfig using vimpager by adding the following to your bashrc (assuming the default path @ _"/etc/darkcloud-nvimconfig"_):
-
-```
-export PAGER=/etc/darkcloud-nvimconfig/vim/bundle/vimpager/vimpager
-alias less="$PAGER"
-alias zless="$PAGER"
-```
-
 ## Configuration
 
 * **Configure Variables**: The following variables can be added to `vim/user.vim` and have their values set to the values you require:
@@ -130,7 +120,7 @@ For a complete list of mappings specific to **darkcloud-nvimconfig**, check the 
 
 * [ale](https://github.com/w0rp/ale): Asynchronous Lint Engine
 * [Comment.nvim](https://github.com/numToStr/Comment.nvim): Smart and Powerful commenting plugin for neovim
-  * [nvim-ts-context-commentstring](nvim-ts-context-commentstring): A Neovim plugin for setting the commentstring option based on the cursor location in the file. The location is checked via treesitter queries
+  * [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring): A Neovim plugin for setting the commentstring option based on the cursor location in the file. The location is checked via treesitter queries
 * [deoplete.nvim](https://github.com/Shougo/deoplete.nvim): Dark powered asynchronous completion framework for neovim/Vim8
   * [neco-syntax](https://github.com/Shougo/neco-syntax): Syntax source for neocomplete/deoplete/ncm
 * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim): EditorConfig plugin for Vim that auto-configures certain settings when a .editorconfig file is present
@@ -153,7 +143,6 @@ For a complete list of mappings specific to **darkcloud-nvimconfig**, check the 
 * [vim-togglelist](https://github.com/milkypostman/vim-togglelist): A simple plugin for vim that allows you to bind a key to toggle the Location List and the Quickfix List
 * [vim-trailing-whitespace](https://github.com/bronson/vim-trailing-whitespace): Highlights and allows for the easy removal of trailing whitespace in documents
 * [vim-unimpaired](https://github.com/tpope/vim-unimpaired): Pairs of handy bracket mappings
-* [vimpager](https://github.com/rkitover/vimpager): Pager using vim and less.vim
 
 ## Credits
 

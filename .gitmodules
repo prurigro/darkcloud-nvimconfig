@@ -67,9 +67,6 @@
 [submodule "vim/bundle/vim-gutentags"]
 	path = vim/bundle/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
-[submodule "vim/bundle/vimpager"]
-	path = vim/bundle/vimpager
-	url = https://github.com/rkitover/vimpager
 [submodule "vim/bundle/Comment.nvim"]
 	path = vim/bundle/Comment.nvim
 	url = https://github.com/numToStr/Comment.nvim

@@ -45,7 +45,6 @@ autocmd FileChangedRO * nested set noreadonly
     autocmd BufNewFile,BufRead *.muttrc setlocal ft=muttrc
     autocmd BufNewFile,BufRead *.neomuttrc setlocal ft=neomuttrc
     autocmd BufNewFile,BufRead *pacman.conf setlocal ft=conf
-    autocmd BufNewFile,BufRead *vimpagerrc setlocal ft=vim
 
     "filtype specific settings
     autocmd BufEnter,FileType sh setlocal iskeyword-=.
@@ -69,9 +68,4 @@ autocmd FileChangedRO * nested set noreadonly
 
     "disable the whitespace plugin for mail
     autocmd BufEnter,FileType mail hi ExtraWhitespace ctermbg=NONE guibg=NONE
-
-    "vimpager settings
-    if exists('g:vimpager.enabled')
-        set nonumber
-    endif
 "}}}
