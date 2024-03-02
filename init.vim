@@ -1,6 +1,6 @@
 "============================================================="
 "                                                             "
-"  Darkcloud Neovim Config: vimrc                             "
+"  Darkcloud Neovim Config: init.vim                          "
 "                                                             "
 "  By: Kevin MacMartin (prurigro@gmail.com)                   "
 "  Website: https://github.com/prurigro/darkcloud-nvimconfig  "
