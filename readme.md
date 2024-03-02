@@ -4,7 +4,7 @@ A theme, config and collection of plugins for Neovim
 
 ## Requirements
 
-* **Vim**: The latest [vim](http://www.vim.org) should be installed to use this distribution.
+* **Neovim**: [neovim](https://neovim.io) is a hard dependency
 * **Bash**: Required by the _update_ and _gentags_ scripts.
 * **Coreutils**: Required by the _update_ script.
 * **Git**: Required by the _update_ script and git-related plugins.
