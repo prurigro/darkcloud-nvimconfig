@@ -104,13 +104,6 @@
         set ttimeout ttimeoutlen=100 "how long before timing out for terminal key codes
         set nomodeline "disable the use of file-based modelines as these are insecure
 
-        "create ~/.vim/swap if necessary, then use as default swap file location
-        if exists('*mkdir') && !isdirectory($HOME.'/.vim/swap')
-            call mkdir($HOME.'/.vim/swap','p')
-        endif
-
-        set directory=$HOME/.vim/swap,.,/var/tmp,/tmp
-
         "FUNCTIONS: {{{
             "enable the auto-creation of missing folders in a save path
             if !exists('*s:MakeNewDir')
