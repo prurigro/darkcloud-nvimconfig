@@ -12,7 +12,7 @@ A theme, config and collection of plugins for Neovim
 ## Optional Requirements
 
 * **Compilers, Linters and Runtimes**: The ale plugin can use compilers, linters and runtimes to provide real-time syntax checking
-* **CTags**: Required by the _tagbar_ and _deoplete_ plugins as well as the _gentags_ script ([ctags website](http://ctags.sourceforge.net))
+* **CTags**: Required by _tagbar_ and optional for _coc.nvim_ ([ctags website](http://ctags.sourceforge.net))
 * **Powerline Fonts**: Required to enable the fancier looking status line ([powerline-fonts repo](https://github.com/Lokaltog/powerline-fonts))
 * **Python**: Required for _deoplete_ autocompletion functionality
 * **Neovim Python Module**: Required for _deoplete_ autocompletion
