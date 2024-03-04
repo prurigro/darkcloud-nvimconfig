@@ -52,12 +52,6 @@
 [submodule "vim/bundle/lightline-ale"]
 	path = vim/bundle/lightline-ale
 	url = https://github.com/maximbaz/lightline-ale
-[submodule "vim/bundle/deoplete.nvim"]
-	path = vim/bundle/deoplete.nvim
-	url = https://github.com/Shougo/deoplete.nvim
-[submodule "vim/bundle/neco-syntax"]
-	path = vim/bundle/neco-syntax
-	url = https://github.com/Shougo/neco-syntax.git
 [submodule "vim/bundle/vim-gutentags"]
 	path = vim/bundle/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
@@ -70,3 +64,27 @@
 [submodule "vim/bundle/nvim-treesitter"]
 	path = vim/bundle/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "vim/bundle/nvim-cmp"]
+	path = vim/bundle/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp
+[submodule "vim/bundle/nvim-snippy"]
+	path = vim/bundle/nvim-snippy
+	url = https://github.com/dcampos/nvim-snippy
+[submodule "vim/bundle/vim-snippets"]
+	path = vim/bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets
+[submodule "vim/bundle/cmp-treesitter"]
+	path = vim/bundle/cmp-treesitter
+	url = https://github.com/ray-x/cmp-treesitter
+[submodule "vim/bundle/cmp-nvim-tags"]
+	path = vim/bundle/cmp-nvim-tags
+	url = https://github.com/quangnguyen30192/cmp-nvim-tags
+[submodule "vim/bundle/cmp-snippy"]
+	path = vim/bundle/cmp-snippy
+	url = https://github.com/dcampos/cmp-snippy
+[submodule "vim/bundle/cmp-buffer"]
+	path = vim/bundle/cmp-buffer
+	url = https://github.com/hrsh7th/cmp-buffer
+[submodule "vim/bundle/cmp-omni"]
+	path = vim/bundle/cmp-omni
+	url = https://github.com/hrsh7th/cmp-omni

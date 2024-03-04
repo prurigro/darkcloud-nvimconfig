@@ -1,5 +1,5 @@
-"autostart syntax checking when vim opens to a compatible filetype (default: 0)
-if !exists("g:autostartchecker") || &diff
+"always disable ale in diff mode
+if &diff
     let g:autostartchecker = 0
 endif
 

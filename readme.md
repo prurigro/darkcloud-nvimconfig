@@ -11,12 +11,9 @@ A theme, config and collection of plugins for Neovim
 
 ## Optional Requirements
 
-* **Compilers, Linters and Runtimes**: The ale plugin can use compilers, linters and runtimes to provide real-time syntax checking
-* **CTags**: Required by _tagbar_ and optional for _coc.nvim_ ([ctags website](http://ctags.sourceforge.net))
-* **Powerline Fonts**: Required to enable the fancier looking status line ([powerline-fonts repo](https://github.com/Lokaltog/powerline-fonts))
-* **Python**: Required for _deoplete_ autocompletion functionality
-* **Neovim Python Module**: Required for _deoplete_ autocompletion
-* **Python Msgpack**: Required for _deoplete_ autocompletion
+* **Powerline Fonts**: Required to enable the fancier looking status line
+* **Universal CTags**: Required by _vim-gutentags_, _tagbar_ and optional for _nvim-cmp_
+* **Compilers, Linters and Runtimes**: The _ale_ plugin can use compilers, linters and runtimes to provide real-time syntax checking
 
 ## Distribution Features
 
@@ -120,11 +117,17 @@ For a complete list of mappings specific to **darkcloud-nvimconfig**, check the 
 * [ale](https://github.com/w0rp/ale): Asynchronous Lint Engine
 * [Comment.nvim](https://github.com/numToStr/Comment.nvim): Smart and Powerful commenting plugin for neovim
   * [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring): A Neovim plugin for setting the commentstring option based on the cursor location in the file. The location is checked via treesitter queries
-* [deoplete.nvim](https://github.com/Shougo/deoplete.nvim): Dark powered asynchronous completion framework for neovim/Vim8
-  * [neco-syntax](https://github.com/Shougo/neco-syntax): Syntax source for neocomplete/deoplete/ncm
 * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim): EditorConfig plugin for Vim that auto-configures certain settings when a .editorconfig file is present
 * [lightline.vim](https://github.com/itchyny/lightline.vim): A light and configurable statusline/tabline for Vim
   * [lightline-ale](https://github.com/maximbaz/lightline-ale): Provides ALE indicator for the lightline vim plugin
+* [nvim-cmp](https://github.com/hrsh7th/nvim-cmp): A completion engine plugin for neovim written in Lua
+  * [cmp-buffer](https://github.com/hrsh7th/cmp-buffer): Buffer words source for nvim-cmp
+  * [cmp-nvim-tags](https://github.com/quangnguyen30192/cmp-nvim-tags): Tags source for nvim-cmp
+  * [cmp-omni](https://github.com/hrsh7th/cmp-omni): Omnifunc source for cmp-nvim
+  * [cmp-snippy](https://github.com/dcampos/cmp-snippy): Nvim-snippy completion source for nvim-cmp
+  * [cmp-treesitter](https://github.com/ray-x/cmp-treesitter): Treesitter source for nvim-cmp
+  * [nvim-snippy](https://github.com/dcampos/nvim-snippy): Snippet plugin for Neovim written in Lua
+  * [vim-snippets](https://github.com/honza/vim-snippets): Snippets files for various programming languages
 * [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): Treesitter configurations and abstraction layer for Neovim
 * [ReplaceWithRegister](https://github.com/vim-scripts/ReplaceWithRegister): Replace text with the contents of a register (for paste+replace without writing over the buffer)
 * [splitjoin.vim](https://github.com/AndrewRadev/splitjoin.vim): Simplifies the transition between multiline and single-line code

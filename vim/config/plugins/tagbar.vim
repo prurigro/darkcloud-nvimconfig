@@ -1,9 +1,5 @@
-"autostart tagbar when vim opens to a compatible filetype (default: 0)
-if !exists("g:autostarttagbar")
-    let g:autostarttagbar = 0
-endif
-
-if !&diff && (g:autostarttagbar == 1)
+"start the tagbar if g:autostarttagbar is true while not in diff mode
+if g:autostarttagbar == 1 && !&diff
     autocmd VimEnter * nested :call tagbar#autoopen(1)
 endif
 
