@@ -13,8 +13,7 @@
 scriptencoding utf-8
 
 "INITIALIZE PLUGINS: {{{
-    "load plugins in vim/bundle/ and vim/bundle.user/
-    execute pathogen#infect('bundle/{}', 'bundle.user/{}')
+    execute pathogen#infect('bundle/{}')
 "}}}
 
 runtime! config/plugins/*

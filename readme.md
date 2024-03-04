@@ -34,15 +34,15 @@ A theme, config and collection of plugins for Neovim
 
 ## Configuration
 
-* **Configure Variables**: The following variables can be added to `vim/user.vim` and have their values set to the values you require:
+* **Configure Variables**: The following variables can be added to `local/user.vim` and have their values set to the values you require:
   * `g:autostartchecker`: **1** = Enable the syntax checker when a file is opened | **0** = Check syntax only after being toggled on (default: **0**)
   * `g:autostarttagbar`: **1** = Load a file with the tagbar visible | **0** = Require the tagbar to be toggled on (default: **0**)
   * `g:enabletreesitter`: **1** = Use treesitter for compatible files | **0** = Keep treesitter disabled (default: **0**)
   * `g:enablecompletion`: **1** = Enable autocompletion | **0** = Disable autocompletion (default: **0**)
   * `g:enableautotags`: **1** = Automatically generate tags files | **0** = Disable tag generation (default: **0**)
   * `g:enablepowerline`: **1** = Render the statusline using characters that require powerline-patched fonts | **0** = Render the statusbar with characters that work with all fonts (default: **0**)
-* **Custom Settings**: Settings with priority over those set by darkcloud-nvimconfig can be added to `vim/user.vim` or any of the folders in the runtimepath.
-* **Custom Plugins**: Pathogen compatible plugins can be cloned or extracted to `darkcloud-nvimconfig/vim/bundle.user/`, or a folder named `bundle` in any of the folders in the runtimepath.
+* **Custom Settings**: Settings with priority over those set by darkcloud-nvimconfig can be added to `local/user.vim` or any of the folders in the runtimepath.
+* **Custom Plugins**: Pathogen compatible plugins can be cloned or extracted to `local/bundle/`, or a folder named `bundle` in any of the folders in the runtimepath.
 * **Update Script**: (requires: bash+git) Use the `update` script to update the project and submodules, as well as handle any required maintenance, generate docs from the pathogen plugins and create missing config scripts with preset values.
 
 ## Mappings
