@@ -41,7 +41,6 @@ A theme, config and collection of plugins for Neovim
   * `g:enablecompletion`: **1** = Enable autocompletion | **0** = Disable autocompletion (default: **0**)
   * `g:enableautotags`: **1** = Automatically generate tags files | **0** = Disable tag generation (default: **0**)
   * `g:enablepowerline`: **1** = Render the statusline using characters that require powerline-patched fonts | **0** = Render the statusbar with characters that work with all fonts (default: **0**)
-* **Custom Settings**: Settings with priority over those set by darkcloud-nvimconfig can be added to `local/user.vim`
 * **Custom Plugins**: Pathogen compatible plugins can be cloned or extracted to `local/bundle/`, or a folder named `bundle` in any of the folders in the runtimepath
 * **Update Script**: (requires: bash+git) Use the `update` script to update the project and submodules, as well as handle any required maintenance
 
