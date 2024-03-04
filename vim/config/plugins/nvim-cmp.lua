@@ -14,10 +14,12 @@ if (vim.g.enablecompletion == 1) then
                 require "snippy".expand_snippet(args.body)
             end
         },
+
         window = {
             completion = cmp.config.window.bordered(),
             documentation = cmp.config.window.bordered(),
         },
+
         mapping = cmp.mapping.preset.insert({
             ["<Tab>"] = cmp.mapping(function(fallback)
                 if cmp.visible() then
@@ -42,14 +44,30 @@ if (vim.g.enablecompletion == 1) then
             end, { "i", "s" }),
 
             ["<Leader>"] = cmp.mapping.abort(),
-            ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+            ["<CR>"] = cmp.mapping.confirm({ select = false }),
         }),
+
         sources = cmp.config.sources({
             { name = "buffer" },
             { name = "treesitter" },
             { name = "omni" },
             { name = "tags", option = { current_buffer_only = true } },
             { name = "snippy" },
-        })
+        }),
+
+        enabled = function()
+            -- disable completion in comments
+            local context = require "cmp.config.context"
+
+            -- keep command mode completion enabled when cursor is in a comment
+            if vim.api.nvim_get_mode().mode == "c" then
+                return true
+            elseif vim.o.filetype == "" or vim.o.filetype == "gitcommit" or vim.o.filetype == "mail" or vim.o.filetype == "markdown" or vim.o.filetype == "text" then
+                return false
+            else
+                return not context.in_treesitter_capture("comment")
+                and not context.in_syntax_group("Comment")
+            end
+        end
     })
 end
