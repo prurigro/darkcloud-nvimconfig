@@ -5,26 +5,26 @@ A theme, config and collection of plugins for Neovim
 ## Requirements
 
 * **Neovim**: [neovim](https://neovim.io) is a hard dependency
-* **Bash**: Required by the _update_ and _gentags_ scripts.
-* **Coreutils**: Required by the _update_ script.
-* **Git**: Required by the _update_ script and git-related plugins.
+* **Bash**: Required by the _update_ and _gentags_ scripts
+* **Coreutils**: Required by the _update_ script
+* **Git**: Required by the _update_ script and git-related plugins
 
 ## Optional Requirements
 
-* **Compilers, Linters and Runtimes**: The ale plugin can use compilers, linters and runtimes to provide real-time syntax checking.
-* **CTags**: Required by the _tagbar_ and _deoplete_ plugins as well as the _gentags_ script ([ctags website](http://ctags.sourceforge.net)).
-* **Powerline Fonts**: Required to enable the fancier looking status line ([powerline-fonts repo](https://github.com/Lokaltog/powerline-fonts)).
-* **Python**: Required for _deoplete_ autocompletion functionality.
-* **Neovim Python Module**: Required for _deoplete_ autocompletion.
-* **Python Msgpack**: Required for _deoplete_ autocompletion.
+* **Compilers, Linters and Runtimes**: The ale plugin can use compilers, linters and runtimes to provide real-time syntax checking
+* **CTags**: Required by the _tagbar_ and _deoplete_ plugins as well as the _gentags_ script ([ctags website](http://ctags.sourceforge.net))
+* **Powerline Fonts**: Required to enable the fancier looking status line ([powerline-fonts repo](https://github.com/Lokaltog/powerline-fonts))
+* **Python**: Required for _deoplete_ autocompletion functionality
+* **Neovim Python Module**: Required for _deoplete_ autocompletion
+* **Python Msgpack**: Required for _deoplete_ autocompletion
 
 ## Distribution Features
 
-* **Default Configuration**: A complete set of defaults, focusing on the most modern settings that still provide a compatible experience.
-* **Custom theme**: An original colour scheme with explicit values set to optimize the look of individual filetypes.
-* **Key Bindings/Aliases**: A set of bindings and aliases defined to group similar features and provide numerous (and sometimes more familiar) ways to access options.
-* **Plugins**: A set of plugins have been included and configured to provide support for most normally-unsupported filetypes, and a set of features useful when using Vim as an editor.
-* **Custom Configuration**: A second vimrc and bundle folder are included that aren't maintained as part of the repo, making custom plugins and configuration easy to add.
+* **Default Configuration**: A complete set of defaults, focusing on the most modern settings that still provide a compatible experience
+* **Custom theme**: An original colour scheme with explicit values set to optimize the look of individual filetypes
+* **Key Bindings/Aliases**: A set of bindings and aliases defined to group similar features and provide numerous (and sometimes more familiar) ways to access options
+* **Plugins**: A set of plugins have been included and configured to provide support for most normally-unsupported filetypes, and a set of features useful when using Vim as an editor
+* **Custom Configuration**: A second vimrc and bundle folder are included that aren't maintained as part of the repo, making custom plugins and configuration easy to add
 
 ## Installation
 
@@ -41,9 +41,9 @@ A theme, config and collection of plugins for Neovim
   * `g:enablecompletion`: **1** = Enable autocompletion | **0** = Disable autocompletion (default: **0**)
   * `g:enableautotags`: **1** = Automatically generate tags files | **0** = Disable tag generation (default: **0**)
   * `g:enablepowerline`: **1** = Render the statusline using characters that require powerline-patched fonts | **0** = Render the statusbar with characters that work with all fonts (default: **0**)
-* **Custom Settings**: Settings with priority over those set by darkcloud-nvimconfig can be added to `local/user.vim` or any of the folders in the runtimepath.
-* **Custom Plugins**: Pathogen compatible plugins can be cloned or extracted to `local/bundle/`, or a folder named `bundle` in any of the folders in the runtimepath.
-* **Update Script**: (requires: bash+git) Use the `update` script to update the project and submodules, as well as handle any required maintenance, generate docs from the pathogen plugins and create missing config scripts with preset values.
+* **Custom Settings**: Settings with priority over those set by darkcloud-nvimconfig can be added to `local/user.vim`
+* **Custom Plugins**: Pathogen compatible plugins can be cloned or extracted to `local/bundle/`, or a folder named `bundle` in any of the folders in the runtimepath
+* **Update Script**: (requires: bash+git) Use the `update` script to update the project and submodules, as well as handle any required maintenance
 
 ## Mappings
 
@@ -114,7 +114,7 @@ A theme, config and collection of plugins for Neovim
 
 ### Complete Reference
 
-For a complete list of mappings specific to **darkcloud-nvimconfig**, check the list in the comments at the top of [vim/config/keyboard.vim](https://github.com/prurigro/darkcloud-nvimconfig/blob/master/vim/config/keyboard.vim).
+For a complete list of mappings specific to **darkcloud-nvimconfig**, check the list in the comments at the top of [vim/config/keyboard.vim](https://github.com/prurigro/darkcloud-nvimconfig/blob/master/vim/config/keyboard.vim)
 
 ## Plugins
 
