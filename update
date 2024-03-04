@@ -70,16 +70,6 @@ function show_help {
     printf '%s\n' 'Run with no arguments to update darkcloud-nvimconfig'
 }
 
-# update coq_nvim dependencies
-function update_coq_dependencies {
-    coq_nvim_bundle=vim/bundle/coq_nvim
-    [[ -d "$coq_nvim_bundle" ]] || return 1
-    pushd "$coq_nvim_bundle" >/dev/null || return 1
-    python3 -m coq deps >/dev/null 2>&1 || error 'python3 -m coq deps' 'Updating COQ dependencies failed'
-    popd >/dev/null || return 1
-    return 0
-}
-
 #
 # SETUP
 #
@@ -309,20 +299,6 @@ else
     reset -I
     printf '%s\n' "$cfg_red_bold FAIL! $c_reset"
     error "nvim -c ':UpdateRemotePlugins|qa!'" 'Updating remote plugins for neovim failed'
-fi
-
-#
-# INSTALL/UPDATE COQ DEPENDENCIES
-#
-
-printf '%s' "$cbg_blue >> Updating coq_nvim dependencies:$c_reset"
-update_coq_dependencies
-
-if (( ! $? )); then
-    printf '%s\n' "$cfg_green_bold SUCCESS! $c_reset"
-else
-    printf '%s\n' "$cfg_red_bold FAIL! $c_reset"
-    error 'python3 -m coq deps' 'Updating coq_nvim dependencies failed'
 fi
 
 #
