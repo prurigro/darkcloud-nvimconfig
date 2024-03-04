@@ -287,21 +287,6 @@ type -P vim >/dev/null && {
 }
 
 #
-# UPDATE REMOTE PLUGINS
-#
-
-printf '%s' "$cbg_blue >> Updating remote plugins for neovim:$c_reset"
-$timeout_command --preserve-status --foreground 1m nvim -c ':UpdateRemotePlugins|qa!'
-
-if (( ! $? )); then
-    printf '%s\n' "$cfg_green_bold SUCCESS! $c_reset"
-else
-    reset -I
-    printf '%s\n' "$cfg_red_bold FAIL! $c_reset"
-    error "nvim -c ':UpdateRemotePlugins|qa!'" 'Updating remote plugins for neovim failed'
-fi
-
-#
 # FINISH
 #
 
