@@ -190,10 +190,6 @@
 "    ?>                       | (A) -> close the dialog
 "    ?<                       | (A) -> close the dialog
 "
-"  (markdown)
-"    <Leader>f                | (N) -> format a table
-"    <Leader>f                | (V) -> format a table
-"
 "  (error/location list)
 "    <Left>                   | (A) -> up
 "    <Right>                  | (A) -> down
@@ -616,10 +612,6 @@
         autocmd FileType help map <buffer> <silent><expr> <Leader><F1> ':q<CR>'
         autocmd FileType help map <buffer> <silent><expr> <Leader>? ':q<CR>'
     endif
-
-    "markdown
-    autocmd FileType markdown nnoremap <buffer> <silent><expr> <Leader>f ':TableFormat<CR>'
-    autocmd FileType markdown xnoremap <buffer> <silent><expr> <Leader>f '<Esc>:TableFormat<CR>gv'
 
     "error/location list
     autocmd FileType qf map <buffer> <Left> <Up>
