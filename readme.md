@@ -130,6 +130,7 @@ For a complete list of mappings specific to **darkcloud-nvimconfig**, check the 
   * [nvim-snippy](https://github.com/dcampos/nvim-snippy): Snippet plugin for Neovim written in Lua
   * [vim-snippets](https://github.com/honza/vim-snippets): Snippets files for various programming languages
 * [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): Treesitter configurations and abstraction layer for Neovim
+  * [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects): Syntax aware text-objects, select, move, swap, and peek support
 * [ReplaceWithRegister](https://github.com/vim-scripts/ReplaceWithRegister): Replace text with the contents of a register (for paste+replace without writing over the buffer)
 * [splitjoin.vim](https://github.com/AndrewRadev/splitjoin.vim): Simplifies the transition between multiline and single-line code
 * [tabular](https://github.com/godlygeek/tabular): Vim script for text filtering and alignment

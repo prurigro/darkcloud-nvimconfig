@@ -91,3 +91,6 @@
 [submodule "vim/bundle/cmp-async-path"]
 	path = vim/bundle/cmp-async-path
 	url = https://codeberg.org/FelipeLema/cmp-async-path
+[submodule "vim/bundle/nvim-treesitter-textobjects"]
+	path = vim/bundle/nvim-treesitter-textobjects
+	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects
