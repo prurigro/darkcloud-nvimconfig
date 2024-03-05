@@ -145,7 +145,7 @@ For a complete list of mappings specific to **darkcloud-nvimconfig**, check the 
 * [vim-togglelist](https://github.com/milkypostman/vim-togglelist): A simple plugin for vim that allows you to bind a key to toggle the Location List and the Quickfix List
 * [vim-trailing-whitespace](https://github.com/bronson/vim-trailing-whitespace): Highlights and allows for the easy removal of trailing whitespace in documents
 * [vim-unimpaired](https://github.com/tpope/vim-unimpaired): Pairs of handy bracket mappings
-  * [vim-repeat](https://github.com/tpope/vim-repeat): A library used by vim-surround to allow its delimiter-switching functions to be repeated with the `.` command
+  * [vim-repeat](https://github.com/tpope/vim-repeat): Enable repeating supported plugin maps with "."
 
 ## Credits
 
