@@ -77,6 +77,8 @@
 "    #                        | (N) -> center vertically on nth last search term
 "
 "  (toggles and features)
+"    <Leader>d                | (N) -> VCS vimdiff in a new tab with signify
+"
 "    ik                       | (N) -> add cursor character as a keyword
 "    iK                       | (N) -> remove cursor character as a keyword
 "
@@ -404,6 +406,9 @@
     "}
 
     "TOGGLES AND FEATURES:{
+        "VCS vimdiff in a new tab with signify
+        nnoremap <silent><expr> <Leader>d ':SignifyDiff<CR>'
+
         "add/remove cursor character as a keyword
         nmap <expr><silent> <Leader>k ':execute "setlocal iskeyword+=".getline(".")[col(".")-1]<CR>:echo "The character ".getline(".")[col(".")-1]." has been added to iskeyword"<CR>'
         nmap <expr><silent> <Leader>K ':execute "setlocal iskeyword-=".getline(".")[col(".")-1]<CR>:echo "The character ".getline(".")[col(".")-1]." has been removed from iskeyword"<CR>'
