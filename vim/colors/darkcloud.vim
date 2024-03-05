@@ -21,7 +21,7 @@ let colors_name = "darkcloud"
 
 "sets the highlighting for the given group | format: s:C('Name','Foreground','Background','Style')
 fun! s:C(group, fg, bg, attr)
-    if has("gui_running")
+    if has("gui_running") || &termguicolors
         let l:term = "gui"
     else
         let l:term = "cterm"
