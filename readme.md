@@ -121,6 +121,7 @@ For a complete list of mappings specific to **darkcloud-nvimconfig**, check the 
 * [lightline.vim](https://github.com/itchyny/lightline.vim): A light and configurable statusline/tabline for Vim
   * [lightline-ale](https://github.com/maximbaz/lightline-ale): Provides ALE indicator for the lightline vim plugin
 * [nvim-cmp](https://github.com/hrsh7th/nvim-cmp): A completion engine plugin for neovim written in Lua
+  * [cmp-async-path](https://codeberg.org/FelipeLema/cmp-async-path): Async filesystem path source for nvim-cmp
   * [cmp-buffer](https://github.com/hrsh7th/cmp-buffer): Buffer words source for nvim-cmp
   * [cmp-nvim-tags](https://github.com/quangnguyen30192/cmp-nvim-tags): Tags source for nvim-cmp
   * [cmp-omni](https://github.com/hrsh7th/cmp-omni): Omnifunc source for cmp-nvim

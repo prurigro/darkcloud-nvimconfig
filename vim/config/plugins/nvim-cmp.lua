@@ -51,6 +51,7 @@ if (vim.g.enablecompletion == 1) then
             { name = "buffer" },
             { name = "treesitter" },
             { name = "omni" },
+            { name = "async_path" },
             { name = "tags", option = { current_buffer_only = true } },
             { name = "snippy" },
         }),

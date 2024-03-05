@@ -88,3 +88,6 @@
 [submodule "vim/bundle/cmp-omni"]
 	path = vim/bundle/cmp-omni
 	url = https://github.com/hrsh7th/cmp-omni
+[submodule "vim/bundle/cmp-async-path"]
+	path = vim/bundle/cmp-async-path
+	url = https://codeberg.org/FelipeLema/cmp-async-path
