@@ -1,6 +1,6 @@
 if (vim.g.enablecompletion == 1) then
     local snippy = require("snippy")
-    local cmp = require"cmp"
+    local cmp = require("cmp")
 
     local has_words_before = function()
         unpack = unpack or table.unpack
