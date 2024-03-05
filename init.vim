@@ -15,7 +15,7 @@
 "}}}
 
 "add config directory: (distro-agnostic system-wide)
-let &runtimepath = printf('%s,%s/vim,%s/vim/after,%s/local', &runtimepath, g:darkcloudpath, g:darkcloudpath, g:darkcloudpath)
+let &runtimepath = printf("%s,%s/vim,%s/vim/after,%s/local", &runtimepath, g:darkcloudpath, g:darkcloudpath, g:darkcloudpath)
 
 "load colours
 if &term != "linux"
@@ -43,20 +43,21 @@ runtime config/settings.vim
 let g:pathogen_disabled = get(g:, "pathogen_disabled", [])
 
 "don't load vim-gutentags if g:enableautotags is false or ctags isn't in path
-if !g:enableautotags || !executable('ctags')
-    call add(g:pathogen_disabled, 'vim-gutentags')
+if !g:enableautotags || !executable("ctags")
+    call add(g:pathogen_disabled, "vim-gutentags")
 endif
 
 "don't load nvim-cmp or its dependencies if g:enablecompletion is false
 if !g:enablecompletion
-    call add(g:pathogen_disabled, 'nvim-cmp')
-    call add(g:pathogen_disabled, 'cmp-buffer')
-    call add(g:pathogen_disabled, 'cmp-nvim-tags')
-    call add(g:pathogen_disabled, 'cmp-omni')
-    call add(g:pathogen_disabled, 'cmp-snippy')
-    call add(g:pathogen_disabled, 'cmp-treesitter')
-    call add(g:pathogen_disabled, 'nvim-snippy')
-    call add(g:pathogen_disabled, 'vim-snippets')
+    call add(g:pathogen_disabled, "cmp-async-path")
+    call add(g:pathogen_disabled, "cmp-buffer")
+    call add(g:pathogen_disabled, "cmp-nvim-tags")
+    call add(g:pathogen_disabled, "cmp-omni")
+    call add(g:pathogen_disabled, "cmp-snippy")
+    call add(g:pathogen_disabled, "cmp-treesitter")
+    call add(g:pathogen_disabled, "nvim-cmp")
+    call add(g:pathogen_disabled, "nvim-snippy")
+    call add(g:pathogen_disabled, "vim-snippets")
 endif
 
 "use pathogen to load plugins that haven't been disabled
