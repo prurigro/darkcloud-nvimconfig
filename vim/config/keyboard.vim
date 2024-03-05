@@ -166,6 +166,8 @@
 "    <Shift-Ctrl-Up>          | (N) -> vim-move: move a line up one line
 "    <Shift-Ctrl-Down>        | (N) -> vim-move: move a line down one line
 "
+"    ]g                       | (N) -> next difference (vimdiff/signify)
+"    [g                       | (N) -> previous difference (vimdiff/signify)
 "    >>                       | (N) -> next difference (vimdiff/signify)
 "    <<                       | (N) -> previous difference (vimdiff/signify)
 "
@@ -577,13 +579,11 @@
         nmap <S-C-Up> <Plug>MoveLineUp
         nmap <S-C-Down> <Plug>MoveLineDown
 
-        "map signify to ]c and [c
-        let g:signify_mapping_next_hunk = ']c'
-        let g:signify_mapping_prev_hunk = '[c'
-
         "move to next/previous difference (vimdiff/signify)
-        nmap >> ]c
-        nmap << [c
+        nmap ]g <plug>(signify-next-hunk)
+        nmap [g <plug>(signify-prev-hunk)
+        nmap >> ]g
+        nmap << [g
     "}
 
     "SELECTION:{
