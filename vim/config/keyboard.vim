@@ -9,22 +9,6 @@
 "                                                             "
 "============================================================="
 "
-"Aliases:
-"  :GitLog & :gitlog          | (C) -> show a navigatable log of commit history
-"  :GitDiff & :gitdiff        | (C) -> current file and last commit in vimdiff
-"  :GitStatus & :gitstatus    | (C) -> shows the output of git status
-"  :GitCommit & :gitcommit    | (C) -> commits changes to the current file
-"  :git <file>                | (C) -> open a vert split with the file in diff mode
-"
-"  :vs33                      | (C) -> create a vertical split using 33% width
-"  :vs66                      | (C) -> create a vertical split using 66% width
-"  :sp33                      | (C) -> create a split using 33% of the height
-"  :sp66                      | (C) -> create a split using 66% of the height
-"  :diff                      | (C) -> open a new file in diff mode
-"
-"  :ik                        | (C) -> add following character to keywords
-"  :iK                        | (C) -> remove following character from keywords
-"
 "Mappings:
 "  (mouse)
 "    <Ctrl-ScrollUp>          | (A) -> scroll left
@@ -204,8 +188,8 @@
 "    <Leader>.,               | (N) -> update differences
 "    <Leader>>                | (N) -> replace diff in other pane with current pane
 "    <Leader>.                | (N) -> replace diff in other pane with current pane
-"    <Leader<<                | (N) -> replace diff in current pane with other pane
-"    <Leader<,                | (N) -> replace diff in current pane with other pane
+"    <Leader><                | (N) -> replace diff in current pane with other pane
+"    <Leader>,                | (N) -> replace diff in current pane with other pane
 
 "DISABLED DEFAULT MAPPING: UNSET SHORTCUTS {{{
     "-unmapping tabbing from < and > for use with diff
@@ -226,27 +210,6 @@
 
     "unmap shift+k opening help
     nnoremap <S-k> <Nop>
-"}}}
-
-"ALIASES: COMMAND SHORTCUTS {{{
-    "shortcuts to git commands
-    cabbrev <expr><silent> GitDiff ':Gdiff<CR>'
-    cabbrev <expr><silent> gitdiff ':Gdiff<CR>'
-    cabbrev <expr><silent> GitStatus ':Gstatus<CR>'
-    cabbrev <expr><silent> gitstatus ':Gstatus<CR>'
-    cabbrev <expr><silent> GitCommit ':Gcommit<CR>'
-    cabbrev <expr><silent> gitcommit ':Gcommit<CR>'
-
-    "create various sizes of splits
-    cabbrev <expr><silent> vs33 ':VS33<CR>'
-    cabbrev <expr><silent> vs66 ':VS66<CR>'
-    cabbrev <expr><silent> sp33 ':SP33<CR>'
-    cabbrev <expr><silent> sp66 ':SP66<CR>'
-    cabbrev diff vertical diffsplit
-
-    "add/remove character as keyword
-    cabbrev ik setlocal iskeyword+=
-    cabbrev iK setlocal iskeyword-=
 "}}}
 
 "MAPPINGS: GENERAL KEYBINDINGS AND REBINDINGS {{{
