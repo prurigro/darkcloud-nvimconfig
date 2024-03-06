@@ -134,12 +134,10 @@
 "    <Leader>w                | (N) -> remove whitespace
 "    <Tab>                    | (V) -> indent all the lines currently selected
 "    <Tab>                    | (N) -> indent the current line
-"    <Leader>>                | (V) -> indent all the lines currently selected
-"    <Leader>>                | (N) -> indent the current line
 "    <Shift-Tab>              | (V) -> un-indent all the lines currently selected
 "    <Shift-Tab>              | (N) -> un-indent the current line
-"    <Leader><                | (V) -> un-indent all the lines currently selected
-"    <Leader><                | (N) -> un-indent the current line
+"    [<Space>                 | (N) -> insert a blank line above the current one
+"    ]<Space>                 | (N) -> insert a blank line below the current one
 "
 "  (macros)
 "    '                        | (N) -> run a macro
@@ -521,15 +519,15 @@
         "remove trailing whitespace
         nnoremap <silent><expr> <Leader>w ':FixWhitespace<CR>:echo "Trailing whitespace has been removed"<CR>'
 
-        "tab/<Leader>> and untab/<Leader>< the currently selected lines
+        "tab and untab the currently selected lines
         vnoremap <Tab> >gv
         nnoremap <Tab> v>gv<Esc>
-        vnoremap <Leader>> >gv
-        nnoremap <Leader>> v>gv<Esc>
         vnoremap <S-Tab> <gv
         nnoremap <S-Tab> v<gv<Esc>
-        vnoremap <Leader>< <gv
-        nnoremap <Leader>< v<gv<Esc>
+
+        "insert blank lines above and below the current one
+        nnoremap <silent> ]<Space> :<C-u>call append(line("."), repeat([""], v:count1))<CR>
+        nnoremap <silent> [<Space> :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
     "}
 
     "MACROS:{
