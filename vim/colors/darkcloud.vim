@@ -281,9 +281,18 @@ endfun
     hi! link SignifyLineChange DiffChange
     hi! link SignifyLineDelete DiffDelete
 
-    "ale
-    call s:C("ALEErrorSign",g:cRed,"","standout")
-    call s:C("ALEWarningSign",g:cYellow,"","standout")
+    "diagnostics
+    call s:C("ALEError",g:cDarkRed,"","")
+    call s:C("ALEWarning",g:cDarkYellow,"","")
+    call s:C("ALEInfo",g:cDarkBlue,"","")
+
+    call s:C("DiagnosticError",g:cDarkRed,"","italic")
+    call s:C("DiagnosticWarn",g:cDarkYellow,"","italic")
+    call s:C("DiagnosticInfo",g:cDarkBlue,"","italic")
+    call s:C("DiagnosticHint",g:cGray3,"","italic")
+    call s:C("DiagnosticOk",g:cWhite,"","italic")
+    call s:C("DiagnosticDeprecated",g:cGray1,"","italic")
+    call s:C("DiagnosticUnnecessary",g:cGray1,"","italic")
 "}}}
 
 "TREESITTER: {{{
