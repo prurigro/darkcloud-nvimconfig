@@ -19,7 +19,7 @@ endif
 "declare the name of our theme
 let colors_name = "darkcloud"
 
-"sets the highlighting for the given group | format: s:C('Name','Foreground','Background','Style')
+"sets the highlighting for the given group | format: s:C("Name","Foreground","Background","Style")
 fun! s:C(group, fg, bg, attr)
     if has("gui_running") || &termguicolors
         let l:term = "gui"
@@ -59,20 +59,23 @@ endfun
     call s:C("Normal",g:cWhite,g:cDarkBg,"")
     hi! link Conceal Normal
 
+    "cursor
     call s:C("Cursor","",g:cDarkBg,"standout")
     call s:C("CursorColumn","",g:cLightBg,"")
     call s:C("CursorLine","",g:cLightBg,"")
     call s:C("CursorLineNr",g:cBlue,g:cLightBg,"bold")
     call s:C("LineNr",g:cGray4,"","bold")
 
+    "selected text
     call s:C("Visual","",g:cDarkBg,"standout")
+
+    "vertical split divider
     call s:C("VertSplit",g:cGray1,"","")
-    call s:C("MatchParen","",g:cLightBg,"bold")
+
+    "matched parenthesis
+    call s:C("MatchParen",g:cWhite,g:cLightBg,"bold")
 
     "whitespace
-    call s:C("TabLine","",g:cBlack,"")
-    call s:C("TabLineFill","",g:cBlack,"")
-    call s:C("TabLineSel",g:cBlack,g:cGray1,"")
     call s:C("ExtraWhiteSpace",g:cDarkRed,g:cDarkBg,"")
 
     "menu call
@@ -278,7 +281,7 @@ endfun
 "}}}
 
 "TREESITTER: {{{
-    if has('nvim')
+    if has("nvim")
         call s:C("@attribute",g:cRed,"","")
         call s:C("@boolean",g:cYellow,"","bold")
         call s:C("@character",g:cWhite,"","bold")
