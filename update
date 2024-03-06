@@ -216,7 +216,7 @@ fi
         [[ -f "$plugin/.git" ]] && {
             plugin_dirname="${plugin/*\/}"
 
-            grep 'path = ' .gitmodules | grep -oe '[^\/]*$' | grep -qe "$plugin_dirname$" || {
+            grep 'path = ' .gitmodules | grep -oe '[^\/]*$' | grep -qe "^$plugin_dirname$" || {
                 [[ -z "$first_found" ]] && {
                     first_found=1
                     printf '%s\n' "$cbg_blue $c_reset$cbg_yellow + Removing old plugins: $c_reset"
