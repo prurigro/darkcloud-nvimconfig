@@ -12,7 +12,7 @@ A theme, config and collection of plugins for Neovim
 ## Optional Requirements
 
 * **Powerline Fonts**: Required to enable the fancier looking status line
-* **Universal CTags**: Required by _vim-gutentags_, and optional for _vista_ and _nvim-cmp_
+* **Universal CTags**: Required by _vim-gutentags_ and _vista_, and optional for _nvim-cmp_
 * **Compilers, Linters and Runtimes**: The _ale_ plugin can use compilers, linters and runtimes to provide real-time syntax checking
 
 ## Distribution Features
