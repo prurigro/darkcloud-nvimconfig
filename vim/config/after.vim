@@ -26,13 +26,10 @@ autocmd FileChangedRO * nested set noreadonly
     "enable more accurate syntax synchronization
     autocmd BufEnter * :syntax sync fromstart
 
-    "don't conceal json syntax
-    let g:vim_json_syntax_conceal = 0
-
     "disable automatic line breaks
     autocmd VimEnter * set textwidth=0
 
-    "set given filenames to various filetypes
+    "set filetypes for various file extensions
     autocmd BufNewFile,BufRead *.aspx,*.asmx,*.ascx,*.master setlocal ft=aspnet
     autocmd BufNewFile,BufRead *.gradle setlocal ft=groovy
     autocmd BufNewFile,BufRead *eslintrc setlocal ft=json
@@ -58,7 +55,6 @@ autocmd FileChangedRO * nested set noreadonly
 
     "settings for buffers in diff mode
     autocmd VimEnter,FilterWritePre * if &diff|setlocal nofoldenable|endif
-    autocmd VimEnter * if &diff|wincmd H|endif
 
     "disable the whitespace plugin for mail
     autocmd BufEnter,FileType mail hi ExtraWhitespace ctermbg=NONE guibg=NONE
