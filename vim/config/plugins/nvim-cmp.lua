@@ -43,7 +43,7 @@ if (vim.g.enablecompletion == 1) then
                 end
             end, { "i", "s" }),
 
-            ["<Leader>"] = cmp.mapping.abort(),
+            ["<Del>"] = cmp.mapping.abort(),
             ["<CR>"] = cmp.mapping.confirm({ select = false }),
         }),
 
