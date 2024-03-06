@@ -284,9 +284,6 @@ endfun
     "ale
     call s:C("ALEErrorSign",g:cRed,"","standout")
     call s:C("ALEWarningSign",g:cYellow,"","standout")
-
-    "taglist
-    hi! link TagListFileName Directory
 "}}}
 
 "TREESITTER: {{{
