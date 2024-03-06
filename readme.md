@@ -85,7 +85,6 @@ A theme, config and collection of plugins for Neovim
 | F4              | ALL  | Toggle source code syntax checking               |
 |                 |      |                                                  |
 | \`              | N    | Toggle gutter (left bar with line numbers etc.)  |
-| Leader+?        | N    | Toggle the **vim** reference manual              |
 
 #### Spell Check
 

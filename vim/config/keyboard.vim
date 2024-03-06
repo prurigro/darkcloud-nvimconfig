@@ -54,9 +54,9 @@
 "    <Esc>                    | (T) -> leave edit mode
 "
 "  (tabs)
-"    <Alt-n>                  | (N) -> go to the next open tab
-"    <Alt-p>                  | (N) -> go to the previous open tab
-"    <Alt-t>                  | (N) -> open a new tab
+"    <Ctrl-n>                 | (N) -> go to the next open tab
+"    <Ctrl-p>                 | (N) -> go to the previous open tab
+"    <Ctrl-t>                 | (N) -> open a new tab
 "
 "  (split)
 "    <Ctrl-w>{                | (N) -> rotate counter-clockwise
@@ -84,7 +84,6 @@
 "
 "    ~                        | (N) -> popup a command reference
 "    <Leader><F1>             | (N) -> toggle the vim reference manual
-"    <Leader>?                | (N) -> toggle the vim reference manual
 "    `                        | (A) -> toggle the gutter(numbers+folds+signify)
 "
 "    <Space><Space>           | (N) -> toggle selected fold
@@ -188,9 +187,6 @@
 "Filetype Specific Mappings:
 "  (help)
 "    q                        | (A) -> close the dialog
-"    <Leader>?                | (A) -> close the dialog
-"    ?>                       | (A) -> close the dialog
-"    ?<                       | (A) -> close the dialog
 "
 "  (error/location list)
 "    <Left>                   | (A) -> up
@@ -217,8 +213,7 @@
     noremap > <Nop>
     noremap < <Nop>
 
-    "-unmapping help from F1 and Ctrl-F1 for use toggling the reference manual
-    "+the :h topic feature works, and <Leader>? displays quickref
+    "-unmapping help from F1, Alt-F1 and Ctrl-F1
     map <F1> <Nop>
     map <A-F1> <Nop>
     map <C-F1> <Nop>
@@ -375,9 +370,9 @@
     "}
 
     "TABS:{
-        nnoremap <silent><expr> <A-n> ':tabnext<CR>'
-        nnoremap <silent><expr> <A-p> ':tabprev<CR>'
-        nnoremap <silent><expr> <A-t> ':tabnew<CR>'
+        nnoremap <silent><expr> <C-n> ':tabnext<CR>'
+        nnoremap <silent><expr> <C-p> ':tabprev<CR>'
+        nnoremap <silent><expr> <C-t> ':tabnew<CR>'
     "}
 
     "SPLIT:{
@@ -413,9 +408,6 @@
 
         "toggle the command reference box
         nnoremap <silent><expr> ~ ':TCommand<CR>'
-
-        "toggle the vim reference manual
-        nnoremap <silent><expr> <Leader>? ':h index.txt<CR>'
 
         "toggle the display of the left gutter
         nnoremap <silent><expr> ` ':if (&number)<Bar>set nonumber<Bar>if exists("b:sy")<Bar>SignifyDisable<Bar>endif<Bar>else<Bar>set number<Bar>if exists("b:sy")<Bar>SignifyEnable<Bar>endif<Bar>endif<CR>:echo "gutter visibility toggled"<CR>'
@@ -612,8 +604,6 @@
     "help
     if !&diff
         autocmd FileType help map <buffer> <silent><expr> q ':q<CR>'
-        autocmd FileType help map <buffer> <silent><expr> <Leader><F1> ':q<CR>'
-        autocmd FileType help map <buffer> <silent><expr> <Leader>? ':q<CR>'
     endif
 
     "error/location list
