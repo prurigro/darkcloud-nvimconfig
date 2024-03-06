@@ -12,7 +12,7 @@ A theme, config and collection of plugins for Neovim
 ## Optional Requirements
 
 * **Powerline Fonts**: Required to enable the fancier looking status line
-* **Universal CTags**: Required by _vim-gutentags_, _tagbar_ and optional for _nvim-cmp_
+* **Universal CTags**: Required by _vim-gutentags_, and optional for _vista_ and _nvim-cmp_
 * **Compilers, Linters and Runtimes**: The _ale_ plugin can use compilers, linters and runtimes to provide real-time syntax checking
 
 ## Distribution Features
@@ -33,7 +33,6 @@ A theme, config and collection of plugins for Neovim
 
 * **Configure Variables**: The following variables can be added to `local/user.vim` and have their values set to the values you require:
   * `g:autostartchecker`: **1** = Enable the syntax checker when a file is opened | **0** = Check syntax only after being toggled on (default: **0**)
-  * `g:autostarttagbar`: **1** = Load a file with the tagbar visible | **0** = Require the tagbar to be toggled on (default: **0**)
   * `g:enabletreesitter`: **1** = Use treesitter for compatible files | **0** = Keep treesitter disabled (default: **0**)
   * `g:enablecompletion`: **1** = Enable autocompletion | **0** = Disable autocompletion (default: **0**)
   * `g:enableautotags`: **1** = Automatically generate tags files | **0** = Disable tag generation (default: **0**)
@@ -67,24 +66,24 @@ A theme, config and collection of plugins for Neovim
 
 #### Sidebars
 
-| Binding         | Mode | Action                                        |
-|-----------------|------|-----------------------------------------------|
-| F11 or Leader+[ | N    | Toggle git history for the current file       |
-| F12 or Leader+] | N    | Toggle the **tagbar** source code tag sidebar |
-| Leader+Leader   | N    | Toggle the location list for **ale** issues   |
+| Binding         | Mode | Action                                      |
+|-----------------|------|---------------------------------------------|
+| F11 or Leader+[ | N    | Toggle git history for the current file     |
+| F12 or Leader+] | N    | Toggle the **vista** symbol and tag sidebar |
+| Leader+Leader   | N    | Toggle the location list for **ale** issues |
 
 #### Toggles
 
-| Binding         | Mode | Action                                           |
-|-----------------|------|--------------------------------------------------|
-| ~               | N    | Popup a command list dialog                      |
-|                 |      |                                                  |
-| F1              | ALL  | Toggle line wrapping                             |
-| F2              | ALL  | Toggle highlighting of spelling mistakes         |
-| F3              | ALL  | Toggle external-paste mode                       |
-| F4              | ALL  | Toggle source code syntax checking               |
-|                 |      |                                                  |
-| \`              | N    | Toggle gutter (left bar with line numbers etc.)  |
+| Binding         | Mode | Action                                          |
+|-----------------|------|-------------------------------------------------|
+| ~               | N    | Popup a command list dialog                     |
+|                 |      |                                                 |
+| F1              | ALL  | Toggle line wrapping                            |
+| F2              | ALL  | Toggle highlighting of spelling mistakes        |
+| F3              | ALL  | Toggle external-paste mode                      |
+| F4              | ALL  | Toggle source code syntax checking              |
+|                 |      |                                                 |
+| \`              | N    | Toggle gutter (left bar with line numbers etc.) |
 
 #### Spell Check
 
@@ -134,7 +133,6 @@ For a complete list of mappings specific to **darkcloud-nvimconfig**, check the 
 * [ReplaceWithRegister](https://github.com/vim-scripts/ReplaceWithRegister): Replace text with the contents of a register (for paste+replace without writing over the buffer)
 * [splitjoin.vim](https://github.com/AndrewRadev/splitjoin.vim): Simplifies the transition between multiline and single-line code
 * [tabular](https://github.com/godlygeek/tabular): Vim script for text filtering and alignment
-* [tagbar](https://github.com/majutsushi/tagbar): Uses ctags to generate a sidebar of the tags for the current file
 * [vim-fugitive](https://github.com/tpope/vim-fugitive): A wrapper integrating git into vim in such a way as to provide features neither of them could offer on their own
 * [vim-gutentags](https://github.com/xolox/vim-easytags): A plugin that takes care of the much needed management of tags files in Vim
 * [vim-move](https://github.com/matze/vim-move): Provides a few convenient ways to move selected text
@@ -143,6 +141,7 @@ For a complete list of mappings specific to **darkcloud-nvimconfig**, check the 
 * [vim-signify](https://github.com/mhinz/vim-signify): When a version controlled file is changed, this displays a column showing where and how, and allows for navigation to and between differences
 * [vim-togglelist](https://github.com/milkypostman/vim-togglelist): A simple plugin for vim that allows you to bind a key to toggle the Location List and the Quickfix List
 * [vim-trailing-whitespace](https://github.com/bronson/vim-trailing-whitespace): Highlights and allows for the easy removal of trailing whitespace in documents
+* [vista.vim](https://github.com/liuchengxu/vista.vim): Viewer & Finder for LSP symbols and tags
 
 ## Credits
 

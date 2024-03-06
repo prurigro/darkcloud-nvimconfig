@@ -30,7 +30,6 @@ runtime user.vim
 
 "set default values for user settings
 let g:autostartchecker = get(g:, "autostartchecker", 0)
-let g:autostarttagbar = get(g:, "autostarttagbar", 0)
 let g:enabletreesitter = get(g:, "enabletreesitter", 0)
 let g:enablecompletion = get(g:, "enablecompletion", 0)
 let g:enableautotags = get(g:, "enableautotags", 0)

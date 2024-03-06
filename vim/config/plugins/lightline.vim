@@ -10,7 +10,7 @@ function! LLFilename()
     let fname = expand("%:t")
 
     return
-    \   fname == "__Tagbar__.1" ? g:lightline.fname :
+    \   fname == "__vista__" ? "" :
     \   &ft == "qf" ? "[Error/Location List]" :
     \       ("" != LLReadonly() ? LLReadonly() . " " : "") .
     \       ("" != fname ? fname : "[NEW]") .
@@ -18,7 +18,7 @@ function! LLFilename()
 endfunction
 
 function! LLFugitive()
-    if expand("%:t") !~? "Tagbar" && exists("*FugitiveHead")
+    if expand("%:t") !~? "__vista__" && exists("*FugitiveHead")
         let mark = ""
         let _ = FugitiveHead()
         return strlen(_) ? mark._ : ""
@@ -42,15 +42,8 @@ endfunction
 function! LLMode()
     let fname = expand("%:t")
 
-    return fname == "__Tagbar__" ? "Tagbar" :
+    return fname == "__vista__" ? "Vista" :
     \   winwidth(0) > 60 ? lightline#mode() : ""
-endfunction
-
-let g:tagbar_status_func = "TagbarStatusFunc"
-
-function! TagbarStatusFunc(current, sort, fname, ...) abort
-    let g:lightline.fname = "tags"
-    return lightline#statusline(0)
 endfunction
 
 let g:lightline = {
@@ -60,12 +53,12 @@ let g:lightline = {
     \ },
     \
     \ "component_function": {
+    \     "mode": "LLMode",
     \     "fugitive": "LLFugitive",
     \     "filename": "LLFilename",
     \     "fileformat": "LLFileformat",
-    \     "filetype": "LLFiletype",
     \     "fileencoding": "LLFileencoding",
-    \     "mode": "LLMode"
+    \     "filetype": "LLFiletype",
     \ },
     \
     \ "component_expand": {
@@ -82,12 +75,8 @@ let g:lightline = {
     \     "linter_ok": "left"
     \ },
     \
-    \ "component": {
-    \     "tagbar": "%{tagbar#currenttag('[%s]', '', 'f')}"
-    \ },
-    \
     \ "active": {
-    \     "left": [[ "mode", "paste" ], [ "fugitive", "filename" ], [ "tagbar" ]],
+    \     "left": [[ "mode", "paste" ], [ "fugitive", "filename" ]],
     \     "right": [[ "linter_checking", "linter_errors", "linter_warnings", "linter_ok" ], [ "fileformat", "fileencoding", "filetype" ], [ "percent", "lineinfo" ]]
     \ }
 \ }

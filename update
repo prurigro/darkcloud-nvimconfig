@@ -132,7 +132,6 @@ printf '\n%s\n' "$cbg_black ~~~ DarkCloud Neovim Config Update Tool ~~~ $c_reset
     if (( ! $? )); then
         {
             printf '%s\n%s\n\n' '"Auto-start syntax checking: (1:start toggled on | *0:start toggled off)' '"let g:autostartchecker = 1'
-            printf '%s\n%s\n\n' '"Auto-start Tagbar: (1:start open | *0:start closed)' '"let g:autostarttagbar = 1'
             printf '%s\n%s\n\n' '"Enable Treesitter: (1:treesitter enabled | *0:treesitter disabled)' '"let g:enabletreesitter = 1'
             printf '%s\n%s\n\n' '"Enable Auto-completion: (1:autocompletion enabled | *0:autocompletion disabled)' '"let g:enablecompletion = 1'
             printf '%s\n%s\n\n' '"Enable automatic tag generation: (1:enable tag generation | *0:disable automatic tag generation)' '"let g:enableautotags = 1'

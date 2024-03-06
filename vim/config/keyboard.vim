@@ -95,8 +95,8 @@
 "
 "    <F11>                    | (N) -> toggle git commit history
 "    <Leader>[                | (N) -> toggle git commit history
-"    <F12>                    | (N) -> toggle the tagbar sidebar
-"    <Leader>]                | (N) -> toggle the tagbar sidebar
+"    <F12>                    | (N) -> toggle the vista sidebar
+"    <Leader>]                | (N) -> toggle the vista sidebar
 "    <Leader><Leader>         | (N) -> toggle the location list
 "
 "  (spellcheck)
@@ -447,9 +447,9 @@
         nnoremap <expr><silent> <F11> ':vs<CR>:0Gclog<CR>:wincmd b<CR>'
         nnoremap <silent><expr> <Leader>[ ':vs<CR>:0Gclog<CR>:wincmd b<CR>'
 
-        "bindings to trigger the tagbar list of tags
-        nnoremap <silent><expr> <F12> ':TagbarToggle<CR>:echo "tagbar toggled"<CR>'
-        nnoremap <silent><expr> <Leader>] ':TagbarToggle<CR>:echo "tagbar toggled"<CR>'
+        "bindings to trigger the vista list of tags
+        nnoremap <silent><expr> <F12> ':Vista!!<CR>'
+        nnoremap <silent><expr> <Leader>] ':Vista!!<CR>'
 
         "toggle the location list
         nnoremap <silent><expr> <Leader><Leader> ':call ToggleLocationList()<CR>'
@@ -629,23 +629,10 @@
 
 "MAPPINGS DISABLED FOR GIVEN FILETYPES: {{{
     "remove incompatible toggles from specific file types
-    autocmd Filetype help,tagbar,qf noremap <buffer> ` <Nop>
-    autocmd Filetype help,tagbar,qf,diff noremap <buffer> <F9> <Nop>
-    autocmd Filetype help,tagbar,qf,diff noremap <buffer> <C-F9> <Nop>
-    autocmd Filetype help,tagbar,qf,diff noremap <buffer> <A-F9> <Nop>
-    autocmd Filetype help,tagbar,qf,diff noremap <buffer> <Leader>} <Nop>
-    autocmd Filetype help,qf noremap <buffer> <F10> <Nop>
-    autocmd Filetype help,qf noremap <buffer> <C-F10> <Nop>
-    autocmd Filetype help,qf noremap <buffer> <A-F10> <Nop>
-    autocmd Filetype help,qf noremap <buffer> <Leader>{ <Nop>
-    autocmd Filetype help,tagbar,qf noremap <buffer> <F11> <Nop>
-    autocmd Filetype help,tagbar,qf noremap <buffer> <C-F11> <Nop>
-    autocmd Filetype help,tagbar,qf noremap <buffer> <A-F11>] <Nop>
-    autocmd Filetype help,tagbar,qf noremap <buffer> <Leader> <Nop>
-    autocmd Filetype help,tagbar,qf noremap <buffer> <F12> <Nop>
-    autocmd Filetype help,tagbar,qf noremap <buffer> <C-F12> <Nop>
-    autocmd Filetype help,tagbar,qf noremap <buffer> <A-F12> <Nop>
-    autocmd Filetype help,tagbar,qf noremap <buffer> <Leader>[ <Nop>
+    autocmd Filetype help,qf,diff,vista noremap <buffer> <F11> <Nop>
+    autocmd Filetype help,qf,diff,vista noremap <buffer> <Leader>[ <Nop>
+    autocmd Filetype help,qf,diff noremap <buffer> <F12> <Nop>
+    autocmd Filetype help,qf,diff noremap <buffer> <Leader>] <Nop>
 
     "disable modifier keys with directions that would interfere with logic
     autocmd Filetype qf noremap <buffer> <C-Up> <Nop>
