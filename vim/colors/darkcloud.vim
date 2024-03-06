@@ -61,9 +61,18 @@ endfun
 
     "cursor
     call s:C("Cursor","",g:cDarkBg,"standout")
-    call s:C("CursorColumn","",g:cLightBg,"")
-    call s:C("CursorLine","",g:cLightBg,"")
-    call s:C("CursorLineNr",g:cBlue,g:cLightBg,"bold")
+
+    if &term != "linux"
+        call s:C("CursorLineNr",g:cBlue,g:cLightBg,"bold")
+        call s:C("CursorColumn","",g:cLightBg,"")
+        call s:C("CursorLine","",g:cLightBg,"")
+    else
+        call s:C("CursorLineNr",g:cBlue,"","bold")
+        call s:C("CursorColumn","","","")
+        call s:C("CursorLine","","","")
+    end
+
+    "line number
     call s:C("LineNr",g:cGray4,"","bold")
 
     "selected text

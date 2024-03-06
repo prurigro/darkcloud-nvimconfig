@@ -87,7 +87,7 @@ let g:lightline#ale#indicator_errors = "E:"
 let g:lightline#ale#indicator_ok = "OK"
 
 "status bar config with and without powerline fonts (default: 0)
-if (g:enablepowerline == 1)
+if &term != "linux" && g:enablepowerline == 1
     let g:lightline.separator = { "left": "", "right": "" }
     let g:lightline.subseparator = { "left": "", "right": "" }
 else
@@ -99,27 +99,25 @@ endif
 "ligtline theme {{{
     let s:p = { "normal": {}, "inactive": {}, "insert": {}, "replace": {}, "visual": {}, "tabline": {} }
 
-    if &term != "linux"
-        let g:lightline.colorscheme = "darkcloud"
+    let g:lightline.colorscheme = "darkcloud"
 
-        let s:p.normal.left = [[ g:cBlue, g:cDarkBg ], [ g:cWhite, g:cLightBg ]]
-        let s:p.inactive.left = [[ g:cGray3, g:cDarkBg ], [ g:cGray3, g:cLightBg ]]
-        let s:p.normal.right = [[ g:cWhite, g:cDarkBg ], [ g:cWhite, g:cLightBg ], [ g:cWhite, g:cDarkBg ]]
-        let s:p.inactive.right = [[ g:cGray3, g:cDarkBg ], [ g:cGray3, g:cLightBg ], [ g:cGray3, g:cDarkBg ]]
+    let s:p.normal.left = [[ g:cBlue, g:cDarkBg ], [ g:cWhite, g:cLightBg ]]
+    let s:p.inactive.left = [[ g:cGray3, g:cDarkBg ], [ g:cGray3, g:cLightBg ]]
+    let s:p.normal.right = [[ g:cWhite, g:cDarkBg ], [ g:cWhite, g:cLightBg ], [ g:cWhite, g:cDarkBg ]]
+    let s:p.inactive.right = [[ g:cGray3, g:cDarkBg ], [ g:cGray3, g:cLightBg ], [ g:cGray3, g:cDarkBg ]]
 
-        let s:p.insert.left = [[ g:cRed, g:cLightBg ], [ g:cWhite, g:cDarkBg ]]
-        let s:p.replace.left = [[ g:cLightBg, g:cRed ], [ g:cWhite, g:cDarkBg ]]
-        let s:p.visual.left = [[ g:cYellow, g:cLightBg ], [ g:cWhite, g:cDarkBg ]]
+    let s:p.insert.left = [[ g:cRed, g:cLightBg ], [ g:cWhite, g:cDarkBg ]]
+    let s:p.replace.left = [[ g:cLightBg, g:cRed ], [ g:cWhite, g:cDarkBg ]]
+    let s:p.visual.left = [[ g:cYellow, g:cLightBg ], [ g:cWhite, g:cDarkBg ]]
 
-        let s:p.normal.middle = [[ g:cWhite, g:cLightBg ]]
-        let s:p.normal.error = [[ g:cRed, g:cLightBg ]]
-        let s:p.normal.warning = [[ g:cYellow, g:cLightBg ]]
+    let s:p.normal.middle = [[ g:cWhite, g:cLightBg ]]
+    let s:p.normal.error = [[ g:cRed, g:cLightBg ]]
+    let s:p.normal.warning = [[ g:cYellow, g:cLightBg ]]
 
-        let s:p.tabline.left = [[ g:cGray2, g:cLightBg ]]
-        let s:p.tabline.tabsel = [[ g:cWhite, g:cDarkBg ]]
-        let s:p.tabline.middle = [[ g:cGray2, g:cLightBg ]]
-        let s:p.tabline.right = [[ g:cWhite, g:cDarkBg ]]
+    let s:p.tabline.left = [[ g:cGray2, g:cLightBg ]]
+    let s:p.tabline.tabsel = [[ g:cWhite, g:cDarkBg ]]
+    let s:p.tabline.middle = [[ g:cGray2, g:cLightBg ]]
+    let s:p.tabline.right = [[ g:cWhite, g:cDarkBg ]]
 
-        let g:lightline#colorscheme#darkcloud#palette = lightline#colorscheme#fill(s:p)
-    endif
+    let g:lightline#colorscheme#darkcloud#palette = lightline#colorscheme#fill(s:p)
 "}}}

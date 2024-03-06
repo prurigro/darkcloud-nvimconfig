@@ -18,12 +18,10 @@
 let &runtimepath = printf("%s,%s/vim,%s/vim/after,%s/local", &runtimepath, g:darkcloudpath, g:darkcloudpath, g:darkcloudpath)
 
 "load colours
-if &term != "linux"
-    runtime colors/palette.vim
+runtime colors/palette.vim
 
-    "load colour scheme:
-    colorscheme darkcloud
-endif
+"load colour scheme:
+colorscheme darkcloud
 
 "load user config:
 runtime user.vim
