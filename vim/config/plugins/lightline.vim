@@ -1,89 +1,94 @@
 function! LLModified()
-    return &ft =~ 'help' ? '' : &modified ? '*' : &modifiable ? '' : '-'
+    return &ft =~ "help" ? "" : &modified ? "*" : &modifiable ? "" : "-"
 endfunction
 
 function! LLReadonly()
-    return &ft !~? 'help' && &readonly ? '[RO]' : ''
+    return &ft !~? "help" && &readonly ? "[RO]" : ""
 endfunction
 
 function! LLFilename()
-    let fname = expand('%:t')
+    let fname = expand("%:t")
 
     return
-    \   fname == '__Tagbar__.1' ? g:lightline.fname :
-    \   &ft == 'qf' ? '[Error/Location List]' :
-    \       ('' != LLReadonly() ? LLReadonly() . ' ' : '') .
-    \       ('' != fname ? fname : '[NEW]') .
-    \       ('' != LLModified() ? ' ' . LLModified() : '')
+    \   fname == "__Tagbar__.1" ? g:lightline.fname :
+    \   &ft == "qf" ? "[Error/Location List]" :
+    \       ("" != LLReadonly() ? LLReadonly() . " " : "") .
+    \       ("" != fname ? fname : "[NEW]") .
+    \       ("" != LLModified() ? " " . LLModified() : "")
 endfunction
 
 function! LLFugitive()
-    if expand('%:t') !~? 'Tagbar' && exists('*FugitiveHead')
-        let mark = '' "edit here for cool mark
+    if expand("%:t") !~? "Tagbar" && exists("*FugitiveHead")
+        let mark = ""
         let _ = FugitiveHead()
-        return strlen(_) ? mark._ : ''
+        return strlen(_) ? mark._ : ""
     else
-        return ''
+        return ""
     endif
 endfunction
 
 function! LLFileformat()
-    return winwidth(0) > 70 ? &fileformat : ''
+    return winwidth(0) > 70 ? &fileformat : ""
 endfunction
 
 function! LLFiletype()
-    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'none') : ''
+    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : "none") : ""
 endfunction
 
 function! LLFileencoding()
-    return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+    return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ""
 endfunction
 
 function! LLMode()
-    let fname = expand('%:t')
+    let fname = expand("%:t")
 
-    return fname == '__Tagbar__' ? 'Tagbar' :
-    \   winwidth(0) > 60 ? lightline#mode() : ''
+    return fname == "__Tagbar__" ? "Tagbar" :
+    \   winwidth(0) > 60 ? lightline#mode() : ""
 endfunction
 
-let g:tagbar_status_func = 'TagbarStatusFunc'
+let g:tagbar_status_func = "TagbarStatusFunc"
 
 function! TagbarStatusFunc(current, sort, fname, ...) abort
-    let g:lightline.fname = 'tags'
+    let g:lightline.fname = "tags"
     return lightline#statusline(0)
 endfunction
 
 let g:lightline = {
-    \ 'component_function': {
-    \     'fugitive': 'LLFugitive',
-    \     'filename': 'LLFilename',
-    \     'fileformat': 'LLFileformat',
-    \     'filetype': 'LLFiletype',
-    \     'fileencoding': 'LLFileencoding',
-    \     'mode': 'LLMode'
+    \ "enable": {
+    \     "statusline": 1,
+    \     "tabline": 1
     \ },
     \
-    \ 'component_expand': {
-    \     'linter_checking': 'lightline#ale#checking',
-    \     'linter_warnings': 'lightline#ale#warnings',
-    \     'linter_errors': 'lightline#ale#errors',
-    \     'linter_ok': 'lightline#ale#ok'
+    \ "component_function": {
+    \     "fugitive": "LLFugitive",
+    \     "filename": "LLFilename",
+    \     "fileformat": "LLFileformat",
+    \     "filetype": "LLFiletype",
+    \     "fileencoding": "LLFileencoding",
+    \     "mode": "LLMode"
     \ },
     \
-    \ 'component_type': {
-    \     'linter_checking': 'left',
-    \     'linter_warnings': 'warning',
-    \     'linter_errors': 'error',
-    \     'linter_ok': 'left'
+    \ "component_expand": {
+    \     "linter_checking": "lightline#ale#checking",
+    \     "linter_warnings": "lightline#ale#warnings",
+    \     "linter_errors": "lightline#ale#errors",
+    \     "linter_ok": "lightline#ale#ok"
     \ },
     \
-    \ 'component': {
-    \     'tagbar': '%{tagbar#currenttag("[%s]", "", "f")}'
+    \ "component_type": {
+    \     "linter_checking": "left",
+    \     "linter_warnings": "warning",
+    \     "linter_errors": "error",
+    \     "linter_ok": "left"
     \ },
     \
-    \ 'active': {
-    \     'left': [[ 'mode', 'paste' ], [ 'fugitive', 'filename' ], [ 'tagbar' ]],
-    \     'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ], [ 'fileformat', 'fileencoding', 'filetype' ], [ 'percent', 'lineinfo' ]]
+    \ "component": {
+    \     "tagbar": "%{tagbar#currenttag('[%s]', '', 'f')}"
+    \ },
+    \
+    \ "active": {
+    \     "left": [[ "mode", "paste" ], [ "fugitive", "filename" ], [ "tagbar" ]],
+    \     "right": [[ "linter_checking", "linter_errors", "linter_warnings", "linter_ok" ], [ "fileformat", "fileencoding", "filetype" ], [ "percent", "lineinfo" ]]
     \ }
 \ }
 
@@ -93,23 +98,20 @@ let g:lightline#ale#indicator_errors = "E:"
 let g:lightline#ale#indicator_ok = "OK"
 
 "status bar config with and without powerline fonts (default: 0)
-if !exists("g:enablepowerline")
-    let g:enablepowerline = 0
-endif
-
 if (g:enablepowerline == 1)
-    let g:lightline.separator = { 'left': '', 'right': '' }
-    let g:lightline.subseparator = { 'left': '', 'right': '' }
+    let g:lightline.separator = { "left": "", "right": "" }
+    let g:lightline.subseparator = { "left": "", "right": "" }
 else
-    let g:lightline.separator = { 'left': '', 'right': '' }
-    let g:lightline.subseparator = { 'left': '|', 'right': '|' }
+    let g:lightline.separator = { "left": "", "right": "" }
+    let g:lightline.subseparator = { "left": "|", "right": "|" }
+    let g:lightline.tabline_subseparator = { "left": "", "right": "" }
 endif
 
 "ligtline theme {{{
-    let s:p = { 'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {} }
+    let s:p = { "normal": {}, "inactive": {}, "insert": {}, "replace": {}, "visual": {}, "tabline": {} }
 
     if &term != "linux"
-        let g:lightline.colorscheme = 'darkcloud'
+        let g:lightline.colorscheme = "darkcloud"
 
         let s:p.normal.left = [[ g:cBlue, g:cDarkBg ], [ g:cWhite, g:cLightBg ]]
         let s:p.inactive.left = [[ g:cGray3, g:cDarkBg ], [ g:cGray3, g:cLightBg ]]
@@ -121,12 +123,13 @@ endif
         let s:p.visual.left = [[ g:cYellow, g:cLightBg ], [ g:cWhite, g:cDarkBg ]]
 
         let s:p.normal.middle = [[ g:cWhite, g:cLightBg ]]
-        let s:p.tabline.left = [[ g:cWhite, g:cDarkBg ]]
-        let s:p.tabline.tabsel = [[ g:cWhite, g:cLightBg ]]
-        let s:p.tabline.middle = [[ g:cDarkBg, g:cGray1 ]]
-        let s:p.tabline.right = copy(s:p.normal.right)
         let s:p.normal.error = [[ g:cRed, g:cLightBg ]]
         let s:p.normal.warning = [[ g:cYellow, g:cLightBg ]]
+
+        let s:p.tabline.left = [[ g:cGray2, g:cLightBg ]]
+        let s:p.tabline.tabsel = [[ g:cWhite, g:cDarkBg ]]
+        let s:p.tabline.middle = [[ g:cGray2, g:cLightBg ]]
+        let s:p.tabline.right = [[ g:cWhite, g:cDarkBg ]]
 
         let g:lightline#colorscheme#darkcloud#palette = lightline#colorscheme#fill(s:p)
     endif
