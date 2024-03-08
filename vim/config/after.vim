@@ -43,6 +43,7 @@ autocmd FileChangedRO * nested set noreadonly
     autocmd Filetype text,gitcommit,mail setlocal wrap
     autocmd FileType tmux setlocal commentstring=#\ %s "set the comment string to #
     autocmd FileType scss setlocal iskeyword+=$
+    autocmd Filetype markdown setlocal iskeyword+=-
     autocmd FileType javascript setlocal iskeyword+=- iskeyword+=.
 
     "special side/bottom-bar settings to apply when opened
