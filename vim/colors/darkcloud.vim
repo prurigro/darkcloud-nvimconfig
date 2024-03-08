@@ -92,7 +92,7 @@ endfun
     call s:C("PmenuSel",g:cBlue,g:cLightBg,"bold")
 
     "search
-    call s:C("Search",g:cRed,g:cWhite,"bold")
+    call s:C("Search",g:cBlack,g:cWhite,"bold")
     hi! link IncSearch Search
     hi! link IncSearchMatch Search
     hi! link IncSearchMatchReverse Search
