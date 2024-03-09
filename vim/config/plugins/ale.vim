@@ -29,18 +29,6 @@ let g:ale_lint_on_insert_leave = 1
 "show which linter is complaining
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
-"specified ale fixers
-let g:ale_fixers = {
-    \     'javascript': [ 'eslint' ],
-    \     'vue': [ 'eslint' ]
-    \ }
-
-"specified ale linters
-let g:ale_linters = {
-    \     'javascript': [ 'eslint' ],
-    \     'vue': [ 'eslint' ]
-    \ }
-
 "don't run ale on minified files
 let g:ale_pattern_options = {
     \     '\.min\.[^\.]*$': { 'ale_linters': [], 'ale_fixers': [] },
