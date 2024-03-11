@@ -76,13 +76,13 @@ endfun
     call s:C("LineNr",g:cGray4,"","bold")
 
     "selected text
-    call s:C("Visual","",g:cDarkBg,"standout")
+    call s:C("Visual","","","standout")
 
     "vertical split divider
     call s:C("VertSplit",g:cGray1,"","")
 
     "matched parenthesis
-    call s:C("MatchParen",g:cWhite,g:cLightBg,"bold")
+    call s:C("MatchParen","","","underline,bold")
 
     "whitespace
     call s:C("ExtraWhiteSpace",g:cDarkRed,g:cDarkBg,"")
@@ -165,6 +165,11 @@ endfun
 
     "coffeeScript
     hi! link coffeeRegExp javaScriptRegexpString
+
+    "css/sass
+    call s:C("cssBraces",g:cBlue,"","")
+    call s:C("sassDefinition",g:cRed,"","bold")
+    call s:C("sassClassChar",g:cYellow,"","bold")
 
     "dosini
     hi! link dosiniLabel Function
