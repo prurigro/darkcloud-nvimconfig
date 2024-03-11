@@ -37,11 +37,15 @@ autocmd FileChangedRO * nested set noreadonly
     autocmd BufNewFile,BufRead *.neomuttrc setlocal ft=neomuttrc
     autocmd BufNewFile,BufRead *pacman.conf setlocal ft=conf
 
-    "filtype specific settings
+    "word processing
+    autocmd Filetype markdown,text,gitcommit,mail setlocal nonumber spell tabstop=2 shiftwidth=2 "defaults
+    autocmd Filetype text,gitcommit,mail setlocal wrap nolist textwidth=80 linebreak breakat&vim breakat-=* breakat-=. breakat-=/ breakat-=? breakat-=, breakat-=: breakat-=; breakat-=! "text wrapping
+
+    "comment string
+    autocmd FileType tmux setlocal commentstring=#\ %s
+
+    "iskeyword
     autocmd BufEnter,FileType sh setlocal iskeyword-=.
-    autocmd Filetype markdown,text,gitcommit,mail setlocal nonumber spell tabstop=2 shiftwidth=2 "word processing defaults
-    autocmd Filetype text,gitcommit,mail setlocal wrap nolist textwidth=80 linebreak breakat&vim breakat-=* breakat-=. breakat-=/ breakat-=? breakat-=, breakat-=: breakat-=; breakat-=! "configure text wrapping for applicable filetypes
-    autocmd FileType tmux setlocal commentstring=#\ %s "set the comment string to #
     autocmd FileType scss setlocal iskeyword+=$
     autocmd Filetype markdown setlocal iskeyword+=-
     autocmd FileType javascript setlocal iskeyword+=- iskeyword+=.
