@@ -27,7 +27,7 @@ autocmd FileChangedRO * nested set noreadonly
     autocmd BufEnter * :syntax sync fromstart
 
     "disable automatic line breaks
-    autocmd VimEnter * set textwidth=0
+    set textwidth=0
 
     "set filetypes for various file extensions
     autocmd BufNewFile,BufRead *.aspx,*.asmx,*.ascx,*.master setlocal ft=aspnet
@@ -39,8 +39,8 @@ autocmd FileChangedRO * nested set noreadonly
 
     "filtype specific settings
     autocmd BufEnter,FileType sh setlocal iskeyword-=.
-    autocmd Filetype text,markdown,gitcommit,mail setlocal nonumber spell nolist linebreak textwidth=80 tabstop=2 shiftwidth=2 breakat&vim breakat-=* breakat-=. breakat-=/ breakat-=? breakat-=, breakat-=: breakat-=; breakat-=! "set some defaults for word processing
-    autocmd Filetype text,gitcommit,mail setlocal wrap
+    autocmd Filetype markdown,text,gitcommit,mail setlocal nonumber spell tabstop=2 shiftwidth=2 "word processing defaults
+    autocmd Filetype text,gitcommit,mail setlocal wrap nolist textwidth=80 linebreak breakat&vim breakat-=* breakat-=. breakat-=/ breakat-=? breakat-=, breakat-=: breakat-=; breakat-=! "configure text wrapping for applicable filetypes
     autocmd FileType tmux setlocal commentstring=#\ %s "set the comment string to #
     autocmd FileType scss setlocal iskeyword+=$
     autocmd Filetype markdown setlocal iskeyword+=-
