@@ -46,7 +46,7 @@ autocmd FileChangedRO * nested set noreadonly
 
     "iskeyword
     autocmd BufEnter,FileType sh setlocal iskeyword-=.
-    autocmd FileType scss setlocal iskeyword+=$
+    autocmd FileType scss setlocal iskeyword+=$ iskeyword+=-
     autocmd Filetype markdown setlocal iskeyword+=-
     autocmd FileType javascript setlocal iskeyword+=- iskeyword+=.
 
