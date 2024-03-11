@@ -39,7 +39,7 @@ autocmd FileChangedRO * nested set noreadonly
 
     "word processing
     autocmd Filetype markdown,text,gitcommit,mail setlocal nonumber spell tabstop=2 shiftwidth=2 "defaults
-    autocmd Filetype text,gitcommit,mail setlocal wrap nolist textwidth=80 linebreak breakat&vim breakat-=* breakat-=. breakat-=/ breakat-=? breakat-=, breakat-=: breakat-=; breakat-=! "text wrapping
+    autocmd Filetype text,mail setlocal wrap nolist textwidth=80 linebreak breakat&vim breakat-=* breakat-=. breakat-=/ breakat-=? breakat-=, breakat-=: breakat-=; breakat-=! "text wrapping
 
     "comment string
     autocmd FileType tmux setlocal commentstring=#\ %s
