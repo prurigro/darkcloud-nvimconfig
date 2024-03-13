@@ -272,7 +272,7 @@ fi
 # GENERATE PLUGIN HELP
 #
 
-type -P vim >/dev/null && {
+type -P nvim >/dev/null && {
     printf '%s' "$cbg_blue >> Generating plugin help:$c_reset"
     $timeout_command --preserve-status --foreground 1m nvim -c 'helptags ALL|qa!'
 
