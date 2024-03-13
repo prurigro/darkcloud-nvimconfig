@@ -274,14 +274,14 @@ fi
 
 type -P vim >/dev/null && {
     printf '%s' "$cbg_blue >> Generating plugin help:$c_reset"
-    $timeout_command --preserve-status --foreground 1m nvim -c 'Helptags|qa!'
+    $timeout_command --preserve-status --foreground 1m nvim -c 'helptags ALL|qa!'
 
     if (( ! $? )); then
         printf '%s\n' "$cfg_green_bold SUCCESS! $c_reset"
     else
         reset -I
         printf '%s\n' "$cfg_red_bold FAIL! $c_reset"
-        error "nvim -c 'Helptags|qa!'" 'Generating helpdocs for the submodules failed'
+        error "nvim -c 'helptags ALL|qa!'" 'Generating helpdocs for the submodules failed'
     fi
 }
 
