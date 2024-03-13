@@ -7,9 +7,6 @@
 [submodule "vim/bundle/lightline.vim"]
 	path = vim/bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim
-[submodule "vim/bundle/vim-togglelist"]
-	path = vim/bundle/vim-togglelist
-	url = https://github.com/milkypostman/vim-togglelist.git
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
@@ -88,3 +85,6 @@
 [submodule "vim/bundle/vista.vim"]
 	path = vim/bundle/vista.vim
 	url = https://github.com/liuchengxu/vista.vim
+[submodule "vim/bundle/qf.nvim"]
+	path = vim/bundle/qf.nvim
+	url = https://github.com/ten3roberts/qf.nvim

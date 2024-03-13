@@ -154,6 +154,9 @@
 "    >>                       | (N) -> next difference (vimdiff/signify)
 "    <<                       | (N) -> previous difference (vimdiff/signify)
 "
+"    [[                       | (N) -> jump to previous issue in the location list (qf.nvim)
+"    ]]                       | (N) -> jump to the next issue in the location list (qf.nvim)
+"
 "  (selection)
 "    <Ctrl-a>                 | (N) -> select all text
 "    <Ctrl-a>                 | (V) -> select all text
@@ -415,7 +418,7 @@
         nnoremap <silent><expr> <Leader>] ':Vista!!<CR>'
 
         "toggle the location list
-        nnoremap <silent><expr> <Leader><Leader> ':call ToggleLocationList()<CR>'
+        nnoremap <Leader><Leader> <cmd>lua require('qf').toggle('l', false)<CR>
     "}
 
     "SPELLCHECK:{
@@ -542,6 +545,10 @@
         nmap [g <plug>(signify-prev-hunk)
         nmap >> ]g
         nmap << [g
+
+        "jump to the previous and next issues in the location list
+        nnoremap [[ <cmd>lua require('qf').above('l')<CR>
+        nnoremap ]] <cmd>lua require('qf').below('l')<CR>
     "}
 
     "SELECTION:{
@@ -576,7 +583,7 @@
     autocmd FileType qf map <buffer> h k
     autocmd FileType qf map <buffer> <2-LeftMouse> <CR>
     autocmd FileType qf map <buffer> <Space> <CR><C-w>p
-    autocmd FileType qf if getwininfo(win_getid())[0]['loclist'] == 0|map <buffer> <silent><expr> q ':call ToggleQuickfixList()<CR>'|else|map <buffer> <silent><expr> q ':call ToggleLocationList()<CR>'|endif
+    autocmd FileType qf map <buffer> <silent><expr> q ':q<CR>'
 
     "vimdiff
     autocmd FilterWritePre * if &diff|nmap <buffer> <silent><expr> <Leader><> ':diffu<CR>'|endif
