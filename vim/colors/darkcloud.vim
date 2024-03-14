@@ -366,6 +366,17 @@ endfun
         hi! link @conditional Conditional
         hi! link @method @function
         hi! link @note @comment
+
+        "scss
+        call s:C("@keyword.directive.scss",g:cYellow,"","")
+        call s:C("@tag.scss",g:cYellow,"","")
+        call s:C("@property.scss",g:cRed,"","bold")
+        call s:C("@variable.scss",g:cBlue,"","bold")
+        call s:C("@type.scss",g:cRed,"","bold")
+        call s:C("@punctuation.delimiter.scss",g:cGray2,"","")
+        call s:C("@number.scss",g:cWhite,"","bold")
+        hi! link @number.float.scss @number.scss
+        hi! link @variable.parameter.scss @variable.scss
     endif
 "}}}
 
