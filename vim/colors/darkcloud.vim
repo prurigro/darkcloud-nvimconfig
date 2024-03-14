@@ -367,16 +367,30 @@ endfun
         hi! link @method @function
         hi! link @note @comment
 
+        "css
+        call s:C("@keyword.directive.css",g:cYellow,"","")
+        call s:C("@function.css",g:cGray1,"","")
+        call s:C("@tag.css",g:cYellow,"","")
+        call s:C("@property.css",g:cRed,"","bold")
+        call s:C("@variable.css",g:cBlue,"","bold")
+        call s:C("@number.css",g:cWhite,"","bold")
+        call s:C("@number.float.css",g:cWhite,"","bold")
+        call s:C("@type.css",g:cRed,"","bold")
+        call s:C("@punctuation.delimiter.css",g:cGray2,"","")
+        hi! link @punctuation.bracket.css @punctuation.delimiter.css
+
         "scss
-        call s:C("@keyword.directive.scss",g:cYellow,"","")
-        call s:C("@tag.scss",g:cYellow,"","")
-        call s:C("@property.scss",g:cRed,"","bold")
-        call s:C("@variable.scss",g:cBlue,"","bold")
-        call s:C("@type.scss",g:cRed,"","bold")
-        call s:C("@punctuation.delimiter.scss",g:cGray2,"","")
-        call s:C("@number.scss",g:cWhite,"","bold")
-        hi! link @number.float.scss @number.scss
-        hi! link @variable.parameter.scss @variable.scss
+        hi! link @keyword.directive.scss @keyword.directive.css
+        hi! link @function.scss @function.css
+        hi! link @tag.scss @tag.css
+        hi! link @property.scss @property.css
+        hi! link @variable.scss @variable.css
+        hi! link @variable.parameter.scss @variable.css
+        hi! link @number.scss @number.css
+        hi! link @number.float.scss @number.float.css
+        hi! link @type.scss @type.css
+        hi! link @punctuation.delimiter.scss @punctuation.delimiter.css
+        hi! link @punctuation.bracket.scss @punctuation.delimiter.css
     endif
 "}}}
 
