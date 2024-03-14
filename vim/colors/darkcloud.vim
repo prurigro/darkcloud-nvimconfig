@@ -168,7 +168,7 @@ endfun
 
     "css/sass
     call s:C("cssBraces",g:cBlue,"","")
-    call s:C("sassDefinition",g:cWhite,"","bold")
+    call s:C("sassDefinition",g:cGray2,"","bold")
     call s:C("sassAmpersand",g:cBlue,"","bold")
     call s:C("sassClassChar",g:cYellow,"","bold")
 
