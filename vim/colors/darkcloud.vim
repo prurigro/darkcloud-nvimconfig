@@ -99,6 +99,10 @@ endfun
     hi! link IncSearchOnCursor IncSearch
     hi! link IncSearchCursor IncSearch
 
+    "quickfix
+    call s:C("QuickFixLine","","","bold,underline")
+    call s:C("qfLineNr",g:cYellow,"","")
+
     "status line
     call s:C("StatusLine","",g:cLightBg,"")
     hi! link StatusLineNC StatusLine
