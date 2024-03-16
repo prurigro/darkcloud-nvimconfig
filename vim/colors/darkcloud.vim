@@ -176,6 +176,11 @@ endfun
     call s:C("sassAmpersand",g:cBlue,"","bold")
     call s:C("sassClassChar",g:cYellow,"","bold")
 
+    "diff
+    call s:C("diffIndexLine",g:cGray2,"","italic")
+    call s:C("diffOldFile",g:cYellow,"","italic")
+    call s:C("diffNewFile",g:cBlue,"","italic")
+
     "dosini
     hi! link dosiniLabel Function
 
