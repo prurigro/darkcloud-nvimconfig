@@ -440,7 +440,7 @@
 
         "P pastes and replaces the buffer, p pastes and keeps it
         vnoremap P p
-        xmap p <Plug>ReplaceWithRegisterVisual
+        vnoremap p P
 
         "delete/cut operations that don't replace the paste buffer
         nnoremap <Leader>x "_x
