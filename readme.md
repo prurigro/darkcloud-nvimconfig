@@ -25,9 +25,9 @@ A theme, config and collection of plugins for Neovim
 
 ## Installation
 
-1. Clone the darkcloud-nvimconfig repo and run the `update` script.
-2. By default the config expects darkcloud-nvimconfig to be installed @ `/etc/darkcloud-nvimconfig`, if you're installing it elsewhere you should add `let g:darkcloudpath = "/path/to/darkcloud-nvimconfig"` to your neovim init.
-3. Add `source /path/to/darkcloud-nvimconfig/init.vim` to the neovim init that you want to use the config with
+1. Clone the darkcloud-nvimconfig repo and run the `update` script
+2. By default darkcloud-nvimconfig expects to be installed @ `/etc/darkcloud-nvimconfig`, if you're installing it elsewhere you should add `let g:darkcloudpath = "/path/to/darkcloud-nvimconfig"` to your neovim init
+3. Add `source /path/to/darkcloud-nvimconfig/init.vim` to your neovim init (after `let g:darkcloudpath = ...` if present)
 
 ## Configuration
 
