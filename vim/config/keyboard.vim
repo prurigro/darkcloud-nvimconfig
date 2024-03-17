@@ -93,7 +93,6 @@
 "    <Leader>p                | (N) -> view the paste buffers and register contents
 "    P                        | (V) -> save selection to the buffer and paste over
 "    p                        | (V) -> preserve the buffer pasting over selected text
-"    Y                        | (N) -> copy to the end of the line
 "
 "  (delete/cut operations that don't replace the paste buffer)
 "    <Leader>x                | (N) -> delete the char(s) under and the cursor
@@ -442,9 +441,6 @@
         "P pastes and replaces the buffer, p pastes and keeps it
         vnoremap P p
         xmap p <Plug>ReplaceWithRegisterVisual
-
-        "copy to the end of the line
-        nnoremap Y vg_y
 
         "delete/cut operations that don't replace the paste buffer
         nnoremap <Leader>x "_x
