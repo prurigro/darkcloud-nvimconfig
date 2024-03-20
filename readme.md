@@ -18,9 +18,9 @@ A theme, config and collection of plugins for Neovim
 ## Distribution Features
 
 * **Default Configuration**: A complete set of defaults, focusing on the most modern settings that still provide a compatible experience
-* **Custom theme**: An original colour scheme with explicit values set to optimize the look of individual filetypes
+* **Custom theme**: An original colour scheme with explicit values set to optimize the look of individual file types
 * **Key Bindings/Aliases**: A set of bindings and aliases defined to group similar features and provide numerous (and sometimes more familiar) ways to access options
-* **Plugins**: A set of plugins have been included and configured to provide support for most normally-unsupported filetypes, and a set of features useful when using Vim as an editor
+* **Plugins**: A set of plugins have been included and configured to provide support for most normally-unsupported file types, and a set of features useful when using Vim as an editor
 * **Custom Configuration**: A second vimrc and bundle folder are included that aren't maintained as part of the repo, making custom plugins and configuration easy to add
 
 ## Installation
@@ -36,7 +36,7 @@ A theme, config and collection of plugins for Neovim
   * `g:enabletreesitter`: **1** = Use treesitter for compatible files | **0** = Keep treesitter disabled (default: **0**)
   * `g:enablecompletion`: **1** = Enable autocompletion | **0** = Disable autocompletion (default: **0**)
   * `g:enableautotags`: **1** = Automatically generate tags files | **0** = Disable tag generation (default: **0**)
-  * `g:enablepowerline`: **1** = Render the statusline using characters that require powerline-patched fonts | **0** = Render the statusbar with characters that work with all fonts (default: **0**)
+  * `g:enablepowerline`: **1** = Render the status line using characters that require powerline-patched fonts | **0** = Render the status line with characters that work with all fonts (default: **0**)
 * **Custom Plugins**: Pathogen compatible plugins can be cloned or extracted to `local/bundle/`, or a folder named `bundle` in any of the folders in the runtimepath
 * **Update Script**: (requires: bash+git) Use the `update` script to update the project and submodules, as well as handle any required maintenance
 
@@ -115,10 +115,10 @@ For a complete list of mappings specific to **darkcloud-nvimconfig**, check the 
 * [ale](https://github.com/w0rp/ale): Asynchronous Lint Engine
 * [Comment.nvim](https://github.com/numToStr/Comment.nvim): Smart and Powerful commenting plugin for neovim
   * [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring): A Neovim plugin for setting the commentstring option based on the cursor location in the file. The location is checked via treesitter queries
-* [lightline.vim](https://github.com/itchyny/lightline.vim): A light and configurable statusline/tabline for Vim
+* [lightline.vim](https://github.com/itchyny/lightline.vim): A light and configurable statusline/tabline plugin for Vim
   * [lightline-ale](https://github.com/maximbaz/lightline-ale): Provides ALE indicator for the lightline vim plugin
 * [nvim-cmp](https://github.com/hrsh7th/nvim-cmp): A completion engine plugin for neovim written in Lua
-  * [cmp-async-path](https://codeberg.org/FelipeLema/cmp-async-path): Async filesystem path source for nvim-cmp
+  * [cmp-async-path](https://codeberg.org/FelipeLema/cmp-async-path): Async file system path source for nvim-cmp
   * [cmp-buffer](https://github.com/hrsh7th/cmp-buffer): Buffer words source for nvim-cmp
   * [cmp-nvim-tags](https://github.com/quangnguyen30192/cmp-nvim-tags): Tags source for nvim-cmp
   * [cmp-omni](https://github.com/hrsh7th/cmp-omni): Omnifunc source for cmp-nvim
@@ -130,7 +130,7 @@ For a complete list of mappings specific to **darkcloud-nvimconfig**, check the 
 * [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): Treesitter configurations and abstraction layer for Neovim
   * [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects): Syntax aware text-objects, select, move, swap, and peek support
 * [qf.nvim](https://github.com/ten3roberts/qf.nvim):  Extends the default quickfix and location lists for neovim
-* [splitjoin.vim](https://github.com/AndrewRadev/splitjoin.vim): Simplifies the transition between multiline and single-line code
+* [splitjoin.vim](https://github.com/AndrewRadev/splitjoin.vim): Simplifies the transition between multi-line and single-line code
 * [tabular](https://github.com/godlygeek/tabular): Vim script for text filtering and alignment
 * [vim-fugitive](https://github.com/tpope/vim-fugitive): A wrapper integrating git into vim in such a way as to provide features neither of them could offer on their own
 * [vim-gutentags](https://github.com/xolox/vim-easytags): A plugin that takes care of the much needed management of tags files in Vim
