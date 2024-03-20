@@ -14,7 +14,7 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
     runtime! macros/matchit.vim
 endif
 
-"enable omnicompletion for any filetype without that has syntax highlighting
+"enable omni-completion for any file type without that has syntax highlighting
 if exists("+omnifunc")
     autocmd VimEnter,Filetype * if &omnifunc == ""|setlocal omnifunc=syntaxcomplete#Complete|endif
 endif
@@ -22,14 +22,14 @@ endif
 "prevent warnings when changing read-only files
 autocmd FileChangedRO * nested set noreadonly
 
-"FILETPE AND SYNTAX: {{{
+"FILE TYPE AND SYNTAX: {{{
     "enable more accurate syntax synchronization
     autocmd BufEnter * :syntax sync fromstart
 
     "disable automatic line breaks
     set textwidth=0
 
-    "set filetypes for various file extensions
+    "set file types for various file extensions
     autocmd BufNewFile,BufRead *.aspx,*.asmx,*.ascx,*.master setlocal ft=aspnet
     autocmd BufNewFile,BufRead *.gradle setlocal ft=groovy
     autocmd BufNewFile,BufRead *eslintrc setlocal ft=json

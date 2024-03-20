@@ -13,7 +13,7 @@
     set nocompatible "disable vi-compatibility settings
     set backspace=indent,eol,start "enables/configures standard backspace behaviour
 
-    "use the '*' register as well as the the '+' register if it's available too
+    "use the '*' register as well as the '+' register if it's available too
     set clipboard=unnamed
 
     if has('unnamedplus')
@@ -42,7 +42,7 @@
     if $TERM =~ '^linux$'|set t_Co=8|elseif !has("gui_running")|set t_Co=256|endif
     set ttyfast "assume a fast connection to the terminal for better rendering
 
-    "configure to primarily use utf8
+    "configure to primarily use utf-8
     if has("multi_byte")
         if &termencoding == ""
             let &termencoding = &encoding
@@ -57,7 +57,7 @@
 
 "GENERAL SETTINGS: {{{
     "FILE: {{{
-        filetype plugin indent on "enable filetype-based auto-indentation
+        filetype plugin indent on "enable file type-based auto-indentation
         syntax on "enable syntax highlighting
         set formatoptions=roqnl12 "how automatic formatting is to be done
         set diffopt=foldcolumn:0,filler "vimdiff default settings
@@ -69,7 +69,7 @@
 
     "USER INTERFACE: {{{
         set updatetime=100 "set updates to occur every 100ms
-        set laststatus=2 showcmd statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v] "statusline init and config
+        set laststatus=2 showcmd statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v] "status line init and config
         set winheight=1 winminheight=1 "set the minimum window height to 1 lines
         set winwidth=1 winminwidth=1 "set the minimum window width to 1 columns
         set noshowmode "don't display mode information handled by lightline
@@ -85,7 +85,7 @@
         set list listchars=tab:>-,trail:- "display tabs as: >--- and trailing spaces as: -
         set showmatch "show matching open bracket when closed bracket is inserted
         set matchtime=5 "the amount of time before the matching bracket will highlight
-        let &showbreak = "" "character to prepend to wrapped lines when linewrapping is enabled
+        let &showbreak = "" "character to prepend to wrapped lines when line wrapping is enabled
 
         "enable tab completion in command mode and configure how it handles extensions
         set completeopt=longest,menuone
@@ -123,7 +123,7 @@
                 augroup END
             endif
 
-            "update the current filetype when a file is renamed
+            "update the current file type when a file is renamed
             augroup RenameCheckFiletype
                 autocmd!
                 autocmd BufFilePost * filetype detect
