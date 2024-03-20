@@ -49,8 +49,8 @@ endfun
 "SYNTAX COLORS:
 
 "SPELL CHECKING UNDERLINE: {{{
-    call s:C("SpellBad","","","italic,underline")
-    call s:C("SpellCap","","","italic,underline")
+    call s:C("SpellBad",g:cRed,"","italic,undercurl")
+    call s:C("SpellCap",g:cYellow,"","italic,undercurl")
     call s:C("SpellRare","","","")
     call s:C("SpellLocal","","","")
 "}}}
