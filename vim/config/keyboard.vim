@@ -32,8 +32,6 @@
 "    <Ctrl-Alt-RightClick>    | (A) -> paste at the cursor (not mouse)
 "    <Ctrl-Alt-MiddleClick>   | (A) -> paste at the cursor (not mouse)
 "
-"    <Shift-MiddleClick>      | (A) -> paste from xorg paste buffer
-"
 "  (terminal)
 "    <Esc>                    | (T) -> leave edit mode
 "
@@ -66,7 +64,7 @@
 "    ik                       | (N) -> add cursor character as a keyword
 "    iK                       | (N) -> remove cursor character as a keyword
 "
-"    ~                        | (N) -> popup a command reference
+"    ~                        | (N) -> pop-up a command reference
 "    <Leader><F1>             | (N) -> toggle the vim reference manual
 "    `                        | (A) -> toggle the gutter(numbers+folds+signify)
 "
@@ -116,8 +114,8 @@
 "    <Leader>w                | (N) -> remove whitespace
 "    <Tab>                    | (V) -> indent all the lines currently selected
 "    <Tab>                    | (N) -> indent the current line
-"    <Shift-Tab>              | (V) -> un-indent all the lines currently selected
-"    <Shift-Tab>              | (N) -> un-indent the current line
+"    <Shift-Tab>              | (V) -> unindent all the lines currently selected
+"    <Shift-Tab>              | (N) -> unindent the current line
 "    [<Space>                 | (N) -> insert a blank line above the current one
 "    ]<Space>                 | (N) -> insert a blank line below the current one
 "
@@ -170,7 +168,7 @@
 "    <Ctrl-Right>             | (V) -> select one word right
 "    <Ctrl-Left>              | (V) -> select one word left
 "
-"Filetype Specific Mappings:
+"File type Specific Mappings:
 "  (help)
 "    q                        | (A) -> close the dialog
 "
@@ -214,7 +212,7 @@
     nnoremap <S-k> <Nop>
 "}}}
 
-"MAPPINGS: GENERAL KEYBINDINGS AND REBINDINGS {{{
+"MAPPINGS: GENERAL KEYBINDINGS AND REBINDING {{{
     "MOUSE:{
         "hold ctrl to scroll left/right instead of up/down
         noremap <C-ScrollWheelUp> 4zh
@@ -324,10 +322,6 @@
         snoremap <C-A-MiddleMouse> p
         vnoremap <C-A-MiddleMouse> p
         inoremap <C-A-MiddleMouse> <C-O>p
-
-        "configure middle click to paste from X
-        noremap <S-Insert> <MiddleMouse>
-        noremap! <S-Insert> <MiddleMouse>
     "}
 
     "TERMINAL:{
@@ -377,7 +371,7 @@
         "toggle the display of the left gutter
         nnoremap <silent><expr> ` ':if (&number)<Bar>set nonumber<Bar>if exists("b:sy")<Bar>SignifyDisable<Bar>endif<Bar>else<Bar>set number<Bar>if exists("b:sy")<Bar>SignifyEnable<Bar>endif<Bar>endif<CR>:echo "gutter visibility toggled"<CR>'
 
-        "toggle folded code at foldpoints
+        "toggle folded code at fold-points
         nnoremap <Space><Space> za
 
         "toggle line wrapping (and bottom bar if using the gui)
@@ -421,16 +415,16 @@
     "}
 
     "SPELLCHECK:{
-        "add the selected mispelled word to the local dictionary
+        "add the selected misspelled word to the local dictionary
         nnoremap ?+ zg
 
-        "display a list of suggestions for the selected mispelled word
+        "display a list of suggestions for the selected misspelled word
         nnoremap ?? hea<C-X>s
 
-        "go to the next mispelled word
+        "go to the next misspelled word
         nnoremap ?N ]s
 
-        "go to the previous mispelled word
+        "go to the previous misspelled word
         nnoremap ?P [s
     "}
 
@@ -473,7 +467,7 @@
         "remove trailing whitespace
         nnoremap <silent><expr> <Leader>w ':FixWhitespace<CR>:echo "Trailing whitespace has been removed"<CR>'
 
-        "tab and untab the currently selected lines
+        "indent and unindent the currently selected lines
         vnoremap <Tab> >gv
         nnoremap <Tab> v>gv<Esc>
         vnoremap <S-Tab> <gv
@@ -593,7 +587,7 @@
     autocmd FilterWritePre * if &diff|cabbrev q! qall!|endif
 "}}}
 
-"MAPPINGS DISABLED FOR GIVEN FILETYPES: {{{
+"MAPPINGS DISABLED FOR GIVEN FILE TYPES: {{{
     "remove incompatible toggles from specific file types
     autocmd Filetype help,qf,diff,vista noremap <buffer> <F11> <Nop>
     autocmd Filetype help,qf,diff,vista noremap <buffer> <Leader>[ <Nop>
