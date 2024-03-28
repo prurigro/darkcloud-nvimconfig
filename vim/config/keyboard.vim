@@ -41,14 +41,12 @@
 "    <Ctrl-t>                 | (N) -> open a new tab
 "
 "  (split)
+"    <Ctrl-w>]                | (N) -> split vertically
+"    <Ctrl-w>[                | (N) -> split horizontally
+"
+"  (rotate)
 "    <Ctrl-w>{                | (N) -> rotate counter-clockwise
 "    <Ctrl-w>}                | (N) -> rotate clockwise
-"    <Ctrl-w>]                | (N) -> split vertically
-"    <Ctrl-w>0                | (N) -> create a vertical split 33% of the window
-"    <Ctrl-w>)                | (N) -> create a vertical split 66% of the window
-"    <Ctrl-w>[                | (N) -> split horizontally
-"    <Ctrl-w>9                | (N) -> create a horizontal split 33% of the window
-"    <Ctrl-w>(                | (N) -> create a horizontal split 66% of the window
 "
 "  (display)
 "    <Backspace>              | (N) -> reset window and clear search
@@ -64,11 +62,8 @@
 "    ik                       | (N) -> add cursor character as a keyword
 "    iK                       | (N) -> remove cursor character as a keyword
 "
-"    ~                        | (N) -> pop-up a command reference
-"    <Leader><F1>             | (N) -> toggle the vim reference manual
-"    `                        | (A) -> toggle the gutter(numbers+folds+signify)
-"
-"    <Space><Space>           | (N) -> toggle selected fold
+"    `                        | (N) -> toggle the gutter
+"    ~                        | (N) -> toggle folds
 "
 "    <F1>                     | (A) -> toggle line wrapping
 "    <F2>                     | (A) -> toggle spell check
@@ -335,14 +330,13 @@
     "}
 
     "SPLIT:{
+        nmap <expr><silent> <C-w>] ':vs<CR>'
+        nmap <expr><silent> <C-w>[ ':sp<CR>:wincmd j<CR>'
+    "}
+
+    "ROTATE:{
         nmap <expr><silent> <C-w>{ ':wincmd R<CR>'
         nmap <expr><silent> <C-w>} ':wincmd r<CR>'
-        nmap <expr><silent> <C-w>] ':vs<CR>'
-        nmap <expr><silent> <C-w>0 ':VS33<CR>'
-        nmap <expr><silent> <C-w>) ':VS66<CR>'
-        nmap <expr><silent> <C-w>[ ':sp<CR>:wincmd j<CR>'
-        nmap <expr><silent> <C-w>9 ':SP33<CR>'
-        nmap <expr><silent> <C-w>( ':SP66<CR>'
     "}
 
     "DISPLAY:{
@@ -365,14 +359,11 @@
         nmap <expr><silent> <Leader>k ':execute "setlocal iskeyword+=".getline(".")[col(".")-1]<CR>:echo "The character ".getline(".")[col(".")-1]." has been added to iskeyword"<CR>'
         nmap <expr><silent> <Leader>K ':execute "setlocal iskeyword-=".getline(".")[col(".")-1]<CR>:echo "The character ".getline(".")[col(".")-1]." has been removed from iskeyword"<CR>'
 
-        "toggle the command reference box
-        nnoremap <silent><expr> ~ ':TCommand<CR>'
-
-        "toggle the display of the left gutter
+        "toggle the gutter
         nnoremap <silent><expr> ` ':if (&number)<Bar>set nonumber<Bar>if exists("b:sy")<Bar>SignifyDisable<Bar>endif<Bar>else<Bar>set number<Bar>if exists("b:sy")<Bar>SignifyEnable<Bar>endif<Bar>endif<CR>:echo "gutter visibility toggled"<CR>'
 
-        "toggle folded code at fold-points
-        nnoremap <Space><Space> za
+        "toggle the fold sidebar
+        nnoremap ~ zRzi
 
         "toggle line wrapping (and bottom bar if using the gui)
         nnoremap <silent><expr> <F1> ':set wrap!<CR>:echo "line wrapping toggled"<CR>'

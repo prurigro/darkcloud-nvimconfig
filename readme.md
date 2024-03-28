@@ -64,6 +64,8 @@ A theme, config and collection of plugins for Neovim
 
 ### Keyboard
 
+A more complete list of key bindings exists at the top of `vim/config/keyboard.vim`
+
 #### Sidebars
 
 | Binding         | Mode | Action                                      |
@@ -76,14 +78,13 @@ A theme, config and collection of plugins for Neovim
 
 | Binding         | Mode | Action                                          |
 |-----------------|------|-------------------------------------------------|
-| ~               | N    | Popup a command list dialog                     |
+| \`              | N    | Toggle gutter (left bar with line numbers, etc) |
+| ~               | N    | Toggle code the code folding sidebar            |
 |                 |      |                                                 |
 | F1              | ALL  | Toggle line wrapping                            |
 | F2              | ALL  | Toggle highlighting of spelling mistakes        |
 | F3              | ALL  | Toggle external-paste mode                      |
 | F4              | ALL  | Toggle source code syntax checking              |
-|                 |      |                                                 |
-| \`              | N    | Toggle gutter (left bar with line numbers etc.) |
 
 #### Spell Check
 

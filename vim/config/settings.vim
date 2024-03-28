@@ -128,40 +128,6 @@
                 autocmd!
                 autocmd BufFilePost * filetype detect
             augroup END
-
-            "functions to create a split using 33% and 66% of the height
-            function s:SPResize33()
-                sp|wincmd =|q
-            endfunction
-
-            function s:sp33()
-                sp|call s:SPResize33()|wincmd j
-            endfunction
-
-            command! -buffer SP33 call s:sp33()
-
-            function s:sp66()
-                sp|wincmd j|call s:SPResize33()
-            endfunction
-
-            command! -buffer SP66 call s:sp66()
-
-            "functions to create a vertical split using 33% and 66% width
-            function s:VSResize66()
-                vs|wincmd =|q
-            endfunction
-
-            function s:vs66()
-                vs|call s:VSResize66()
-            endfunction
-
-            command! -buffer VS66 call s:vs66()
-
-            function s:vs33()
-                vs|wincmd h|call s:VSResize66()|wincmd l
-            endfunction
-
-            command! -buffer VS33 call s:vs33()
         "}}}
     "}}}
 "}}}
