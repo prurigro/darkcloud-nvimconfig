@@ -51,8 +51,8 @@ endfun
 "SPELL CHECKING UNDERLINE: {{{
     call s:C("SpellBad",g:cRed,"","italic,undercurl")
     call s:C("SpellCap",g:cYellow,"","italic,undercurl")
-    call s:C("SpellRare","","","")
     call s:C("SpellLocal","","","")
+    call s:C("SpellRare","","","")
 "}}}
 
 "CORE: {{{
@@ -63,13 +63,13 @@ endfun
     call s:C("Cursor","",g:cDarkBg,"standout")
 
     if &term != "linux"
-        call s:C("CursorLineNr",g:cBlue,g:cLightBg,"bold")
         call s:C("CursorColumn","",g:cLightBg,"")
         call s:C("CursorLine","",g:cLightBg,"")
+        call s:C("CursorLineNr",g:cBlue,g:cLightBg,"bold")
     else
-        call s:C("CursorLineNr",g:cBlue,"","bold")
         call s:C("CursorColumn","","","")
         call s:C("CursorLine","","","")
+        call s:C("CursorLineNr",g:cBlue,"","bold")
     end
 
     "line number
@@ -94,10 +94,10 @@ endfun
     "search
     call s:C("Search","","","standout")
     hi! link IncSearch Search
+    hi! link IncSearchCursor IncSearch
     hi! link IncSearchMatch Search
     hi! link IncSearchMatchReverse Search
     hi! link IncSearchOnCursor IncSearch
-    hi! link IncSearchCursor IncSearch
 
     "quickfix
     call s:C("QuickFixLine","","","bold,underline")
@@ -105,12 +105,12 @@ endfun
 
     "status line
     call s:C("StatusLine","",g:cLightBg,"")
-    hi! link StatusLineNC StatusLine
     call s:C("WildMenu",g:cGray1,g:cLightBg,"")
+    hi! link StatusLineNC StatusLine
 
     "folding
-    call s:C("Folded",g:cBlue,g:cLightBg,"bold")
     call s:C("FoldColumn",g:cWhite,"","bold")
+    call s:C("Folded",g:cBlue,g:cLightBg,"bold")
     call s:C("SignColumn",g:cRed,"","bold")
     hi! link ColorColumn SignColumn
 
@@ -150,8 +150,8 @@ endfun
 
     "errors
     call s:C("Error",g:cRed,g:cBlack,"standout")
-    hi! link WarningMsg Error
     hi! link ErrorMsg Error
+    hi! link WarningMsg Error
 
     "vimdiff
     call s:C("DiffAdd",g:cYellow,"","standout")
@@ -172,22 +172,24 @@ endfun
 
     "css/sass
     call s:C("cssBraces",g:cBlue,"","")
-    call s:C("sassDefinition",g:cGray2,"","bold")
+    call s:C("cssValueNumber",g:cYellow,"","bold")
     call s:C("sassAmpersand",g:cBlue,"","bold")
-    call s:C("sassClassChar",g:cYellow,"","bold")
+    call s:C("sassClass",g:cGray1,"","bold")
+    call s:C("sassClassChar",g:cBlue,"","bold")
+    call s:C("sassDefinition",g:cGray2,"","bold")
 
     "diff
     call s:C("diffIndexLine",g:cGray2,"","italic")
-    call s:C("diffOldFile",g:cYellow,"","italic")
     call s:C("diffNewFile",g:cBlue,"","italic")
+    call s:C("diffOldFile",g:cYellow,"","italic")
 
     "dosini
     hi! link dosiniLabel Function
 
     "gitcommit
+    call s:C("gitcommitFile",g:cRed,"","")
     call s:C("gitcommitSummary",g:cWhite,"","")
     call s:C("gitcommitType",g:cBlue,"","")
-    call s:C("gitcommitFile",g:cRed,"","")
 
     "html
     call s:C("htmlArg",g:cRed,"","bold")
@@ -203,20 +205,20 @@ endfun
     call s:C("htmlTagName",g:cYellow,"","bold")
 
     "javaScript
+    call s:C("jsBracket",g:cYellow,"","bold")
+    call s:C("jsExport",g:cRed,"","bold")
+    call s:C("jsFrom",g:cRed,"","bold")
+    call s:C("jsFuncBlock",g:cBlue,"","")
     call s:C("jsImport",g:cRed,"","bold")
     call s:C("jsModuleKeyword",g:cYellow,"","bold")
-    call s:C("jsFrom",g:cRed,"","bold")
-    call s:C("jsExport",g:cRed,"","bold")
-    call s:C("jsFuncBlock",g:cBlue,"","")
     call s:C("jsObjectKey",g:cBlue,"","")
     call s:C("jsObjectProp",g:cBlue,"","")
-    call s:C("jsBracket",g:cYellow,"","bold")
     call s:C("jsReturn",g:cRed,"","bold")
     hi! link jsBraces Delimiter
-    hi! link jsParens Delimiter
     hi! link jsDomElemAttrs jsSpecial
     hi! link jsDomElemFuncs jsFunction
     hi! link jsHtmlEvents jsSpecial
+    hi! link jsParens Delimiter
 
     "json
     autocmd BufEnter,FileType json hi! link Label Constant
@@ -256,8 +258,8 @@ endfun
     hi! link rubySharpBang Comment
 
     "sh
-    call s:C("shVariable",g:cBlue,"","bold")
     call s:C("shAlias",g:cBlue,"","bold")
+    call s:C("shVariable",g:cBlue,"","bold")
 
     "systemd unit files
     hi! link sdBindIPv6 sdValue
@@ -320,18 +322,18 @@ endfun
         call s:C("@danger",g:cRed,"","bold")
         call s:C("@error",g:cRed,"","bold")
         call s:C("@exception",g:cRed,"","")
+        call s:C("@field",g:cBlue,"","italic")
         call s:C("@float",g:cYellow,"","bold")
         call s:C("@function",g:cGray2,"","bold")
-        call s:C("@function.call",g:cGray2,"","bold")
-        call s:C("@function.method",g:cGray2,"","bold")
         call s:C("@function.builtin",g:cYellow,"","")
+        call s:C("@function.call",g:cGray2,"","bold")
         call s:C("@function.macro",g:cGray2,"","italic")
-        call s:C("@field",g:cBlue,"","italic")
+        call s:C("@function.method",g:cGray2,"","bold")
         call s:C("@include",g:cBlue,"","bold")
         call s:C("@keyword",g:cRed,"","bold")
+        call s:C("@keyword.directive",g:cGray3,"","italic")
         call s:C("@keyword.function",g:cBlue,"","bold")
         call s:C("@keyword.import",g:cYellow,"","bold")
-        call s:C("@keyword.directive",g:cGray3,"","italic")
         call s:C("@label",g:cWhite,"","")
         call s:C("@namespace",g:cGray2,"","")
         call s:C("@none",g:cWhite,"","")
@@ -366,8 +368,8 @@ endfun
         call s:C("@type",g:cBlue,"","bold")
         call s:C("@type.qualifier",g:cYellow,"","bold")
         call s:C("@variable",g:cBlue,"","")
-        call s:C("@variable.member",g:cBlue,"","bold")
         call s:C("@variable.builtin",g:cYellow,"","bold")
+        call s:C("@variable.member",g:cBlue,"","bold")
         call s:C("@variable.parameter",g:cYellow,"","")
         call s:C("@warning",g:cRed,"","")
         hi! link @annotation @comment
@@ -377,29 +379,34 @@ endfun
         hi! link @note @comment
 
         "css
+        call s:C("@function.css",g:cWhite,"","")
         call s:C("@keyword.directive.css",g:cYellow,"","")
-        call s:C("@function.css",g:cGray1,"","")
-        call s:C("@tag.css",g:cYellow,"","")
+        call s:C("@number.css",g:cYellow,"","bold")
+        call s:C("@number.float.css",g:cYellow,"","bold")
         call s:C("@property.css",g:cRed,"","bold")
-        call s:C("@variable.css",g:cBlue,"","bold")
-        call s:C("@number.css",g:cWhite,"","bold")
-        call s:C("@number.float.css",g:cWhite,"","bold")
-        call s:C("@type.css",g:cRed,"","bold")
         call s:C("@punctuation.delimiter.css",g:cGray2,"","")
+        call s:C("@tag.css",g:cYellow,"","")
+        call s:C("@type.css",g:cRed,"","bold")
+        call s:C("@variable.css",g:cBlue,"","")
         hi! link @punctuation.bracket.css @punctuation.delimiter.css
 
         "scss
-        hi! link @keyword.directive.scss @keyword.directive.css
+        call s:C("@attribute.scss",g:cBlue,"","")
+        call s:C("@character.special.scss",g:cBlue,"","bold")
+        call s:C("@keyword.import.scss","","","")
+        call s:C("@operator.scss","","","")
+        call s:C("@punctuation.bracket.scss","","","")
+        call s:C("@punctuation.delimiter.scss","","","")
+        call s:C("@string.scss","","","")
+        call s:C("@type.scss",g:cGray1,"","bold")
+        call s:C("@variable.parameter.scss","","","")
         hi! link @function.scss @function.css
-        hi! link @tag.scss @tag.css
-        hi! link @property.scss @property.css
-        hi! link @variable.scss @variable.css
-        hi! link @variable.parameter.scss @variable.css
-        hi! link @number.scss @number.css
+        hi! link @keyword.directive.scss @keyword.directive.css
         hi! link @number.float.scss @number.float.css
-        hi! link @type.scss @type.css
-        hi! link @punctuation.delimiter.scss @punctuation.delimiter.css
-        hi! link @punctuation.bracket.scss @punctuation.delimiter.css
+        hi! link @number.scss @number.css
+        hi! link @property.scss @property.css
+        hi! link @tag.scss @tag.css
+        hi! link @variable.scss @variable.css
     endif
 "}}}
 
