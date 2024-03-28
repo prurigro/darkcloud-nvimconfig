@@ -393,7 +393,9 @@ endfun
         "scss
         call s:C("@attribute.scss",g:cBlue,"","")
         call s:C("@character.special.scss",g:cBlue,"","bold")
+        call s:C("@keyword.scss","","","")
         call s:C("@keyword.import.scss","","","")
+        call s:C("@keyword.operator.scss","","","")
         call s:C("@operator.scss","","","")
         call s:C("@punctuation.bracket.scss","","","")
         call s:C("@punctuation.delimiter.scss","","","")
