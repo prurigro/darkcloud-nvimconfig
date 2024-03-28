@@ -391,15 +391,16 @@ endfun
         hi! link @punctuation.bracket.css @punctuation.delimiter.css
 
         "scss
-        call s:C("@attribute.scss",g:cBlue,"","")
+        call s:C("@attribute.scss","","","")
         call s:C("@character.special.scss",g:cBlue,"","bold")
-        call s:C("@keyword.scss","","","")
         call s:C("@keyword.import.scss","","","")
         call s:C("@keyword.operator.scss","","","")
+        call s:C("@keyword.scss","","","")
         call s:C("@operator.scss","","","")
         call s:C("@punctuation.bracket.scss","","","")
         call s:C("@punctuation.delimiter.scss","","","")
         call s:C("@string.scss","","","")
+        call s:C("@tag.scss","","","")
         call s:C("@type.scss",g:cGray1,"","bold")
         call s:C("@variable.parameter.scss","","","")
         hi! link @function.scss @function.css
@@ -407,7 +408,6 @@ endfun
         hi! link @number.float.scss @number.float.css
         hi! link @number.scss @number.css
         hi! link @property.scss @property.css
-        hi! link @tag.scss @tag.css
         hi! link @variable.scss @variable.css
     endif
 "}}}
