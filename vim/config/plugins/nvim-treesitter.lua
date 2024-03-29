@@ -18,7 +18,7 @@ if (vim.g.enabletreesitter == 1) then
         highlight = {
             enable = true,
             disable = { "gitcommit", "markdown" },
-            additional_vim_regex_highlighting = { "scss" },
+            additional_vim_regex_highlighting = { "diff", "scss" },
         },
 
         textobjects = {
