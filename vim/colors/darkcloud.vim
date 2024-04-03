@@ -177,6 +177,8 @@ endfun
     call s:C("sassClass",g:cGray1,"","bold")
     call s:C("sassClassChar",g:cBlue,"","bold")
     call s:C("sassDefinition",g:cGray2,"","bold")
+    call s:C("sassMediaQuery",g:cGray2,"","bold")
+    call s:C("sassMixinName",g:cGray2,"","bold")
 
     "diff
     call s:C("diffIndexLine",g:cGray2,"","italic")
@@ -379,7 +381,7 @@ endfun
         hi! link @note @comment
 
         "css
-        call s:C("@function.css",g:cWhite,"","")
+        call s:C("@function.css",g:cBlue,"","")
         call s:C("@keyword.directive.css",g:cYellow,"","")
         call s:C("@number.css",g:cYellow,"","bold")
         call s:C("@number.float.css",g:cYellow,"","bold")
@@ -393,22 +395,22 @@ endfun
         "scss
         call s:C("@attribute.scss","","","")
         call s:C("@character.special.scss",g:cBlue,"","bold")
+        call s:C("@function.scss","","","")
         call s:C("@keyword.import.scss","","","")
         call s:C("@keyword.operator.scss","","","")
         call s:C("@keyword.scss","","","")
         call s:C("@operator.scss","","","")
+        call s:C("@property.scss","","","")
         call s:C("@punctuation.bracket.scss","","","")
         call s:C("@punctuation.delimiter.scss","","","")
         call s:C("@string.scss","","","")
         call s:C("@tag.scss","","","")
         call s:C("@type.scss",g:cGray1,"","bold")
         call s:C("@variable.parameter.scss","","","")
-        hi! link @function.scss @function.css
+        call s:C("@variable.scss","","","")
         hi! link @keyword.directive.scss @keyword.directive.css
         hi! link @number.float.scss @number.float.css
         hi! link @number.scss @number.css
-        hi! link @property.scss @property.css
-        hi! link @variable.scss @variable.css
 
         "diff
         call s:C("@attribute.diff",g:cYellow,"","")
