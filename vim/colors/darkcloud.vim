@@ -245,6 +245,8 @@ endfun
     hi! link objcSuperclass objcClass
 
     "php
+    call s:C("phpIdentifier",g:cBlue,"","")
+    call s:C("phpRelation",g:cYellow,"","")
     hi! link phpArrayPair Operator
     hi! link phpNull Constant
     hi! link phpSuperglobal Identifier
