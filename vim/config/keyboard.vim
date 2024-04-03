@@ -363,7 +363,18 @@
         nnoremap <silent><expr> ` ':if (&number)<Bar>set nonumber<Bar>if exists("b:sy")<Bar>SignifyDisable<Bar>endif<Bar>else<Bar>set number<Bar>if exists("b:sy")<Bar>SignifyEnable<Bar>endif<Bar>endif<CR>:echo "gutter visibility toggled"<CR>'
 
         "toggle the fold sidebar
-        nnoremap ~ zRzi
+        function! FoldToggle()
+            if (&foldcolumn == 0)
+                set foldenable
+                set foldcolumn=1
+                normal zR
+            else
+                set nofoldenable
+                set foldcolumn=0
+            endif
+        endfunction
+
+        nnoremap <silent><expr> ~ ':call FoldToggle()<CR>'
 
         "toggle line wrapping (and bottom bar if using the gui)
         nnoremap <silent><expr> <F1> ':set wrap!<CR>:echo "line wrapping toggled"<CR>'
