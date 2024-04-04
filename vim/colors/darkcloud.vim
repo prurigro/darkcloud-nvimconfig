@@ -400,6 +400,7 @@ endfun
         call s:C("@function.scss","","","")
         call s:C("@keyword.import.scss","","","")
         call s:C("@keyword.operator.scss","","","")
+        call s:C("@keyword.repeat.scss","","","")
         call s:C("@keyword.scss","","","")
         call s:C("@operator.scss","","","")
         call s:C("@property.scss","","","")
