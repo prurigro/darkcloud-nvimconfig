@@ -179,6 +179,7 @@ endfun
     call s:C("sassDefinition",g:cGray2,"","bold")
     call s:C("sassMediaQuery",g:cGray2,"","bold")
     call s:C("sassMixinName",g:cGray2,"","bold")
+    hi! link sassProperty Type
 
     "diff
     call s:C("diffIndexLine",g:cGray2,"","italic")
@@ -405,10 +406,10 @@ endfun
         call s:C("@operator.scss","","","")
         call s:C("@property.scss","","","")
         call s:C("@punctuation.bracket.scss","","","")
-        call s:C("@punctuation.delimiter.scss","","","")
+        call s:C("@punctuation.delimiter.scss",g:cGray2,"","")
         call s:C("@string.scss","","","")
         call s:C("@tag.scss","","","")
-        call s:C("@type.scss",g:cGray1,"","bold")
+        call s:C("@type.scss","","","")
         call s:C("@variable.parameter.scss","","","")
         call s:C("@variable.scss","","","")
         hi! link @keyword.directive.scss @keyword.directive.css
