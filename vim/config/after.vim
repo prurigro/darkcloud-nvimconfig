@@ -64,4 +64,7 @@ autocmd FileChangedRO * nested set noreadonly
 
     "disable the whitespace plugin for mail
     autocmd BufEnter,FileType mail hi ExtraWhitespace ctermbg=NONE guibg=NONE
+
+    "close the quickfix if it's the last window
+    autocmd WinEnter * if winnr("$") == 1 && &buftype == "quickfix"|q|endif
 "}}}
