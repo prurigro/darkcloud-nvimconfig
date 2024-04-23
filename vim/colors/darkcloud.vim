@@ -395,6 +395,13 @@ endfun
         call s:C("@variable.css",g:cBlue,"","")
         hi! link @punctuation.bracket.css @punctuation.delimiter.css
 
+        "diff
+        call s:C("@attribute.diff",g:cYellow,"","")
+        call s:C("@constant.diff",g:cBlue,"","italic")
+        call s:C("@diff.minus",g:cYellow,"","")
+        call s:C("@diff.plus",g:cBlue,"","")
+        call s:C("@function.diff",g:cRed,"","bold")
+
         "scss
         call s:C("@attribute.scss","","","")
         call s:C("@character.special.scss",g:cBlue,"","bold")
@@ -416,12 +423,8 @@ endfun
         hi! link @number.float.scss @number.float.css
         hi! link @number.scss @number.css
 
-        "diff
-        call s:C("@attribute.diff",g:cYellow,"","")
-        call s:C("@constant.diff",g:cBlue,"","italic")
-        call s:C("@diff.minus",g:cYellow,"","")
-        call s:C("@diff.plus",g:cBlue,"","")
-        call s:C("@function.diff",g:cRed,"","bold")
+        "vue
+        call s:C("@function.method.vue",g:cRed,"","bold")
     endif
 "}}}
 
