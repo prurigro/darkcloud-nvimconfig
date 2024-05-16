@@ -14,28 +14,11 @@
     set backspace=indent,eol,start "enables/configures standard backspace behaviour
 
     "use the '*' register as well as the '+' register if it's available too
-    set clipboard=unnamed
-
     if has('unnamedplus')
-        if has('nvim')
-            set clipboard=unnamedplus
-        else
-            set clipboard+=unnamedplus
-        endif
+        set clipboard=unnamedplus
     endif
 
-    if has('nvim')
-        "extend selection instead of showing the right click menu in neovim
-        set mousemodel=extend
-    else
-        "fancy mouse in vim reporting with xterm2 fallback
-        if has("mouse_sgr")
-            set ttymouse=sgr
-        else
-            set ttymouse=xterm2
-        endif
-    endif
-
+    set mousemodel=extend "extend selection instead of showing the right click menu in neovim
     set mouse=a "enables mouse functionality with extended capabilities
 
     "8 colours in $TERM=linux, 256 elsewhere
