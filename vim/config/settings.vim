@@ -66,6 +66,7 @@
         set scrolloff=5 "scroll vertically when the cursor is 5 characters away from the top or bottom
         set sidescroll=1 sidescrolloff=5 "scroll horizontally when the cursor is 5 chars away from the edge
         set list listchars=tab:>-,trail:- "display tabs as: >--- and trailing spaces as: -
+        set shortmess+=I "disable startup message
         set showmatch "show matching open bracket when closed bracket is inserted
         set matchtime=5 "the amount of time before the matching bracket will highlight
         let &showbreak = "" "character to prepend to wrapped lines when line wrapping is enabled
