@@ -399,10 +399,14 @@ endfun
 
         "diff
         call s:C("@attribute.diff",g:cYellow,"","")
-        call s:C("@constant.diff",g:cBlue,"","italic")
+        call s:C("@constant.diff","","","")
         call s:C("@diff.minus",g:cYellow,"","")
         call s:C("@diff.plus",g:cBlue,"","")
         call s:C("@function.diff",g:cRed,"","bold")
+        call s:C("@keyword.diff","","","")
+        call s:C("@number.diff","","","")
+        call s:C("@punctuation.special.diff","","","")
+        call s:C("@string.special.path.diff","","","")
 
         "scss
         call s:C("@attribute.scss","","","")
