@@ -158,6 +158,8 @@ endfun
     call s:C("DiffChange",g:cBlue,"","standout")
     call s:C("DiffDelete",g:cRed,"","standout")
     call s:C("DiffText",g:cGray2,"","standout")
+    call s:C("DiffAdded",g:cBlue,"","bold")
+    call s:C("DiffRemoved",g:cYellow,"","bold")
 "}}}
 
 "LANGUAGE: {{{
