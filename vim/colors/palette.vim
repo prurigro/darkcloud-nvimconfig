@@ -1,4 +1,4 @@
-if has("gui_running") || &term != "linux" && &termguicolors
+if has("gui_running") || &termguicolors
     let g:cBlack = '#000000'
     let g:cWhite = '#ffffff'
 
