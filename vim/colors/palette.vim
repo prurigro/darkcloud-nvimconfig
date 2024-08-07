@@ -1,4 +1,4 @@
-if has("gui_running") || &termguicolors
+if has("gui_running") || &term != "linux" && &termguicolors
     let g:cBlack = '#000000'
     let g:cWhite = '#ffffff'
 
@@ -17,7 +17,7 @@ if has("gui_running") || &termguicolors
 
     let g:cLightBg = '#303030'
     let g:cDarkBg = '#262626'
-elseif &term != "linux" && &t_Co >= 256
+elseif &t_Co >= 256 && &term != "linux"
     let g:cBlack = '0' "#000000
     let g:cWhite = '15' "#ffffff
 

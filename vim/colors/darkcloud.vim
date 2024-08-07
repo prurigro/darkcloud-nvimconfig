@@ -19,30 +19,32 @@ endif
 "declare the name of our theme
 let colors_name = "darkcloud"
 
+"declare the term type
+if has("gui_running") || &termguicolors
+    let g:term_colors_type = "gui"
+else
+    set notermguicolors "required to use cterm colors
+    let g:term_colors_type = "cterm"
+endif
+
 "sets the highlighting for the given group | format: s:C("Name","Foreground","Background","Style")
 fun! s:C(group, fg, bg, attr)
-    if has("gui_running") || &termguicolors
-        let l:term = "gui"
-    else
-        let l:term = "cterm"
-    endif
-
     if a:fg != ""
-        exec "hi " . a:group . " " . l:term . "fg=" . a:fg
+        exec "hi " . a:group . " " . g:term_colors_type . "fg=" . a:fg
     else
-        exec "hi " . a:group . " " . l:term . "fg=NONE"
+        exec "hi " . a:group . " " . g:term_colors_type . "fg=NONE"
     endif
 
     if a:bg != ""
-        exec "hi " . a:group . " " . l:term . "bg=" . a:bg
+        exec "hi " . a:group . " " . g:term_colors_type . "bg=" . a:bg
     else
-        exec "hi " . a:group . " " . l:term . "bg=NONE"
+        exec "hi " . a:group . " " . g:term_colors_type . "bg=NONE"
     endif
 
     if a:attr != ""
-        exec "hi " . a:group . " " . l:term . "=" . a:attr
+        exec "hi " . a:group . " " . g:term_colors_type . "=" . a:attr
     else
-        exec "hi " . a:group . " " . l:term . "=NONE"
+        exec "hi " . a:group . " " . g:term_colors_type . "=NONE"
     endif
 endfun
 
