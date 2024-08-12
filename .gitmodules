@@ -82,3 +82,6 @@
 [submodule "vim/bundle/qf.nvim"]
 	path = vim/bundle/qf.nvim
 	url = https://github.com/ten3roberts/qf.nvim
+[submodule "vim/bundle/smartyank.nvim"]
+	path = vim/bundle/smartyank.nvim
+	url = https://github.com/ibhagwan/smartyank.nvim
