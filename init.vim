@@ -9,13 +9,11 @@
 "                                                             "
 "============================================================="
 
-"darkcloud neovim config folder path: {{{
-    "the location of darkcloud-nvimconfig (default is /etc/darkcloud-nvimconfig)
-    let g:darkcloudpath = get(g:, "darkcloudpath", "/etc/darkcloud-nvimconfig")
-"}}}
+"load config path
+exec 'source ' . expand('<sfile>:p:h') . '/local/path.vim'
 
 "add config directory: (distro-agnostic system-wide)
-let &runtimepath = printf("%s,%s/vim,%s/vim/after,%s/local", &runtimepath, g:darkcloudpath, g:darkcloudpath, g:darkcloudpath)
+let &runtimepath = printf("%s,%s/vim,%s/local", &runtimepath, g:darkcloudpath, g:darkcloudpath)
 
 "load colours
 runtime colors/palette.vim
