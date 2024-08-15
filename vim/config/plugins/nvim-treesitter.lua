@@ -27,6 +27,8 @@ if (vim.g.enabletreesitter == 1) then
                 lookahead = true, -- Automatically jump forward to textobj
 
                 keymaps = {
+                    [ "ap" ] = { query = "@parameter.outer", desc = "Select outer part of a parameter region" },
+                    [ "ip" ] = { query = "@parameter.inner", desc = "Select inner part of a parameter region" },
                     [ "ac" ] = { query = "@class.outer", desc = "Select outer part of a class region" },
                     [ "ic" ] = { query = "@class.inner", desc = "Select inner part of a class region" },
                     [ "af" ] = { query = "@function.outer", desc = "Select outer part of a function region" },
@@ -37,10 +39,10 @@ if (vim.g.enabletreesitter == 1) then
                 selection_modes = {
                     [ "@parameter.outer" ] = "v",
                     [ "@parameter.inner" ] = "v",
-                    [ "@class.inner" ] = "V",
-                    [ "@class.outer" ] = "V",
-                    [ "@function.outer" ] = "V",
-                    [ "@function.inner" ] = "V",
+                    [ "@class.inner" ] = "v",
+                    [ "@class.outer" ] = "v",
+                    [ "@function.outer" ] = "v",
+                    [ "@function.inner" ] = "v",
                 },
 
                 include_surrounding_whitespace = false,
@@ -51,23 +53,27 @@ if (vim.g.enabletreesitter == 1) then
                 set_jumps = true, -- whether to set jumps in the jumplist
 
                 goto_next_start = {
+                    [ "]p" ] = { query = "@parameter.outer", desc = "Next parameter start" },
                     [ "]c" ] = { query = "@class.outer", desc = "Next class start" },
                     [ "]f" ] = { query = "@function.outer", desc = "Next function start" },
                 },
 
-                goto_next_end = {
-                    [ "]C" ] = { query = "@class.outer", desc = "Next class end" },
-                    [ "]F" ] = { query = "@function.outer", desc = "Next function end" },
-                },
-
                 goto_previous_start = {
-                    [ "[c" ] = { query = "@class.outer", desc = "Prevoius class start" },
+                    [ "[p" ] = { query = "@parameter.outer", desc = "Previous parameter start" },
+                    [ "[c" ] = { query = "@class.outer", desc = "Previous class start" },
                     [ "[f" ] = { query = "@function.outer", desc = "Previous function start" },
                 },
 
+                goto_next_end = {
+                    [ "}P" ] = { query = "@parameter.outer", desc = "Next parameter end" },
+                    [ "}C" ] = { query = "@class.outer", desc = "Next class end" },
+                    [ "}F" ] = { query = "@function.outer", desc = "Next function end" },
+                },
+
                 goto_previous_end = {
-                    [ "[C" ] = { query = "@class.outer", desc = "Previous class end" },
-                    [ "[F" ] = { query = "@function.outer", desc = "Previous function end" },
+                    [ "{P" ] = { query = "@parameter.outer", desc = "Previous parameter end" },
+                    [ "{C" ] = { query = "@class.outer", desc = "Previous class end" },
+                    [ "{F" ] = { query = "@function.outer", desc = "Previous function end" },
                 },
             },
         },
