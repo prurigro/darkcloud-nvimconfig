@@ -21,6 +21,12 @@ if (vim.g.enabletreesitter == 1) then
             additional_vim_regex_highlighting = { "diff", "php", "scss" },
         },
 
+        -- vim-matchup
+        matchup = {
+            enable = true
+        },
+
+        -- nvim-treesitter-textobjects
         textobjects = {
             select = {
                 enable = true,
