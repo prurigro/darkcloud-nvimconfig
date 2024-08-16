@@ -13,7 +13,6 @@
 #
 
 user_vim_config=local/user.vim
-path_config=local/path.vim
 local_bundle_dir=local/bundle
 error_log=update-errors.log
 
@@ -124,9 +123,6 @@ printf '\n%s\n' "$cbg_black ~~~ DarkCloud Neovim Config Update Tool ~~~ $c_reset
         error "install -d $local_bundle_dir" "User plugin directory couldn't be created" "$process_status"
     fi
 }
-
-# create or update path.vim
-printf '%s\n' "let g:darkcloudpath = \"$(readlink -f "$script_home")\"" > "$path_config"
 
 # create user.vim if it doesn't exist
 [[ -e "$user_vim_config" ]] || {

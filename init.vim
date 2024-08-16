@@ -10,7 +10,7 @@
 "============================================================="
 
 "load config path
-exec 'source ' . expand('<sfile>:p:h') . '/local/path.vim'
+let g:darkcloudpath = expand('<sfile>:p:h')
 
 "add config directory: (distro-agnostic system-wide)
 let &runtimepath = printf("%s,%s/vim,%s/local", &runtimepath, g:darkcloudpath, g:darkcloudpath)
