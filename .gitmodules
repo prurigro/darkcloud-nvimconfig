@@ -87,4 +87,4 @@
 	url = https://github.com/ibhagwan/smartyank.nvim
 [submodule "vim/bundle/MatchTagAlways"]
 	path = vim/bundle/MatchTagAlways
-	url = https://github.com/Valloric/MatchTagAlways
+	url = https://github.com/vitiral/MatchTagAlways
