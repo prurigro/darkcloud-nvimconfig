@@ -50,30 +50,30 @@ if (vim.g.enablecompletion == 1) then
         sources = cmp.config.sources({
             {
                 name = "snippy",
-                priority = 4
+                priority = 4,
             },
 
             {
                 name = "async_path",
-                priority = 3
+                priority = 3,
             },
 
             {
                 name = "buffer",
                 priority = 3,
-                max_item_count = 5
+                max_item_count = 5,
             },
 
             {
                 name = "treesitter",
                 priority = 2,
-                max_item_count = 5
+                max_item_count = 5,
             },
 
             {
                 name = "omni",
                 priority = 2,
-                max_item_count = 5
+                max_item_count = 5,
             },
 
             {
