@@ -13,7 +13,7 @@
 let g:darkcloudpath = expand('<sfile>:p:h')
 
 "add config directory: (distro-agnostic system-wide)
-let &runtimepath = printf("%s,%s/vim,%s/local", &runtimepath, g:darkcloudpath, g:darkcloudpath)
+let &runtimepath = printf("%s,%s/vim,%s/vim/after,%s/local", &runtimepath, g:darkcloudpath, g:darkcloudpath, g:darkcloudpath)
 
 "load colours
 runtime colors/palette.vim
