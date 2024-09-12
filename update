@@ -28,13 +28,13 @@ else
 fi
 
 if [[ -t 1 ]]; then
-    cbg_blue=$'\e[44m'
-    cbg_red_bold=$'\e[1;41m'
+    cfg_red=$'\e[1;31m'
+    cfg_green=$'\e[1;32m'
+    cfg_white=$'\e[1;37m'
+    cbg_red=$'\e[1;41m'
+    cbg_yellow=$'\e[1;43m'
+    cbg_blue=$'\e[1;44m'
     cbg_black=$'\e[40m'
-    cbg_yellow=$'\e[43m'
-    cfg_green_bold=$'\e[1;32m'
-    cfg_red_bold=$'\e[1;31m'
-    cfg_white_bold=$'\e[1;37m'
     c_reset=$'\e[0m'
 else
     cbg_blue='#'
@@ -46,9 +46,9 @@ fi
 
 # error: output and log error
 function error {
-    printf '%s\n' "$cbg_blue $c_reset$cbg_red_bold ! ERROR: $c_reset$cfg_red_bold $2 " >&2
-    printf '%s\n' "$cbg_blue $c_reset$cbg_red_bold ! COMMAND: $c_reset ${cfg_white_bold}=> $1$c_reset" >&2
-    [[ -n "$3" ]] && printf '%s\n' "$cbg_blue $c_reset$cbg_red_bold ! OUTPUT: $c_reset$cfg_white_bold $3" >&2
+    printf '%s\n' "$cbg_blue $c_reset$cbg_red ! ERROR: $c_reset$cfg_red $2 " >&2
+    printf '%s\n' "$cbg_blue $c_reset$cbg_red ! COMMAND: $c_reset ${cfg_white}=> $1$c_reset" >&2
+    [[ -n "$3" ]] && printf '%s\n' "$cbg_blue $c_reset$cbg_red ! OUTPUT: $c_reset$cfg_white $3" >&2
     printf '%s\n%s\n%s\n' "DATE: @ $(date)" "ERROR: $2" "COMMAND: $1" >> "$script_home/$error_log"
     [[ -n "$3" ]] && printf '%s\n' "OUTPUT: $3" >> "$script_home/$error_log"
     printf '\n' >> "$script_home/$error_log"
@@ -117,9 +117,9 @@ printf '\n%s\n' "$cbg_black ~~~ DarkCloud Neovim Config Update Tool ~~~ $c_reset
     process_status="$(install -d "$local_bundle_dir" 2>&1)"
 
     if (( ! $? )); then
-        printf '%s\n' "$cfg_green_bold SUCCESS! $c_reset"
+        printf '%s\n' "$cfg_green SUCCESS! $c_reset"
     else
-        printf '%s\n' "$cfg_red_bold FAIL! $c_reset"
+        printf '%s\n' "$cfg_red FAIL! $c_reset"
         error "install -d $local_bundle_dir" "User plugin directory couldn't be created" "$process_status"
     fi
 }
@@ -139,12 +139,12 @@ printf '\n%s\n' "$cbg_black ~~~ DarkCloud Neovim Config Update Tool ~~~ $c_reset
         } >> "$user_vim_config"
 
         if [[ -e "$user_vim_config" ]]; then
-            printf '%s\n' "$cfg_green_bold SUCCESS! $c_reset"
+            printf '%s\n' "$cfg_green SUCCESS! $c_reset"
         else
-            printf '%s\n' "$cfg_red_bold FAIL! $c_reset"
+            printf '%s\n' "$cfg_red FAIL! $c_reset"
         fi
     else
-        printf '%s\n' "$cfg_red_bold FAIL! $c_reset"
+        printf '%s\n' "$cfg_red FAIL! $c_reset"
         error "touch $user_vim_config" "User config couldn't be created" "$process_status"
     fi
 }
@@ -157,9 +157,9 @@ printf '\n%s' "$cbg_blue >> Updating darkcloud-nvimconfig:$c_reset"
 process_status="$(git pull origin master 2>&1)"
 
 if (( ! $? )); then
-    printf '%s\n' "$cfg_green_bold SUCCESS! $c_reset"
+    printf '%s\n' "$cfg_green SUCCESS! $c_reset"
 else
-    printf '%s\n' "$cfg_red_bold FAIL! $c_reset"
+    printf '%s\n' "$cfg_red FAIL! $c_reset"
     error 'git pull origin master' 'Git failed to sync the repo' "$process_status"
     exit 1
 fi
@@ -173,9 +173,9 @@ printf '%s' "$cbg_blue $c_reset$cbg_yellow + Updating plugin URLs:$c_reset"
 process_status="$(git submodule sync 2>&1)"
 
 if (( ! $? )); then
-    printf '%s\n' "$cfg_green_bold SUCCESS! $c_reset"
+    printf '%s\n' "$cfg_green SUCCESS! $c_reset"
 else
-    printf '%s\n' "$cfg_red_bold FAIL! $c_reset"
+    printf '%s\n' "$cfg_red FAIL! $c_reset"
     error 'git submodule sync' 'Git failed to sync the submodules' "$process_status"
 fi
 
@@ -188,13 +188,13 @@ if (( ! $? )); then
     process_status=$(git submodule update --init --recursive 2>&1)
 
     if (( ! $? )); then
-        printf '%s\n' "$cfg_green_bold SUCCESS! $c_reset"
+        printf '%s\n' "$cfg_green SUCCESS! $c_reset"
     else
-        printf '%s\n' "$cfg_red_bold FAIL! $c_reset"
+        printf '%s\n' "$cfg_red FAIL! $c_reset"
         error 'git submodule update --init --recursive' 'Git failed to update the submodules' "$process_status"
     fi
 else
-    printf '%s\n' "$cfg_red_bold FAIL! $c_reset"
+    printf '%s\n' "$cfg_red FAIL! $c_reset"
     error 'git submodule foreach git fetch --all' "Git failed to fetch the submodules from their respective remotes" "$process_status"
 fi
 
@@ -204,9 +204,9 @@ printf '%s' "$cbg_blue $c_reset$cbg_yellow + Remove untracked files:$c_reset"
 process_status="$(git submodule foreach git clean -dxf 2>&1)"
 
 if (( ! $? )); then
-    printf '%s\n' "$cfg_green_bold SUCCESS! $c_reset"
+    printf '%s\n' "$cfg_green SUCCESS! $c_reset"
 else
-    printf '%s\n' "$cfg_red_bold FAIL! $c_reset"
+    printf '%s\n' "$cfg_red FAIL! $c_reset"
     error 'git submodule foreach git clean -dxf' 'Git failed to remove untracked files' "$process_status"
 fi
 
@@ -224,7 +224,7 @@ fi
                 process_status="$(rm -rf "${plugin:?}")"
 
                 if (( ! $? )); then
-                    printf '%s\n' "$cbg_blue $c_reset$cbg_yellow = $cfg_white_bold$plugin$c_reset"
+                    printf '%s\n' "$cbg_blue $c_reset$cbg_yellow = $cfg_white$plugin$c_reset"
                 else
                     error "rm -rf $plugin" "Folder couldn't be deleted" "$process_status"
                     exit 1
@@ -252,9 +252,9 @@ fi
 
             if (( ! $? )); then
                 if ! grep -q "Already up-to-date" <<< "$process_status"; then
-                    printf '%s\n' "$cfg_green_bold SUCCESS! $c_reset"
+                    printf '%s\n' "$cfg_green SUCCESS! $c_reset"
                 else
-                    printf '%s\n' "$cfg_white_bold UP TO DATE $c_reset"
+                    printf '%s\n' "$cfg_white UP TO DATE $c_reset"
                 fi
             else
                 error 'git pull' "Failed pulling changes for $plugin" "$process_status"
@@ -277,10 +277,10 @@ type -P nvim >/dev/null && {
     $timeout_command --preserve-status --foreground 1m nvim -c 'helptags ALL|qa!'
 
     if (( ! $? )); then
-        printf '%s\n' "$cfg_green_bold SUCCESS! $c_reset"
+        printf '%s\n' "$cfg_green SUCCESS! $c_reset"
     else
         reset -I
-        printf '%s\n' "$cfg_red_bold FAIL! $c_reset"
+        printf '%s\n' "$cfg_red FAIL! $c_reset"
         error "nvim -c 'helptags ALL|qa!'" 'Generating helpdocs for the submodules failed'
     fi
 }
