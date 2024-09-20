@@ -155,13 +155,17 @@ endfun
     hi! link ErrorMsg Error
     hi! link WarningMsg Error
 
-    "vimdiff
+    "diff
     call s:C("DiffAdd",g:cYellow,"","standout")
+    call s:C("DiffAdded",g:cBlue,"","bold")
     call s:C("DiffChange",g:cBlue,"","standout")
     call s:C("DiffDelete",g:cRed,"","standout")
+    call s:C("DiffFile","","","")
+    call s:C("DiffRemoved",g:cRed,"","bold")
     call s:C("DiffText",g:cGray2,"","standout")
-    call s:C("DiffAdded",g:cBlue,"","bold")
-    call s:C("DiffRemoved",g:cYellow,"","bold")
+    call s:C("diffIndexLine",g:cGray2,"","italic")
+    call s:C("diffNewFile",g:cBlue,"","bold,italic")
+    call s:C("diffOldFile",g:cRed,"","bold,italic")
 "}}}
 
 "LANGUAGE: {{{
@@ -184,11 +188,6 @@ endfun
     call s:C("sassMediaQuery",g:cGray2,"","bold")
     call s:C("sassMixinName",g:cGray2,"","bold")
     hi! link sassProperty Type
-
-    "diff
-    call s:C("diffIndexLine",g:cGray2,"","italic")
-    call s:C("diffNewFile",g:cBlue,"","italic")
-    call s:C("diffOldFile",g:cYellow,"","italic")
 
     "dosini
     hi! link dosiniLabel Function
@@ -402,13 +401,13 @@ endfun
         "diff
         call s:C("@attribute.diff",g:cYellow,"","")
         call s:C("@constant.diff","","","")
-        call s:C("@diff.minus",g:cYellow,"","")
-        call s:C("@diff.plus",g:cBlue,"","")
         call s:C("@function.diff",g:cRed,"","bold")
         call s:C("@keyword.diff","","","")
         call s:C("@number.diff","","","")
         call s:C("@punctuation.special.diff","","","")
         call s:C("@string.special.path.diff","","","")
+        hi! link @diff.minus DiffRemoved
+        hi! link @diff.plus DiffAdded
 
         "scss
         call s:C("@attribute.scss","","","")
