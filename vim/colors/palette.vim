@@ -11,7 +11,7 @@ if has("gui_running") || &term != "linux" && &termguicolors
     let g:cYellow = '#ffd787'
     let g:cBlue = '#87d7ff'
 
-    let g:cDarkRed = '#ab4c4c'
+    let g:cDarkRed = '#b85252'
     let g:cDarkYellow = '#d4b370'
     let g:cDarkBlue = '#70b3d4'
 
