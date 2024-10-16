@@ -63,7 +63,7 @@
         set cursorline cursorcolumn "enable row/column highlighting
         set visualbell "notify visually instead of with an audible bell
         set splitright "add new tiles on the right (and not left) when added
-        set scrolloff=5 "scroll vertically when the cursor is 5 characters away from the top or bottom
+        set scrolloff=0 "don't scroll vertically when the cursor is near the top or bottom
         set sidescroll=1 sidescrolloff=5 "scroll horizontally when the cursor is 5 chars away from the edge
         set list listchars=tab:>-,trail:- "display tabs as: >--- and trailing spaces as: -
         set shortmess+=I "disable startup message
