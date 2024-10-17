@@ -502,6 +502,30 @@
         nnoremap <C-h> <S-Left>
 
         "map alt+direction to moving the viewport in that direction
+        noremap <A-Up> <ScrollWheelUp>
+        nnoremap <A-Up> <ScrollWheelUp>
+        xnoremap <A-Up> <ScrollWheelUp>
+        snoremap <A-Up> <ScrollWheelUp>
+        vnoremap <A-Up> <ScrollWheelUp>
+        inoremap <A-Up> <ScrollWheelUp>
+        noremap <A-Down> <ScrollWheelDown>
+        nnoremap <A-Down> <ScrollWheelDown>
+        xnoremap <A-Down> <ScrollWheelDown>
+        snoremap <A-Down> <ScrollWheelDown>
+        vnoremap <A-Down> <ScrollWheelDown>
+        inoremap <A-Down> <ScrollWheelDown>
+        noremap <A-Right> 4zl
+        nnoremap <A-Right> 4zl
+        xnoremap <A-Right> 4zl
+        snoremap <A-Right> 4zl
+        vnoremap <A-Right> 4zl
+        inoremap <A-Right> <C-O>4zl
+        noremap <A-Left> 4zh
+        nnoremap <A-Left> 4zh
+        xnoremap <A-Left> 4zh
+        snoremap <A-Left> 4zh
+        vnoremap <A-Left> 4zh
+        inoremap <A-Left> <C-O>4zh
         noremap <A-k> <ScrollWheelUp>
         nnoremap <A-k> <ScrollWheelUp>
         xnoremap <A-k> <ScrollWheelUp>
