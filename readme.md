@@ -109,7 +109,7 @@ A more complete list of key bindings exists at the top of `vim/config/keyboard.v
 
 ### Complete Reference
 
-For a complete list of mappings specific to **darkcloud-nvimconfig**, check the list in the comments at the top of [vim/config/keyboard.vim](https://github.com/prurigro/darkcloud-nvimconfig/blob/master/vim/config/keyboard.vim)
+For a complete list of mappings specific to **darkcloud-nvimconfig**, check the list in the comments at the top of [vim/config/keyboard.vim](https://github.com/prurigro/darkcloud-nvimconfig/blob/master/vim/config/keyboard.vim) and the various plugin configs.
 
 ## Plugins
 

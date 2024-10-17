@@ -127,20 +127,15 @@
 "    <Ctrl-Right>             | (N) -> move one word right
 "    <Ctrl-Left>              | (N) -> move one word left
 "
-"    <Alt-Up>                 | (A) -> move the screen up
-"    <Alt-Down>               | (A) -> move the screen down
-"    <Alt-Right>              | (A) -> move the screen to the right
-"    <Alt-Left>               | (A) -> move the screen to the left
+"    <Alt-k>                  | (A) -> move the screen up
+"    <Alt-j>                  | (A) -> move the screen down
+"    <Alt-l>                  | (A) -> move the screen to the right
+"    <Alt-h>                  | (A) -> move the screen to the left
 "
 "    <Shift-Up>               | (N) -> move to the beginning of the document
 "    <Shift-Down>             | (N) -> move to the end of the document
 "    <Shift-Right>            | (N) -> move to the end of the line
 "    <Shift-Left>             | (N) -> move to the beginning of the non-whitespace
-"
-"    <Shift-Ctrl-Up>          | (V) -> vim-move: move a block up one line
-"    <Shift-Ctrl-Down>        | (V) -> vim-move: move a block down one line
-"    <Shift-Ctrl-Up>          | (N) -> vim-move: move a line up one line
-"    <Shift-Ctrl-Down>        | (N) -> vim-move: move a line down one line
 "
 "    ]g                       | (N) -> next difference (vimdiff/signify)
 "    [g                       | (N) -> previous difference (vimdiff/signify)
@@ -499,42 +494,36 @@
         nnoremap <C-Left> <S-Left>
 
         "map alt+direction to moving the viewport in that direction
-        noremap <A-Up> <ScrollWheelUp>
-        nnoremap <A-Up> <ScrollWheelUp>
-        xnoremap <A-Up> <ScrollWheelUp>
-        snoremap <A-Up> <ScrollWheelUp>
-        vnoremap <A-Up> <ScrollWheelUp>
-        inoremap <A-Up> <ScrollWheelUp>
-        noremap <A-Down> <ScrollWheelDown>
-        nnoremap <A-Down> <ScrollWheelDown>
-        xnoremap <A-Down> <ScrollWheelDown>
-        snoremap <A-Down> <ScrollWheelDown>
-        vnoremap <A-Down> <ScrollWheelDown>
-        inoremap <A-Down> <ScrollWheelDown>
-        noremap <A-Right> 4zl
-        nnoremap <A-Right> 4zl
-        xnoremap <A-Right> 4zl
-        snoremap <A-Right> 4zl
-        vnoremap <A-Right> 4zl
-        inoremap <A-Right> <C-O>4zl
-        noremap <A-Left> 4zh
-        nnoremap <A-Left> 4zh
-        xnoremap <A-Left> 4zh
-        snoremap <A-Left> 4zh
-        vnoremap <A-Left> 4zh
-        inoremap <A-Left> <C-O>4zh
+        noremap <A-k> <ScrollWheelUp>
+        nnoremap <A-k> <ScrollWheelUp>
+        xnoremap <A-k> <ScrollWheelUp>
+        snoremap <A-k> <ScrollWheelUp>
+        vnoremap <A-k> <ScrollWheelUp>
+        inoremap <A-k> <ScrollWheelUp>
+        noremap <A-j> <ScrollWheelDown>
+        nnoremap <A-j> <ScrollWheelDown>
+        xnoremap <A-j> <ScrollWheelDown>
+        snoremap <A-j> <ScrollWheelDown>
+        vnoremap <A-j> <ScrollWheelDown>
+        inoremap <A-j> <ScrollWheelDown>
+        noremap <A-l> 4zl
+        nnoremap <A-l> 4zl
+        xnoremap <A-l> 4zl
+        snoremap <A-l> 4zl
+        vnoremap <A-l> 4zl
+        inoremap <A-l> <C-O>4zl
+        noremap <A-h> 4zh
+        nnoremap <A-h> 4zh
+        xnoremap <A-h> 4zh
+        snoremap <A-h> 4zh
+        vnoremap <A-h> 4zh
+        inoremap <A-h> <C-O>4zh
 
         "remap keys to scroll to the end in a direction
         nnoremap <S-Up> gg0
         nnoremap <S-Down> G$
         nnoremap <S-Right> $
         nnoremap <S-Left> ^
-
-        "remap shift+ctrl+up/down to move blocks up/down a line with vim-move
-        vmap <S-C-Up> <Plug>MoveBlockUp
-        vmap <S-C-Down> <Plug>MoveBlockDown
-        nmap <S-C-Up> <Plug>MoveLineUp
-        nmap <S-C-Down> <Plug>MoveLineDown
 
         "move to next/previous difference (vimdiff/signify)
         nmap ]g <plug>(signify-next-hunk)
