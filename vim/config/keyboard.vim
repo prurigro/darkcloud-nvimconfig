@@ -123,6 +123,7 @@
 "
 "    <Ctrl-Up>                | (N) -> move four lines up
 "    <Ctrl-Down>              | (N) -> move four lines down
+"
 "    <Ctrl-Right>             | (N) -> move one word right
 "    <Ctrl-Left>              | (N) -> move one word left
 "
@@ -489,12 +490,15 @@
         nnoremap = +
         nnoremap _ -
 
-        "map ctrl+direction to shifting the screen in that direction
+        "map ctrl+up/down to moving the cursor up and down by 4 lines
         nnoremap <C-Up> 4k
         nnoremap <C-Down> 4j
+
+        "map ctrl+right/left to moving the cursor left and right by one word
         nnoremap <C-Right> <S-Right>
         nnoremap <C-Left> <S-Left>
 
+        "map alt+direction to moving the viewport in that direction
         noremap <A-Up> <ScrollWheelUp>
         nnoremap <A-Up> <ScrollWheelUp>
         xnoremap <A-Up> <ScrollWheelUp>
