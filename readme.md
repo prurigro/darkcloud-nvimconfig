@@ -101,7 +101,6 @@ A more complete list of key bindings exists at the top of `vim/config/keyboard.v
 |----------|------|---------------------------------------------------------------|
 | Leader+J | N+V  | Format line/selected lines to a max width of the _textwidth_  |
 | Leader+f | N+V  | Format document/selection alignment using Vim syntax          |
-| Leader+f | N+V  | (Markdown) Format table cursor is currently on                |
 | Leader+F | N    | Fix document with available ale fixers                        |
 | Leader+t | N    | Convert all tabs into spaces and continue session with spaces |
 | Leader+T | N    | Convert all spaces into tabs and continue session with tabs   |
