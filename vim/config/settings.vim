@@ -27,10 +27,6 @@
 
     "configure to primarily use utf-8
     if has("multi_byte")
-        if &termencoding == ""
-            let &termencoding = &encoding
-        endif
-
         set encoding=utf-8
         setglobal fileencoding=utf-8
     endif
