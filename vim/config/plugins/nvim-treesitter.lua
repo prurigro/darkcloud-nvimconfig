@@ -18,7 +18,7 @@ if (vim.g.enabletreesitter == 1) then
         highlight = {
             enable = true,
             disable = { "blade", "gitcommit", "markdown", "tmux" },
-            additional_vim_regex_highlighting = { "diff", "php", "scss" },
+            additional_vim_regex_highlighting = { "blade", "diff", "php", "scss" },
         },
 
         -- nvim-treesitter-textobjects
