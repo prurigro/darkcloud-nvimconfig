@@ -12,7 +12,7 @@ if (vim.g.enabletreesitter == 1) then
     require("nvim-treesitter.configs").setup({
         ensure_installed = { "bash", "c", "cpp", "css", "diff", "git_config", "go", "html", "java", "javascript", "json", "lua", "php", "python", "query", "rust", "scss", "toml", "typescript", "vim", "vimdoc", "vue" },
         sync_install = true,
-        auto_install = true,
+        auto_install = false,
         parser_install_dir = parser_dir,
 
         highlight = {
