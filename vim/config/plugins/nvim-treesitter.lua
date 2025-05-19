@@ -17,7 +17,7 @@ if (vim.g.enabletreesitter == 1) then
 
         highlight = {
             enable = true,
-            disable = { "gitcommit", "markdown", "tmux" },
+            disable = { "blade", "gitcommit", "markdown", "tmux" },
             additional_vim_regex_highlighting = { "diff", "php", "scss" },
         },
 
