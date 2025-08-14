@@ -181,6 +181,9 @@ endfun
     "css/sass
     call s:C("cssBraces",g:cBlue,"","")
     call s:C("cssValueNumber",g:cYellow,"","bold")
+    call s:C("cssValueLength",g:cYellow,"","bold")
+    call s:C("cssValueTime",g:cYellow,"","bold")
+    call s:C("cssUnitDecorators",g:cYellow,"","bold")
     call s:C("sassAmpersand",g:cBlue,"","bold")
     call s:C("sassClass",g:cGray1,"","bold")
     call s:C("sassClassChar",g:cBlue,"","bold")
