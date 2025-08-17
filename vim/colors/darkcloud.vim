@@ -238,6 +238,7 @@ endfun
     call s:C("mkdCode",g:cYellow,g:cLightBg,"")
     call s:C("mkdURL",g:cGray3,"","")
     hi! link mkdIndentCode mkdCode
+    hi! link RenderMarkdownCodeInline mkdCode
 
     "objective-c/cocoa
     hi! link cocoaClass objcClass
