@@ -38,7 +38,7 @@
 "  (tabs)
 "    <Ctrl-n>                 | (N) -> go to the next open tab
 "    <Ctrl-p>                 | (N) -> go to the previous open tab
-"    <Ctrl-t>                 | (N) -> open a new tab
+"    <Leader><Ctrl-t>         | (N) -> open a new tab
 "
 "  (split)
 "    <Ctrl-w>]                | (N) -> split vertically
@@ -326,7 +326,7 @@
     "TABS:{
         nnoremap <silent><expr> <C-n> ':tabnext<CR>'
         nnoremap <silent><expr> <C-p> ':tabprev<CR>'
-        nnoremap <silent><expr> <C-t> ':tabnew<CR>'
+        nnoremap <silent><expr> <Leader><C-t> ':tabnew<CR>'
     "}
 
     "SPLIT:{
