@@ -14,7 +14,6 @@ A theme, config and collection of plugins for Neovim
 * **Powerline Fonts**: Required to enable the fancier looking status line
 * **Universal CTags**: Required by _vim-gutentags_ and _vista_, and optional for _nvim-cmp_
 * **Compilers, Linters and Runtimes**: The _ale_ plugin can use compilers, linters and runtimes to provide real-time syntax checking
-* **Python**: Required to enable the _MatchTagAlways_ plugin
 
 ## Distribution Features
 
@@ -117,7 +116,6 @@ For a complete list of mappings specific to **darkcloud-nvimconfig**, check the 
   * [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring): A Neovim plugin for setting the commentstring option based on the cursor location in the file. The location is checked via treesitter queries
 * [lightline.vim](https://github.com/itchyny/lightline.vim): A light and configurable statusline/tabline plugin for Vim
   * [lightline-ale](https://github.com/maximbaz/lightline-ale): Provides ALE indicator for the lightline vim plugin
-* [MatchTagAlways](https://github.com/Valloric/MatchTagAlways): Always highlight enclosing tags
 * [nvim-cmp](https://github.com/hrsh7th/nvim-cmp): A completion engine plugin for neovim written in Lua
   * [cmp-async-path](https://codeberg.org/FelipeLema/cmp-async-path): Async file system path source for nvim-cmp
   * [cmp-buffer](https://github.com/hrsh7th/cmp-buffer): Buffer words source for nvim-cmp
@@ -136,6 +134,7 @@ For a complete list of mappings specific to **darkcloud-nvimconfig**, check the 
 * [tabular](https://github.com/godlygeek/tabular): Vim script for text filtering and alignment
 * [vim-fugitive](https://github.com/tpope/vim-fugitive): A wrapper integrating git into vim in such a way as to provide features neither of them could offer on their own
 * [vim-gutentags](https://github.com/xolox/vim-easytags): A plugin that takes care of the much needed management of tags files in Vim
+* [vim-matchup](https://github.com/andymass/vim-matchup): A plugin that lets you highlight, navigate, and operate on sets of matching text. It extends vim's % key to language-specific words instead of just single characters
 * [vim-move](https://github.com/matze/vim-move): Provides a few convenient ways to move selected text
 * [vim-pathogen](https://github.com/tpope/vim-pathogen): A plugin to load other plugins while keeping them isolated in their own directory structure rather than all dumped together
 * [vim-polyglot-darkcloud](https://github.com/prurigro/vim-polyglot-darkcloud): The darkcloud-nvimconfig fork of a meta-package that attempts to provide the best syntax plugins for each file type

@@ -55,11 +55,6 @@ if !g:enablecompletion
     call add(g:pathogen_disabled, "vim-snippets")
 endif
 
-"don't load MatchTagAlways if python isn't available
-if !has('python3')
-    call add(g:pathogen_disabled, 'MatchTagAlways')
-endif
-
 "use pathogen to load plugins that haven't been disabled
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 
