@@ -14,6 +14,7 @@ A theme, config and collection of plugins for Neovim
 * **Powerline Fonts**: Required to enable the fancier looking status line
 * **Universal CTags**: Required by _vim-gutentags_ and _vista_, and optional for _nvim-cmp_
 * **Compilers, Linters and Runtimes**: The _ale_ plugin can use compilers, linters and runtimes to provide real-time syntax checking
+* **Tree-sitter CLI**: Required to enable treesitter support
 
 ## Distribution Features
 
@@ -113,7 +114,6 @@ For a complete list of mappings specific to **darkcloud-nvimconfig**, check the 
 
 * [ale](https://github.com/w0rp/ale): Asynchronous Lint Engine
 * [Comment.nvim](https://github.com/numToStr/Comment.nvim): Smart and Powerful commenting plugin for neovim
-  * [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring): A Neovim plugin for setting the commentstring option based on the cursor location in the file. The location is checked via treesitter queries
 * [lightline.vim](https://github.com/itchyny/lightline.vim): A light and configurable statusline/tabline plugin for Vim
   * [lightline-ale](https://github.com/maximbaz/lightline-ale): Provides ALE indicator for the lightline vim plugin
 * [nvim-cmp](https://github.com/hrsh7th/nvim-cmp): A completion engine plugin for neovim written in Lua
@@ -127,7 +127,7 @@ For a complete list of mappings specific to **darkcloud-nvimconfig**, check the 
   * [vim-snippets](https://github.com/honza/vim-snippets): Snippets files for various programming languages
 * [nvim-surround](https://github.com/kylechui/nvim-surround): Add/change/delete surrounding delimiter pairs with ease
 * [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): Treesitter configurations and abstraction layer for Neovim
-  * [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects): Syntax aware text-objects, select, move, swap, and peek support
+  * [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring): A Neovim plugin for setting the commentstring option based on the cursor location in the file. The location is checked via treesitter queries.
 * [qf.nvim](https://github.com/ten3roberts/qf.nvim): Extends the default quickfix and location lists for neovim
 * [smartyank.nvim](https://github.com/ibhagwan/smartyank.nvim): An opinionated (yet customizable) yank
 * [splitjoin.vim](https://github.com/AndrewRadev/splitjoin.vim): Simplifies the transition between multi-line and single-line code
