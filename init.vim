@@ -15,12 +15,6 @@ let g:darkcloudpath = expand('<sfile>:p:h')
 "add config directory: (distro-agnostic system-wide)
 let &runtimepath = printf("%s,%s/vim,%s/vim/after,%s/local", &runtimepath, g:darkcloudpath, g:darkcloudpath, g:darkcloudpath)
 
-"load colours
-runtime colors/palette.vim
-
-"load colour scheme:
-colorscheme darkcloud
-
 "load user config:
 runtime user.vim
 
@@ -30,6 +24,12 @@ let g:enabletreesitter = get(g:, "enabletreesitter", 0)
 let g:enablecompletion = get(g:, "enablecompletion", 0)
 let g:enableautotags = get(g:, "enableautotags", 0)
 let g:enablepowerline = get(g:, "enablepowerline", 0)
+
+"load colours
+runtime colors/palette.vim
+
+"load colour scheme:
+colorscheme darkcloud
 
 "load settings:
 runtime config/settings.vim

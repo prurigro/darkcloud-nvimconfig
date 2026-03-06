@@ -325,7 +325,7 @@ endfun
 "}}}
 
 "TREESITTER: {{{
-    if has("nvim")
+    if g:enabletreesitter == 1
         call s:C("@attribute",g:cRed,"","")
         call s:C("@boolean",g:cYellow,"","bold")
         call s:C("@character",g:cWhite,"","bold")
@@ -412,28 +412,6 @@ endfun
         call s:C("@string.special.path.diff","","","")
         hi! link @diff.minus DiffRemoved
         hi! link @diff.plus DiffAdded
-
-        "scss
-        call s:C("@attribute.scss","","","")
-        call s:C("@character.special.scss",g:cBlue,"","bold")
-        call s:C("@function.scss","","","")
-        call s:C("@keyword.import.scss",g:cYellow,"","bold")
-        call s:C("@keyword.modifier.scss","","","")
-        call s:C("@keyword.operator.scss","","","")
-        call s:C("@keyword.repeat.scss","","","")
-        call s:C("@keyword.scss","","","")
-        call s:C("@operator.scss","","","")
-        call s:C("@property.scss","","","")
-        call s:C("@punctuation.bracket.scss","","","")
-        call s:C("@punctuation.delimiter.scss",g:cGray2,"","")
-        call s:C("@string.scss","","","")
-        call s:C("@tag.scss","","","")
-        call s:C("@type.scss","","","")
-        call s:C("@variable.parameter.scss","","","")
-        call s:C("@variable.scss","","","")
-        hi! link @keyword.directive.scss @keyword.directive.css
-        hi! link @number.float.scss @number.float.css
-        hi! link @number.scss @number.css
 
         "vue
         call s:C("@function.method.vue",g:cRed,"","bold")
