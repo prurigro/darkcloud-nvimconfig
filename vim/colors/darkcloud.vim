@@ -413,6 +413,14 @@ endfun
         hi! link @diff.minus DiffRemoved
         hi! link @diff.plus DiffAdded
 
+        "markdown
+        call s:C("@markup.heading.1.markdown",g:cRed,"","bold")
+        call s:C("@markup.heading.2.markdown",g:cBlue,"","bold")
+        call s:C("@markup.heading.3.markdown",g:cYellow,"","bold")
+        call s:C("@markup.heading.4.markdown",g:cRed,"","")
+        call s:C("@markup.heading.5.markdown",g:cBlue,"","")
+        call s:C("@markup.heading.6.markdown",g:cYellow,"","")
+
         "vue
         call s:C("@function.method.vue",g:cRed,"","bold")
     endif
