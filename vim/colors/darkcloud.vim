@@ -235,7 +235,7 @@ endfun
     autocmd BufEnter,FileType json hi! link String Statement
 
     "markdown
-    call s:C("mkdCode",g:cYellow,g:cLightBg,"")
+    call s:C("mkdCode",g:cDarkYellow,"","")
     call s:C("mkdURL",g:cGray3,"","")
     hi! link mkdIndentCode mkdCode
     hi! link RenderMarkdownCodeInline mkdCode
@@ -420,6 +420,7 @@ endfun
         call s:C("@markup.heading.4.markdown",g:cRed,"","")
         call s:C("@markup.heading.5.markdown",g:cBlue,"","")
         call s:C("@markup.heading.6.markdown",g:cYellow,"","")
+        hi! link @markup.raw.block.markdown mkdCode
 
         "vue
         call s:C("@function.method.vue",g:cRed,"","bold")
