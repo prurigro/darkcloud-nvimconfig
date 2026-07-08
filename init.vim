@@ -37,6 +37,11 @@ runtime config/settings.vim
 "initialize plugins:
 let g:pathogen_disabled = get(g:, "pathogen_disabled", [])
 
+"don't load nvim-ts-context-commentstring if g:enabletreesitter is false
+if !g:enabletreesitter
+    call add(g:pathogen_disabled, "nvim-ts-context-commentstring")
+endif
+
 "don't load vim-gutentags if g:enableautotags is false or ctags isn't in path
 if !g:enableautotags || !executable("ctags")
     call add(g:pathogen_disabled, "vim-gutentags")
