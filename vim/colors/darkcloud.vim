@@ -74,6 +74,14 @@ endfun
         call s:C("CursorLineNr",g:cBlue,"","bold")
     end
 
+    "modes
+    call s:C("NormalMode",g:cBlue,g:cLightBg,"bold")
+    call s:C("InsertMode",g:cRed,g:cLightBg,"bold")
+    call s:C("VisualMode",g:cYellow,g:cDarkBg,"bold")
+    call s:C("CommandMode",g:cBlue,g:cLightBg,"bold")
+    call s:C("ReplaceMode",g:cLightBg,g:cRed,"bold")
+    call s:C("SelectMode",g:cYellow,g:cLightBg,"bold")
+
     "line number
     call s:C("LineNr",g:cGray4,"","bold")
 

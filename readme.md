@@ -116,6 +116,7 @@ For a complete list of mappings specific to **darkcloud-nvimconfig**, check the 
 * [Comment.nvim](https://github.com/numToStr/Comment.nvim): Smart and Powerful commenting plugin for neovim
 * [lightline.vim](https://github.com/itchyny/lightline.vim): A light and configurable statusline/tabline plugin for Vim
   * [lightline-ale](https://github.com/maximbaz/lightline-ale): Provides ALE indicator for the lightline vim plugin
+* [modicator.nvim](https://github.com/mawkler/modicator.nvim): A small Neovim plugin that changes the color of your cursor's line number based on the current Vim mode.
 * [nvim-cmp](https://github.com/hrsh7th/nvim-cmp): A completion engine plugin for neovim written in Lua
   * [cmp-async-path](https://codeberg.org/FelipeLema/cmp-async-path): Async file system path source for nvim-cmp
   * [cmp-buffer](https://github.com/hrsh7th/cmp-buffer): Buffer words source for nvim-cmp
