@@ -1,9 +1,6 @@
 "don't use default mappings
 let g:move_map_keys = 0
 
-"don't auto-indent (this can alter the shift width)
-let g:move_auto_indent = 0
-
 "visual mode mappings
 vmap <S-C-Up> <Plug>MoveBlockUp
 vmap <S-C-Down> <Plug>MoveBlockDown
